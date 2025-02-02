@@ -1,0 +1,557 @@
+																		/*  INFORMATION */
+
+
+/**
+ * @name Boykisser CV v.1.6
+ * @author zafazu, ClearVision Team
+ * @version 1.6_zafazu_custom
+ * @description mostly fixed from 30.01.2025
+*/
+
+
+																		/*  CSS INFORMATION */
+
+                                    @import "https://clearvision.github.io/ClearVision-v6/main.css";
+
+                                    :root {
+                                        --main-color: #a65fc2;
+                                        --hover-color: #ae6bc8;
+                                        --success-color: #8411b9;
+                                        --danger-color: #06c516;
+                                        --url-color: #06c516;
+                                        --online-color: #43b581;
+                                        --idle-color: #faa61a;
+                                        --dnd-color: #982929;
+                                        --streaming-color: #593695;
+                                        --offline-color: #808080;
+                                        --main-font: gg sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+                                        --code-font: Consolas, Liberation Mono, Menlo, Courier, monospace;
+                                        --text-normal: rgb(220, 221, 222);
+                                        --text-muted: rgb(114, 118, 125);
+                                        --channels-width: 220px;
+                                        --members-width: 240px;
+                                        --background-shading: 160%;
+                                        --background-overlay: rgba(0, 0, 0, 0.6);
+                                        --background-image: url(https://steamuserimages-a.akamaihd.net/ugc/2056511339667813175/9931033C6C548C49FE26E9EF8999D0A9F5EF8DB8/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true);
+                                        --background-position: center;
+                                        --background-size: 125%;
+                                        --background-repeat: repeat;
+                                        --background-attachment: fixed;
+                                        --background-brightness: 100%;
+                                        --background-contrast: 100%;
+                                        --background-saturation: 100%;
+                                        --background-invert: 0%;
+                                        --background-grayscale: 0%;
+                                        --background-sepia: 0%;
+                                        --home-icon: url();
+                                        --home-position: center;
+                                        --home-size: 50px;
+                                        --channel-unread: var(--main-color);
+                                        --channel-color: rgba(255, 255, 255, 0.3);
+                                        --channel-text-selected: #fff;
+                                        --muted-color: rgba(255, 255, 255, 0.1);
+                                        --backdrop-overlay: rgba(0, 0, 0, 0.8);
+                                        --backdrop-image: var(--background-image);
+                                        --backdrop-position: var(--background-position);
+                                        --backdrop-size: var(--background-size);
+                                        --backdrop-repeat: var(--background-repeat);
+                                        --backdrop-attachment: var(--background-attachment);
+                                        --backdrop-brightness: var(--background-brightness);
+                                        --backdrop-contrast: var(--background-contrast);
+                                        --backdrop-saturation: var(--background-saturation);
+                                        --backdrop-invert: var(--background-invert);
+                                        --backdrop-grayscale: var(--background-grayscale);
+                                        --backdrop-sepia: var(--background-sepia);
+                                        --backdrop-blur: var(--background-blur);
+                                        --user-popout-image: var(--background-image);
+                                        --user-popout-position: var(--background-position);
+                                        --user-popout-size: var(--background-size);
+                                        --user-popout-repeat: var(--background-repeat);
+                                        --user-popout-attachment: var(--background-attachment);
+                                        --user-popout-brightness: var(--background-brightness);
+                                        --user-popout-contrast: var(--background-contrast);
+                                        --user-popout-saturation: var(--background-saturation);
+                                        --user-popout-invert: var(--background-invert);
+                                        --user-popout-grayscale: var(--background-grayscale);
+                                        --user-popout-sepia: var(--background-sepia);
+                                        --user-popout-blur: calc(var(--background-blur) + 3px);
+                                        --user-popout-overlay: rgba(0, 0, 0, 0.6);
+                                        --user-modal-image: var(--background-image);
+                                        --user-modal-position: var(--background-position);
+                                        --user-modal-size: var(--background-size);
+                                        --user-modal-repeat: var(--background-repeat);
+                                        --user-modal-attachment: var(--background-attachment);
+                                        --user-modal-brightness: var(--background-brightness);
+                                        --user-modal-contrast: var(--background-contrast);
+                                        --user-modal-saturation: var(--background-saturation);
+                                        --user-modal-invert: var(--background-invert);
+                                        --user-modal-grayscale: var(--background-grayscale);
+                                        --user-modal-sepia: var(--background-sepia);
+                                        --user-modal-blur: calc(var(--background-blur) + 3px);
+                                        --bd-blue: var(--main-color);
+                                        --bd-blue-hover: var(--hover-color);
+                                        --bd-blue-active: var(--hover-color);
+                                    }
+                                    
+                                    /* FRIENDLIST LINES */
+                                    .peopleListItem_cc6179  { 
+                                        border-top: none;
+                                        border-bottom: none;
+                                    }
+                                    
+                                    /* MINIMALISTIC SEARCHING [NOT MINE] */
+                                    .search_ff5f90 {
+                                        order: var(--search-order, 1);
+                                    }
+                                    .search_ff5f90 .searchBar_a46bef {
+                                        background: rgba(0, 0, 0, 0);
+                                    }
+                                    .search_ff5f90 .searchBar_a46bef:not(:focus-within, :hover, :has(.clear_effbe2)) {
+                                        width: 24px;
+                                    }
+                                    .search_ff5f90 .searchBar_a46bef:not(:focus-within, :hover, :has(.clear_effbe2)) .iconContainer_effbe2 {
+                                        width: 24px;
+                                        height: 24px;
+                                        cursor: pointer;
+                                    }
+                                    
+                                    .searchBar__35e86 {
+                                        display: none;
+                                    }
+
+
+                                    /* BETTER FRIENDLIST */
+                                    .text__19b6d, .customStatusEmoji__19b6d {
+                                        display: none;
+                                    }
+                                    .peopleListItem_cc6179 .icon_c9d15c {
+                                        display: none;
+                                    }
+                                    
+                                    /* CLEAR VISION WATERMARK REMOVAL */
+                                    .typeWindows__421ed>.wordmark__421ed:before {
+                                        content: "";
+                                        color: rgba(255, 255, 255, .7);
+                                        font-size: 14px;
+                                        text-shadow: 0 0 3px #000;
+                                    }
+                                    .typeWindows__421ed>.wordmark__421ed:after {
+                                        content: "";
+                                        color: rgba(255, 255, 255, .3);
+                                        font-family: var(--code-font);
+                                        font-size: 10px;
+                                    }
+                                    
+                                    /* SEARCHBAR REMOVAL */
+                                    .searchBarComponent_f0963d,
+                                    .searchBar_f0963d {
+                                        display: none;
+                                    }
+                                    
+                                    .image__33d12 {
+                                        visibility: hidden;
+                                        position: relative;
+                                    }
+                                    
+                                    /* BOYKISSER FRIEND THING */
+                                    .image__33d12:after {
+                                        visibility: visible;
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                        content: url("https://i.imgur.com/a8Qm8Bd.png");
+                                    }
+                                    
+                                    .text__33d12 {
+                                        visibility: hidden;
+                                        position: relative;
+                                    }
+                                    
+                                    .text__33d12:after {
+                                        visibility: visible;
+                                        position: absolute;
+                                        top: 0;
+                                        left: 0;
+                                        content: "There are no pending friend requests. Here's Boykisser for now.";
+                                    }
+
+                                    .friendsEmpty_c7ea19 .vertical_abf706 .text__33d12 {
+
+                                        visibility: hidden;
+                                        position: relative;
+                                    }
+                                    
+                                    /* MESSAGE TOOL BAR FIX 06.08.2024 */
+                                    
+                                    /* ACTIVE NOW TEXT */
+                                    .header__7d20c {
+                                        text-indent: -9999px;
+                                    }
+                                    .header__7d20c::after {
+                                        content: "Was ist denn hier los";
+                                        display: block;
+                                        text-indent: 0px;
+                                        position: relative;
+                                        left: 66px;
+                                    }
+                                    
+                                    /* QUESTS BOYKISSER */
+                                    .content_a56260 .wrapper_a3747e .text_a3747e {
+                                        visibility: hidden;
+                                        position: relative;
+                                    }
+                                    
+                                    .content_a56260 .wrapper_a3747e .text_a3747e:after {
+                                        visibility: visible;
+                                        position: absolute;
+                                        top: 0;
+                                        left: 15%;
+                                        content: "You haven't completed any quests silly";
+                                    }
+                                    
+                                    /* REMOVE EDIT BUTTON ON PROFILE */
+                                    .wrapper_cb78f1 .button_f9d37d {
+                                        display: none;
+                                    }
+                                    
+                                    /* TEXT PREVIEW REMOVAL */
+                                    .preview_a614a7,
+                                    .input_effbe2,
+                                    .inner_effbe2 {
+                                        display: none;
+                                    }
+                                    
+                                    .button_adca65:active {
+                                        backdrop-filter: blur(8px);
+                                    }
+                                    
+                                    /* ACTIVITY BACKGROUND TRANSPARENT LOL TRANS + PARENT FUNNY */
+                                    .overlayBackground_c69a7b {
+                                        background-color: transparent !important;
+                                    }
+                                    
+                                    /* REACTION FIX */
+                                    .reactionBtn_ec6b19 {
+                                        background-color: transparent !important;
+                                    }
+                                    
+                                    /* SETTINGS BLUR EFFECT */
+                                    .contentColumn__23e6b {
+                                        backdrop-filter: blur(8px);
+                                    }
+                                    .app-3xd6d0 {
+                                        backdrop-filter: blur(0);
+                                        transition: backdrop-filter 1.5s ease-in-out;
+                                    }
+                                    .app-3xd6d0:has(.contentColumn__23e6b) {
+                                        backdrop-filter: blur(3px);
+                                    }
+                                    .contentTransitionwrap_c25c6d {
+                                        backdrop-filter: blur(3px);
+                                    }
+                                    .app-3xd6de {
+                                        backdrop-filter: blur(0);
+                                        transition: backdrop-filter 1.5s ease-in-out;
+                                    }
+                                    .app-3xd6d0:has(.contentTransitionwrap_c25c6d) {
+                                        backdrop-filter: blur(3px);
+                                      }
+                                      
+                                      .sidebar__23e6b .sidebarRegionScroller__23e6b .sidebarRegion__23e6b {
+                                          margin: 30px 8px 30px 0 !important;
+                                          background: transparent !important;
+                                          backdrop-filter: blur(8px) !important;
+                                          -webkit-mask-image: linear-gradient(to bottom, transparent, #000 5%, #000 95%, transparent) !important;
+                                          mask-image: linear-gradient(to bottom, transparent, #000 5%, #000 95%, transparent) !important;
+                                          position: relative !important;
+                                          left: 8px;
+                                      }
+                                      
+                                      .accountProfileCard_b69b77 {
+                                          background-color: transparent !important;
+                                      }
+                                      
+                                      .biteSizeInner_c69a7b {
+                                          background-color: transparent !important;
+                                      }
+                                      
+                                      /* ACTIVITY DINGENS UEBER MEMEBERS REMOVAL */
+                                      .container_c64476 {
+                                          display: none;
+                                      }
+                                      
+                                      .headerContainer__095fe {
+                                          display: none;
+                                      }
+
+                                      .container__0f2e8 {
+                                        display: none;
+                                      }
+                                      
+                                      .container_a5ad5c:has(.content__99f8c:focus) .container_a5ad5c:nth-child(2) {
+                                          display: none;
+                                      }
+                                      
+                                      .content__99f8c:has(.container__0f2e8) {
+                                          position: relative !important;
+                                          top: -50px !important;
+                                      }
+                                      
+                                      /* ACTIVITY FIX FOR ClearVision */
+                                      body:has(.vc-membercount-widget) .vc-membercount-widget {
+                                          position: relative;
+                                          height: 21px;
+                                          background-color: #000 !important;
+                                          z-index: 1;
+                                      }
+                                      
+                                      /* STREAM PREVIEW BLACK BACKGROUND */
+                                      .streamPreviewWrapper_adbea6 {
+                                          background-color: #000 !important;
+                                      }
+                                      
+                                      .biteSizeInner_c69a7b {
+                                          background-color: #000 !important;
+                                      }
+                                      
+                                      .innerDisabled_d0696b {
+                                          pointer-events: auto !important;
+                                          opacity: 1;
+                                      }
+                                      
+                                    
+                                      .button_df39bd {
+                                        display: none !important;
+                                      }
+
+
+                                      .scrollableContainer_bdf0de {
+                                        background-color: transparent !important;
+                                      }
+
+                                      .themedBackground_bdf0de {
+                                        background-color: transparent !important;
+                                      }
+
+
+                                      .channelTextArea_a7d72e {
+                                        background-color:  transparent !important;
+                                      }
+
+
+
+                                      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
