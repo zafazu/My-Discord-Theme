@@ -2,7 +2,7 @@
 
 
 /**
- * @name Boykisser CV v.1.6
+ * @name Boykisser CV v.2.0
  * @author zafazu, ClearVision Team
  * @version 1.6_zafazu_custom
  * @description mostly fixed from 30.01.2025
@@ -14,7 +14,8 @@
                                     @import "https://clearvision.github.io/ClearVision-v6/main.css";
 
                                     :root {
-                                        --main-color: #a65fc2;
+                                        --main-color: #a69589;
+                                        --main-color-border: #5c4e47;
                                         --hover-color: #ae6bc8;
                                         --success-color: #8411b9;
                                         --danger-color: #06c516;
@@ -184,15 +185,20 @@
                                     /* MESSAGE TOOL BAR FIX 06.08.2024 */
                                     
                                     /* ACTIVE NOW TEXT */
+
                                     .header__7d20c {
                                         text-indent: -9999px;
+                                        position: relative;
+                                        display: flex;
+                                        justify-content: center;
                                     }
+                                    
                                     .header__7d20c::after {
                                         content: "Was ist denn hier los";
-                                        display: block;
-                                        text-indent: 0px;
-                                        position: relative;
-                                        left: 66px;
+                                        text-align: center;
+                                        position: absolute;
+                                        left: 50%;
+                                        transform: translateX(-39%);
                                     }
                                     
                                     /* QUESTS BOYKISSER */
@@ -339,219 +345,170 @@
                                       }
 
 
+                                      .wrapper__960df {
+                                        display: none;
+                                    }
 
-                                      
+                                    /* REMOVE GREEN ICONS */
+                                    
+                                    .icon__8ac07 {
+                                        display: none;
+                                    }
 
 
+                                    
+                                   
+                                   
 
 
+                                        
+                                   .children__9293f .topic__6ec1a {
+                                    max-width: 500px;
+                                 }
+                                    .tileWrapper__6981d {
+                                    position: absolute;
+                                    }
+                                
+/* --------------------------------------------------- NEW UI --------------------------------------------------- */
 
+/* BAR */
 
+.title_c38106  {
+    display: none !important;
+}
 
+.bar_c38106 {
+    position: relative;
+    nav-down: 100px
+}
 
+/* SERVERLIST */
 
+.wrapper_cc5dd2 {
+    width: 40px;          
+    height: 40px;         
+    border-radius: 50%;    
+    overflow: hidden;      
+    display: inline-block; 
+}
 
+.svg_cc5dd2  {
+    width: 50px;          
+    height: 50px;         
+    border-radius: 50px;    
+    overflow: hidden;      
+    display: inline-block; 
+}
 
+.svg_cc5dd2 svg {
+    width: 30px;          
+    height: 30px;
+    position: relative; 
+    left: 0px;
+}
 
 
+.expandedFolderIconWrapper__4 {
+    width: 50px;          
+    height: 50px; 
+}
 
+.folderIconWrapper__48112 {
+    width: 50px;          
+    height: 50px; 
+    position: relative;
+    left: 2px;
+    border-radius: 50%;    
+    overflow: hidden;      
+    display: inline-block; 
+}
 
+.stack_dbd263 {
+    flex-grow: 1;
+    height: auto;
+    align-self: stretch;
+}
 
 
+.wrapper__48112 {
+    height: auto;
+    display: block;
+}
 
 
 
 
+/* SEARCH BAR */
 
+.medium_a45028 {
+    display: none;
+}
 
 
 
+/* SEARCH BAR POS FIX */
 
+.children__9293f {
+    position: relative;
+    top: 5px;
+}
 
 
 
 
 
+/* BORDERS */
 
 
+.container__133bf {
+    border-color: var(--main-color-border) !important;
+}
 
 
+.sidebarListRounded_c48ade {
+    border-color: var(--main-color-border) !important;
+}
 
 
 
 
+.tabBody__133bf {
+    border: none !important;
+ }
+ 
+ 
+ .container__9293f {
+     border-bottom: none !important;
+ }
+ 
+ 
+ .scrollerBase_d125d2 {
+    border: none !important;
+}
 
 
+.subtitleContainer_f75fb0 {
+    border: none !important;
+}
 
+.chat_f75fb0 {
+    border-color: var(--main-color-border) !important;
+}
 
 
 
 
 
 
+/* ADD FRIEND */
 
 
+.tabBar__133bf .item_b3f026:nth-child(4) {
+    background-color: var(--main-color) !important;
+}
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
