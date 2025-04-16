@@ -510,10 +510,11 @@
                                     /* ADD FRIEND */
                                     
                                     
-                                    .tabBar__133bf .item_b3f026:nth-child(4) {
-                                        background-color: var(--main-color) !important;
-                                    }
-                                    
+					.tabBar__133bf:has(.item_b3f026:nth-child(4)) .item_b3f026:nth-child(4),
+					.tabBar__133bf:not(:has(.item_b3f026:nth-child(4))) .item_b3f026:nth-child(3) {
+					    background-color: var(--main-color) !important;
+					}
+
                                     
                                     /* HOME ICON */
 
