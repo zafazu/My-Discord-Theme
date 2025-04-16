@@ -522,7 +522,12 @@
                                     background-color: #000 !important;
                                      }
                                 
-                                
+                                	  /* FRIEND STATUS FIX */
+
+                                    .container_c9d15c {
+                                        display: none;
+                                    }
+
  
  
                                     
