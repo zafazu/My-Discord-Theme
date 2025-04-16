@@ -384,56 +384,53 @@
                                     
                                     /* SERVERLIST */
                                     
-                                    .wrapper_cc5dd2 {
-                                        width: 40px;          
-                                        height: 40px;         
-                                        border-radius: 50%;    
-                                        overflow: hidden;      
-                                        display: inline-block; 
-                                    }
-                                    
-                                    .svg_cc5dd2  {
-                                        width: 50px;          
-                                        height: 50px;         
-                                        border-radius: 50px;    
-                                        overflow: hidden;      
-                                        display: inline-block; 
-                                    }
-                                    
-                                    .svg_cc5dd2 svg {
-                                        width: 30px;          
-                                        height: 30px;
-                                        position: relative; 
-                                        left: 0px;
-                                    }
-                                    
-                                    
-                                    .expandedFolderIconWrapper__4 {
-                                        width: 50px;          
-                                        height: 50px; 
-                                    }
-                                    
-                                    .folderIconWrapper__48112 {
-                                        width: 50px;          
-                                        height: 50px; 
-                                        position: relative;
-                                        left: 2px;
-                                        border-radius: 50%;    
-                                        overflow: hidden;      
-                                        display: inline-block; 
-                                    }
-                                    
-                                    .stack_dbd263 {
-                                        flex-grow: 1;
-                                        height: auto;
-                                        align-self: stretch;
-                                    }
-                                    
-                                    
-                                    .wrapper__48112 {
-                                        height: auto;
-                                        display: block;
-                                    }
+                                  .wrapper_cc5dd2 {
+				    width: 40px;          
+				    height: 40px;         
+				    border-radius: 50%;    
+				    overflow: hidden;      
+				}
+				
+				.svg_cc5dd2  {
+				    width: 50px;          
+				    height: 50px;         
+				    border-radius: 50px;    
+				    overflow: hidden;      
+				    
+				}
+				
+				.svg_cc5dd2 svg {
+				    width: 30px;          
+				    height: 30px;
+				    position: relative; 
+				    left: 0px;
+				}
+				
+				
+				.expandedFolderIconWrapper__4 {
+				    width: 50px;          
+				    height: 50px; 
+				}
+				
+				.folderIconWrapper__48112 {
+				    width: 50px;          
+				    height: 50px; 
+				    position: relative;
+				    left: 2px;
+				    border-radius: 50%;    
+				    overflow: hidden;      
+				    display: inline-block; 
+				}
+				
+				
+				
+				
+				.wrapper__48112 {
+				    height: auto;
+				    display: block;
+				}
+				
+
                                     
                                     
                                     
