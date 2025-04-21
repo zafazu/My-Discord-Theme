@@ -400,11 +400,9 @@
                                         position: relative;
                                         top: 10px;
                                     }
-                                    .panelTitleContainer__37e49 {
-                                        position: relative;
-                                        top: 5px;
-                                    }
-                                    
+                                    .panelSubtextContainer__37e49 {
+					    display: none !important;
+					}
                                     /* SERVERLIST */
                                     
                                         .wrapper_cc5dd2 {
