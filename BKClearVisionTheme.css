@@ -306,7 +306,7 @@
                                                                           /* ACTIVITY FIX FOR ClearVision */
                                                                           .vc-membercount-member-list {
                                                                               position: relative;
-                                                                              height: 31px;
+                                                                              height: 30px;
                                                                               background-color: #000 !important;
                                                                               z-index: 1;
                                                                           }
