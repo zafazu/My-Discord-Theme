@@ -14,6 +14,7 @@
                                                                         @import "https://clearvision.github.io/ClearVision-v6/main.css";
 
                                                                         :root {
+									    --theme-version: "zafazu's Theme Version: 1.5";
                                                                             --main-color: #a69589;
                                                                             --main-color-border: #5c4e47;
                                                                             --hover-color: #ae6bc8;
@@ -371,15 +372,37 @@
                                                                     
                                     /* --------------------------------------------------- NEW UI --------------------------------------------------- */
                                     
-                                    /* BAR */
                                     
-                                    .title_c38106  {
-                                        display: none !important;
+                                   /* BAR */
+                                    
+                                    .base_c48ade .bar_c38106  .title_c38106 .text-sm\/medium_cf4812 {
+                                        font-size: 0;
                                     }
                                     
-                                    .bar_c38106 {
+                                    .base_c48ade .bar_c38106 .title_c38106 .text-sm\/medium_cf4812::before {
+                                        content: var(--theme-version);
+                                        font-size: 11px; 
+                                        opacity: 50%;
+        
+                                    }
+
+                                    .base_c48ade .title_c38106 .title__85643 svg  {
+                                        display: none !important;
+                                    }
+
+                                    .title_c38106 .title__85643 .guildIcon__85643 {
+                                        display: none;
+                                    }
+
+                                    .bar_c38106 .title_c38106 .title__85643 {
+                                        transform: translateX(-100%);
+                                        margin-right: 63%;
                                         position: relative;
-                                        nav-down: 100px
+                                        top: 10px;
+                                    }
+                                    .panelTitleContainer__37e49 {
+                                        position: relative;
+                                        top: 5px;
                                     }
                                     
                                     /* SERVERLIST */
@@ -555,6 +578,18 @@
 				 .buttonsInner__5126c {
                                         background-color: black !important;
                                         border-color: var(--main-color-border);
+                                    }
+
+
+				
+                                    .buttonsInner__5126c {
+                                        background-color: black !important;
+                                        border-color: var(--main-color-border);
+                                    }
+
+
+                                    .inner_c0bea0 {
+                                        background-color: #000 !important;
                                     }
 
 
