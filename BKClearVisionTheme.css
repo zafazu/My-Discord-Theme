@@ -406,26 +406,9 @@
 					}
                                     /* SERVERLIST */
                                     
-                                        .wrapper_cc5dd2 {
-                                        width: 40px;          
-                                        height: 40px;         
-                                        border-radius: 50%;    
-                                        overflow: hidden;      
-                                    }
-                                    
-                                    .svg_cc5dd2  {
-                                        width: 50px;          
-                                        height: 50px;         
-                                        border-radius: 50px;    
-                                        overflow: hidden;      
-                                        
-                                    }
-                                    
-                                    .svg_cc5dd2 svg {
-                                        width: 30px;          
-                                        height: 30px;
-                                        position: relative; 
-                                        left: 0px;
+                                       [class*="closedFolderIconWrapper_"] > [class*="guildIcon_"],
+                                    [data-list-item-id*="guildsnav_"] > [class*="icon_"] {
+                                        border-radius: 50% !important;
                                     }
                                     
                                     
