@@ -14,10 +14,10 @@
                                                                         @import "https://raw.githubusercontent.com/zafazu/My-Discord-Theme/refs/heads/main/CV_main.css";
 										/* https://clearvision.github.io/ClearVision-v6/main.css */
                                                                         :root {
-									    --theme-version: "zafazu's Theme Version: 1.11";
+									    --theme-version: "zafazu's Theme Version: 1.12";
                                                                             --main-color: #a69589;
                                                                             --main-color-border: #5c4e47;
-                                                                            --hover-color: #f9f6fa;
+                                                                            --hover-color: #747474;
                                                                             --success-color: #8411b9;
                                                                             --danger-color: #06c516;
                                                                             --url-color: #06c516;
