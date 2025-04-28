@@ -188,19 +188,21 @@
                                                                         /* ACTIVE NOW TEXT */
                                     
                                                                         .header__7d20c {
-                                                                            text-indent: -9999px;
-                                                                            position: relative;
-                                                                            display: flex;
-                                                                            justify-content: center;
-                                                                        }
-                                                                        
-                                                                        .header__7d20c::after {
-                                                                            content: "Was ist denn hier los";
-                                                                            text-align: center;
-                                                                            position: absolute;
-                                                                            left: 50%;
-                                                                            transform: translateX(-39%);
-                                                                        }
+					                                    text-indent: -9999px;
+					                                    position: relative;
+					                                    display: flex;
+					                                    justify-content: center;
+					                                }
+					                                
+					                                .header__7d20c::after {
+					                                    text-indent: 1px;
+					                                    content: "miau :3";
+					                                    text-align: center;
+					                                    position: absolute;
+					                                    left: 50%;
+					                                    transform: translateX(-39%);
+					                                }
+                                
                                                                         
                                                                         /* QUESTS BOYKISSER */
                                                                         .content_a56260 .wrapper_a3747e .text_a3747e {
