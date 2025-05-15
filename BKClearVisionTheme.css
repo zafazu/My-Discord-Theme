@@ -653,7 +653,7 @@
 				}
 				
 				.avatarWrapper__86ab2 {
-				    background-color: #000 !important;
+				    background-color: transparent !important;
 				}
 				
 				
@@ -672,6 +672,8 @@
 				.header__99f53 {
 				    background-color: black !important;
 				}
-				
+				.animatorLeft_faf9c0 {
+				    border-radius: 20px !important;
+				}
 
 
