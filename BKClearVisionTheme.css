@@ -14,7 +14,7 @@
                                                                         @import "https://raw.githubusercontent.com/zafazu/My-Discord-Theme/refs/heads/main/CV_main.css";
 										/* https://clearvision.github.io/ClearVision-v6/main.css */
                                                                         :root {
-									    --theme-version: "zafazu's Theme Version: 1.18";
+									    --theme-version: "zafazu's Theme Version: 1.18.1";
                                                                             --main-color: #a69589;
                                                                             --main-color-border: #5c4e47;
                                                                             --hover-color: #747474;
@@ -640,22 +640,22 @@
 				/* CLAN TAGS */
 
 				.avatarContainer__86ab2 {
-				background-color: transparent !important;
+             			   background: none !important;
 				}
 				
 				.container__86ab2 {
-				    background-color: #000 !important;
-				}
-				
-				.svg__2338f {
-				    background-color: #000 !important;
-				    border-radius: 20% !important;
-				}
-				
-				.avatarWrapper__86ab2 {
 				    background-color: transparent !important;
 				}
 				
+				.svg__2338f {
+				    background-color: transparent !important;
+				    border-radius: 20% !important;
+				}
+				
+				.avatarWrapper__86ab2  {
+				    background-color: transparent !important;
+				}
+
 				
 				
 				.chipletContainerInner__10651 {
