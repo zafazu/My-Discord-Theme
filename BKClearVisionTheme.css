@@ -308,11 +308,12 @@
                                                                           
                                                                           /* ACTIVITY FIX FOR ClearVision */
                                                                           .vc-membercount-member-list {
-                                                                                position: relative;
-										  height: 30px;
-										  top: -5px
-                                                                              background-color: #000 !important;
-                                                                              z-index: 1;
+                                                                              position: relative;
+										 height: 20px;
+										 top: -10px;
+										 background-color: #000 !important;
+										 z-index: 1;
+
                                                                           }
                                                                           
                                                                           /* STREAM PREVIEW BLACK BACKGROUND */
