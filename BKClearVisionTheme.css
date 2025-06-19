@@ -14,7 +14,7 @@
                                                                         @import "https://raw.githubusercontent.com/zafazu/My-Discord-Theme/refs/heads/main/CV_main.css";
 										/* https://clearvision.github.io/ClearVision-v6/main.css */
                                                                         :root {
-									    --theme-version: "zafazu's Theme Version: 1.18.4";
+									    --theme-version: "zafazu's Theme Version: 1.19";
                                                                             --main-color: #a69589;
                                                                             --main-color-border: #5c4e47;
                                                                             --hover-color: #747474;
@@ -308,8 +308,9 @@
                                                                           
                                                                           /* ACTIVITY FIX FOR ClearVision */
                                                                           .vc-membercount-member-list {
-                                                                              position: relative;
-                                                                              height: 30px;
+                                                                                position: relative;
+										  height: 30px;
+										  top: -5px
                                                                               background-color: #000 !important;
                                                                               z-index: 1;
                                                                           }
