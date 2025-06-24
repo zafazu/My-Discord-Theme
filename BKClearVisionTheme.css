@@ -14,7 +14,7 @@
                                                                         @import "https://raw.githubusercontent.com/zafazu/My-Discord-Theme/refs/heads/main/CV_main.css";
 										/* https://clearvision.github.io/ClearVision-v6/main.css */
                                                                         :root {
-									    --theme-version: "zafazu's Theme Version: 1.20.3 - [22.06.2025]";
+									    --theme-version: "zafazu's Theme Version: 1.20.4 - [25.06.2025]";
                                                                             --main-color: #a69589;
                                                                             --main-color-border: #5c4e47;
                                                                             --hover-color: #747474;
@@ -743,4 +743,17 @@
 			.cardContainer__6b102 {
 			    background-color: black;
 			}
-						               
+
+
+			/* FIX SUMMARIES PLUGIN */
+
+			body:has(.topicsPill__0f481) .topicsPill__0f481 {
+			    background-color: black !important;
+			    border: none !important;
+			}
+			
+			body:has(.topicsPillContainer__0f481) .topicsPillContainer__0f481 {
+			    border: none !important;
+			}
+			
+
