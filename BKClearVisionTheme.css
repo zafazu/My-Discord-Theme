@@ -14,7 +14,7 @@
                                                                         @import "https://raw.githubusercontent.com/zafazu/My-Discord-Theme/refs/heads/main/CV_main.css";
 										/* https://clearvision.github.io/ClearVision-v6/main.css */
                                                                         :root {
-									    --theme-version: "zafazu's Theme Version: 1.20.4 - [25.06.2025]";
+									    --theme-version: "zafazu's Theme Version: 1.21 - [25.06.2025]";
                                                                             --main-color: #a69589;
                                                                             --main-color-border: #5c4e47;
                                                                             --hover-color: #747474;
@@ -755,5 +755,23 @@
 			body:has(.topicsPillContainer__0f481) .topicsPillContainer__0f481 {
 			    border: none !important;
 			}
+
+			/* FIX MESSAGE SEARCHBAR */
+
+			.DraftEditor-root {
+			    background-color: black;
+			}
+			
+			.searchBar__97492 {
+			    border-radius: 5px;   
+			}
+			
+			.icon__97492{
+			    background-color: black;
+			    height: 40px !important;
+			    position: relative;
+			    top: -7px;
+			}
+
 			
 
