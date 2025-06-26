@@ -14,7 +14,7 @@
                                                                         @import "https://raw.githubusercontent.com/zafazu/My-Discord-Theme/refs/heads/main/CV_main.css";
 										/* https://clearvision.github.io/ClearVision-v6/main.css */
                                                                         :root {
-									    --theme-version: "zafazu's Theme Version: 1.21 - [25.06.2025]";
+									    --theme-version: "zafazu's Theme Version: 1.22 - [26.06.2025]";
                                                                             --main-color: #a69589;
                                                                             --main-color-border: #5c4e47;
                                                                             --hover-color: #747474;
@@ -774,4 +774,11 @@
 			}
 
 			
+			/* SERVER BANNER FIX */
+
+			.bannerImg_f37cb1 {
+			    width: max-content;
+			}
+
+
 
