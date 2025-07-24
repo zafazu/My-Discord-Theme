@@ -14,7 +14,7 @@
                                                                         @import "https://raw.githubusercontent.com/zafazu/My-Discord-Theme/refs/heads/main/CV_main.css";
 										/* https://clearvision.github.io/ClearVision-v6/main.css */
                                                                         :root {
-									    --theme-version: "zafazu's Theme Version: 1.23.1 - [16.07.2025]";
+									    --theme-version: "zafazu's Theme Version: 1.24 - [24.07.2025]";
                                                                             --main-color: #a69589;
                                                                             --main-color-border: #5c4e47;
                                                                             --hover-color: #747474;
@@ -818,5 +818,18 @@
 			
 			}
 
+			.progress__0d0f9 {
+			    border-radius: 4px !important;
+			    background-color: transparent;
+			    background: none;
+			    background-color: rgb(56, 26, 52);
+			}
+			
+			.progress__0d0f9:hover {
+			    border-radius: 4px !important;
+			    background-color: transparent;
+			    background: none;
+			    background-color: rgb(56, 26, 52);
+			}
 
 
