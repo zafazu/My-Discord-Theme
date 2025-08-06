@@ -14,7 +14,7 @@
                                                                         @import "https://raw.githubusercontent.com/zafazu/My-Discord-Theme/refs/heads/main/CV_main.css";
 										/* https://clearvision.github.io/ClearVision-v6/main.css */
                                                                         :root {
-									    --theme-version: "zafazu's Theme Version: 1.25 - [24.07.2025]";
+									    --theme-version: "zafazu's Theme Version: 1.26 - [06.08.2025]";
                                                                             --main-color: #a69589;
                                                                             --main-color-border: #5c4e47;
                                                                             --hover-color: #747474;
@@ -843,3 +843,10 @@
 				.scroller__28fdc {
 				    background-color: transparent !important;
 				}
+
+				.page_c48ade {
+				    border: none !important;
+				    outline: none !important;
+				}
+				
+
