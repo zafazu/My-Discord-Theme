@@ -14,7 +14,7 @@
                                                                         @import "https://raw.githubusercontent.com/zafazu/My-Discord-Theme/refs/heads/main/CV_main.css";
 										/* https://clearvision.github.io/ClearVision-v6/main.css */
                                                                         :root {
-									    --theme-version: "1.32 - [26.09.2025] - Made by zafazu";
+									    --theme-version: "1.33 - [27.09.2025] - Made by zafazu";
                                                                             --main-color: #a69589;
                                                                             --main-color-border: #5c4e47;
                                                                             --hover-color: #747474;
@@ -898,17 +898,22 @@
     bottom: 7px;
 }
     
-
+/*PROFILE TEXT FIX */
 
 .panelTitleContainer__37e49 [class*="text-md/medium_cf4812"] {
   opacity: 80%;
   font-size: 15px;
 }
 
+
+/*SETTINGS SEARCHBAR FIX */
+
 .input__0f084 {
   background-color: transparent;
   box-shadow: none !important;   
 }
+
+/*ACTIVITY FIX 2.0 */
 
 .members_c8ffbb {
     position: relative;
@@ -922,4 +927,30 @@
 }
 
 
+/*message box fix */
 
+.form_f75fb0 {
+    position: relative;
+    bottom: 15px;
+}
+
+/*server black box */
+
+.content_d125d2 > div:nth-child(1) {
+    display: none;
+}
+
+/*server scroller fix */
+
+.scroller__629e4 {
+    position: relative;
+    top: 70px;
+}
+
+
+/* Friend Button Fix */
+
+.interactive_bf202d:has(.link__972a0) {
+    position: relative;
+    top: 10px;   
+}
