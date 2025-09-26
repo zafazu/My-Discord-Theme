@@ -14,7 +14,7 @@
                                                                         @import "https://raw.githubusercontent.com/zafazu/My-Discord-Theme/refs/heads/main/CV_main.css";
 										/* https://clearvision.github.io/ClearVision-v6/main.css */
                                                                         :root {
-									    --theme-version: "1.31 - [26.09.2025] - Made by zafazu";
+									    --theme-version: "1.32 - [26.09.2025] - Made by zafazu";
                                                                             --main-color: #a69589;
                                                                             --main-color-border: #5c4e47;
                                                                             --hover-color: #747474;
@@ -908,6 +908,17 @@
 .input__0f084 {
   background-color: transparent;
   box-shadow: none !important;   
+}
+
+.members_c8ffbb {
+    position: relative;
+    bottom: 40px !important;
+}
+
+.vc-membercount-widget {
+    position: relative;
+    top: 33px;
+    background-color: black;
 }
 
 
