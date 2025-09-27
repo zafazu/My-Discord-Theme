@@ -14,7 +14,7 @@
                                                                         @import "https://raw.githubusercontent.com/zafazu/My-Discord-Theme/refs/heads/main/CV_main.css";
 										/* https://clearvision.github.io/ClearVision-v6/main.css */
                                                                         :root {
-									    --theme-version: "1.35.1 - [27.09.2025] - Made by zafazu";
+									    --theme-version: "1.36 - [27.09.2025] - Made by zafazu";
                                                                             --main-color: #a69589;
                                                                             --main-color-border: #5c4e47;
                                                                             --hover-color: #747474;
@@ -932,6 +932,15 @@
 .form_f75fb0 {
     position: relative;
     bottom: 15px;
+}
+
+
+/* SERVER BANNER BLACK BOX FIX */
+
+
+
+.scroller__629e4 {
+    background-color: transparent !important;
 }
 
 
