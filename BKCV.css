@@ -938,20 +938,20 @@
 
 /* SERVER BANNER BLACK BOX FIX */
 
-body:not(:has(.bannerImg_f37cb1)) .content_d125d2 .scroller__629e4 {
+.container_f37cb1:not(:has(.bannerImg_f37cb1)) .content_d125d2 .scroller__629e4 {
   position: relative;
   bottom: 40px !important;
 }
 
 
 
-body:has(.bannerImg_f37cb1) .content_d125d2 > div:nth-child(1) {
+.container_f37cb1:has(.bannerImg_f37cb1) .content_d125d2 > div:nth-child(1) {
     display: none !important;
 }
 
 
 
-body:has(.bannerImg_f37cb1) .scroller__629e4 {
+.container_f37cb1:has(.bannerImg_f37cb1) .scroller__629e4 {
     position: relative;
     top: 0px;
 }
@@ -969,14 +969,14 @@ body:has(.bannerImg_f37cb1) .scroller__629e4 {
      background-color: transparent !important;
 }
 
-body:has(.bannerImg_f37cb1) .progress__0d0f9 {
+.container_f37cb1:has(.bannerImg_f37cb1) .progress__0d0f9 {
     display: none;
 }
 
-body:has(.bannerImg_f37cb1) .textContainer__0d0f9 {
+.container_f37cb1:has(.bannerImg_f37cb1) .textContainer__0d0f9 {
     display: none;
 }
 
-body:has(.bannerImg_f37cb1) .progressContainer__0d0f9 {
+.container_f37cb1:has(.bannerImg_f37cb1) .progressContainer__0d0f9 {
     background-color: transparent;
 }
