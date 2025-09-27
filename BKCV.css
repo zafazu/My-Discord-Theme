@@ -14,7 +14,7 @@
                                                                         @import "https://raw.githubusercontent.com/zafazu/My-Discord-Theme/refs/heads/main/CV_main.css";
 										/* https://clearvision.github.io/ClearVision-v6/main.css */
                                                                         :root {
-									    --theme-version: "1.34 - [27.09.2025] - Made by zafazu";
+									    --theme-version: "1.35 - [27.09.2025] - Made by zafazu";
                                                                             --main-color: #a69589;
                                                                             --main-color-border: #5c4e47;
                                                                             --hover-color: #747474;
@@ -980,3 +980,31 @@
 .container_f37cb1:has(.bannerImg_f37cb1) .progressContainer__0d0f9 {
     background-color: transparent;
 }
+
+
+/* CAT */
+
+/*  THANKS TO Computing Cat for this snippet and help ^^  */
+
+
+.user-profile-sidebar > [class^="inner_"] > [class^="footer__"] 
+{border: none; &::before { display: block; border-bottom: 1px solid var(--user-profile-border); }}
+ .emptyCard__7e549::before{
+    content: 
+   "╱|、   \a"
+ "(˚ˎ 。7  \a"
+  "|、˜〵\  \a"
+"  じしˍ,)ノ";
+
+    white-space: pre;
+    inset: 0;
+    padding:  20px 0;
+    color: rgba(255, 255, 255, 0.547);
+    text-align: center;
+    font-size: 150%;
+}
+
+
+
+
+
