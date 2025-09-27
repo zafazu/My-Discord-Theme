@@ -196,7 +196,7 @@
 					                                
 					                                .header__7d20c::after {
 					                                    text-indent: 1px;
-					                                    content: "ACTIVITY";
+					                                    content: "";
 					                                    text-align: left;
 					                                    position: absolute;
 					                                    left: 50%;
