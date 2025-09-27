@@ -14,7 +14,7 @@
                                                                         @import "https://raw.githubusercontent.com/zafazu/My-Discord-Theme/refs/heads/main/CV_main.css";
 										/* https://clearvision.github.io/ClearVision-v6/main.css */
                                                                         :root {
-									    --theme-version: "1.36 - [27.09.2025] - Made by zafazu";
+									    --theme-version: "1.37 - [28.09.2025] - Made by zafazu";
                                                                             --main-color: #a69589;
                                                                             --main-color-border: #5c4e47;
                                                                             --hover-color: #747474;
@@ -969,6 +969,27 @@
     font-size: 150%;
 }
 
+.title_c38106 {
+    justify-content: left !important;
+    padding: 0 320px;
+}
+
+.title_c38106::before {
+  /* The cat */
+  content: 
+    "  ╱|、   \a"
+    "  (˚ˎ 。7  \a"
+    "  |、˜〵\  \a"
+    "    じしˍ,)ノ";
+
+  white-space: pre;
+  display: block;
+  padding:  20px;
+  color: rgba(255, 255, 255, 0.503);
+  text-align: center;
+  font-size: 15%;
+  line-height: 1.2;
+}
 
 
 
