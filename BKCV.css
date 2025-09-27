@@ -747,12 +747,12 @@
 
 			/* FIX SUMMARIES PLUGIN */
 
-			body:has(.topicsPill__0f481) .topicsPill__0f481 {
+			.messagesWrapper__36d07:has(.topicsPill__0f481) .topicsPill__0f481 {
 			    background-color: black !important;
 			    border: none !important;
 			}
 			
-			body:has(.topicsPillContainer__0f481) .topicsPillContainer__0f481 {
+			.messagesWrapper__36d07:has(.topicsPillContainer__0f481) .topicsPillContainer__0f481 {
 			    border: none !important;
 			}
 
