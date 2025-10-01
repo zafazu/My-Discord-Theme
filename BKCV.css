@@ -14,7 +14,7 @@
                                                                         @import "https://raw.githubusercontent.com/zafazu/My-Discord-Theme/refs/heads/main/CV_main.css";
 										/* https://clearvision.github.io/ClearVision-v6/main.css */
                                                                         :root {
-									    --theme-version: "1.38 - [01.10.2025] - Made by zafazu";
+									    --theme-version: "1.39 - [01.10.2025] - Made by zafazu";
                                                                             --main-color: #a69589;
                                                                             --main-color-border: #5c4e47;
                                                                             --hover-color: #747474;
@@ -985,6 +985,26 @@
   font-size: 15%;
   line-height: 1.2;
 }
+
+/* SPOTIFY MODAL GRABBER FIX */
+
+.grabber_a562c8 {
+    position: relative; 
+    top: -0px; 
+
+}
+
+
+/* Textbox MESSAGE MSG fix */
+
+.textArea__74017 {
+    margin-top: 9px;
+}
+
+.button__74017, .button_e6e74f{
+    margin-bottom: -20px 
+}
+
 
 
 
