@@ -14,7 +14,7 @@
                                                                         @import "https://raw.githubusercontent.com/zafazu/My-Discord-Theme/refs/heads/main/CV_main.css";
 										/* https://clearvision.github.io/ClearVision-v6/main.css */
                                                                         :root {
-									    --theme-version: "1.37.1 - [01.10.2025] - Made by zafazu";
+									    --theme-version: "1.38 - [01.10.2025] - Made by zafazu";
                                                                             --main-color: #a69589;
                                                                             --main-color-border: #5c4e47;
                                                                             --hover-color: #747474;
@@ -888,6 +888,8 @@
     background-color: black !important;
 }
 
+/*
+
 .inner__74017 {
     height: 60px;
 }
@@ -897,7 +899,9 @@
     position: relative;
     bottom: 7px;
 }
-    
+
+*/
+
 /*PROFILE TEXT FIX */
 
 .panelTitleContainer__37e49 [class*="text-md/medium_cf4812"] {
