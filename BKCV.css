@@ -14,7 +14,7 @@
                                                                         @import "https://raw.githubusercontent.com/zafazu/My-Discord-Theme/refs/heads/main/CV_main.css";
 										/* https://clearvision.github.io/ClearVision-v6/main.css */
                                                                         :root {
-									    --theme-version: "1.41.2 - [09.10.2025] - Made by zafazu";
+									    --theme-version: "1.42 - [15.10.2025] - Made by zafazu";
                                                                             --main-color: #a69589;
                                                                             --main-color-border: #5c4e47;
                                                                             --hover-color: #747474;
@@ -1039,6 +1039,40 @@
     border-radius:10px !important;
 }
 
+/* JAPANESE WORDS FIX */
+
+.markup__75297, defaultColor__4bd52, .username_c19a55, .overflowTooltip__972a0 {
+  font-family: "gg sans", Helvetica, Arial, sans-serif !important;
+}
+
+
+.markup__75297, defaultColor__4bd52, .username_c19a55, .overflowTooltip__972a0 {
+  font-family: "gg sans", "Hiragino Sans", "ヒラギノ角ゴ ProN W3",
+               "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, Osaka, "MS PGothic",
+               "Noto Sans", Helvetica, Arial, sans-serif !important;
+}
+
+/* NITRO HOME FIX */
+
+.link__972a0:last-child .overflow__82b15:first-child {
+  visibility: hidden;
+  content: "" !important;
+
+}
+
+.link__972a0:last-child .overflow__82b15:first-child::after {
+  visibility: visible;
+  position: relative;
+  right: 70px;
+  content: "Nitro";
+
+}
+
+
+
+.buttonChildrenWrapper_a22cb0 {
+  background-color: var(--main-color);
+}
 
 
 
