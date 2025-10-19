@@ -14,7 +14,7 @@
                                                                         @import "https://raw.githubusercontent.com/zafazu/My-Discord-Theme/refs/heads/main/CV_main.css";
 										/* https://clearvision.github.io/ClearVision-v6/main.css */
                                                                         :root {
-									    --theme-version: "1.42.1 - [15.10.2025] - Made by zafazu";
+									    --theme-version: "1.43 - [19.10.2025] - Made by zafazu";
                                                                             --main-color: #a69589;
                                                                             --main-color-border: #5c4e47;
                                                                             --hover-color: #747474;
@@ -1080,6 +1080,11 @@
 
 }
 
+/* Gradient fix */
 
+
+.chatGradientBase__36d07 {
+    display: none;
+}
 
 
