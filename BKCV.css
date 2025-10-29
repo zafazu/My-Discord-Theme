@@ -14,7 +14,7 @@
                                                                         @import "https://raw.githubusercontent.com/zafazu/My-Discord-Theme/refs/heads/main/CV_main.css";
 										/* https://clearvision.github.io/ClearVision-v6/main.css */
                                                                         :root {
-									    --theme-version: "1.44 - [29.10.2025] - Made by zafazu";
+									    --theme-version: "1.45 - [29.10.2025] - Made by zafazu";
                                                                             --main-color: #a69589;
                                                                             --main-color-border: #5c4e47;
                                                                             --hover-color: #747474;
@@ -1089,65 +1089,53 @@
 
 /* ------------------------------------------------------------------*/
 
-/* MAKE THE OVERFLOW VISIBLE SO THE ICONS CAN SHOW ABOVE BAR */
+@media (max-width: 1500px) {
 
-.form_f75fb0 .scrollableContainer__74017 {
-  overflow: visible !important;
+  /* MAKE THE OVERFLOW VISIBLE SO THE ICONS CAN SHOW ABOVE BAR */
+  .form_f75fb0 .scrollableContainer__74017 {
+    overflow: visible !important;
+  }
+
+  /* MAKE IT MOVE */
+  .form_f75fb0 .inner__74017 {
+    position: relative;  
+  }
+
+  /* DEFINE POS */
+  .form_f75fb0 .buttons__74017 {
+    position: absolute;  
+    top: 0;
+    right: 0;
+    z-index: 10;         
+    transition: top 0.3s ease;
+  }
+
+  /* MOVE BUTTONS */
+  .form_f75fb0 .inner__74017:focus-within .buttons__74017 {
+    top: -70px;          
+  }
+
+  .form_f75fb0 .inner__74017:focus-within .markup__75297 {
+    width: 100%;       
+  }
+
+  /* OTHERS */
+  .form_f75fb0 .buttons__74017 {
+    position: absolute; 
+    right: 0;
+    top: 0;
+  }
+
+  .form_f75fb0 .inner__74017 {
+    position: relative; 
+  }
+
+  .form_f75fb0 .markup__75297 {
+    display: block;
+    width: 150px;    
+    transition: width 0.3s ease;
+  }
 }
-
-
-
-/* MAKE IT MOVE */
-
-.form_f75fb0 .inner__74017 {
-  position: relative;  
-}
-
-
-/* DEFINE POS */
-
-.form_f75fb0 .buttons__74017 {
-  position: absolute;  
-  top: 0;
-  right: 0;
-  z-index: 10;         
-  transition: top 0.3s ease;
-}
-
-
-/* MOVE BUTTONS */
-
-.form_f75fb0 .inner__74017:focus-within .buttons__74017 {
-  top: -70px;          
-}
-
-
-.form_f75fb0 .inner__74017:focus-within .markup__75297 {
-  width: 100%;       
-}
-
-
-
-/* OTHERS */
-
-
-.form_f75fb0 .buttons__74017 {
-  position: absolute; 
-  right: 0;
-  top: 0;
-}
-
-
-.form_f75fb0 .inner__74017 {
-  position: relative; 
-}
-
-.form_f75fb0 .markup__75297 {
-  display: block;
-  width: 150px;    
-  transition: width 0.3s ease;
-}
-
 
 
 /* ------------------------------------------------------------------*/
