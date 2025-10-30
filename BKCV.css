@@ -14,7 +14,7 @@
                                                                         @import "https://raw.githubusercontent.com/zafazu/My-Discord-Theme/refs/heads/main/CV_main.css";
 										/* https://clearvision.github.io/ClearVision-v6/main.css */
                                                                         :root {
-									    --theme-version: "1.45 - [29.10.2025] - Made by zafazu";
+									    --theme-version: "1.46 - [30.10.2025] - Made by zafazu";
                                                                             --main-color: #a69589;
                                                                             --main-color-border: #5c4e47;
                                                                             --hover-color: #747474;
@@ -543,6 +543,9 @@
                                    .tabBar__133bf :last-child {
 				    background-color: var(--main-color) !important;
 }
+
+
+
   
                                     
                                     /* HOME ICON */
@@ -1139,3 +1142,15 @@
 
 
 /* ------------------------------------------------------------------*/
+
+
+.title_edbb22, .searchBar_e6b769 {
+    display: none;
+}
+
+
+.sidebarList__5e434{
+ border-color: var(--main-color-border) !important;
+}
+
+
