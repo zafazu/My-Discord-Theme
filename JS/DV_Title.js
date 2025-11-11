@@ -1,13 +1,13 @@
 const sel = '.visual-refresh:not(.platform-osx) .leading_c38106';
-const timeout = 60_000; // 1 Minute
-const intervalTime = 500; // alle 0,5 Sekunden prüfen
+const timeout = 60_000; 
+const intervalTime = 500; 
 let elapsed = 0;
 
 const interval = setInterval(() => {
   elapsed += intervalTime;
 
-  const target = document.querySelector(sel); // neu abfragen
-  if (!target && elapsed < timeout) return;   // noch nicht da, weiter prüfen
+  const target = document.querySelector(sel); 
+  if (!target && elapsed < timeout) return;  
 
   if (document.querySelector('.injected-js-btn')) {
     if (target) target.style.setProperty('--before-content', '"DarkVisionJS"');
@@ -17,4 +17,5 @@ const interval = setInterval(() => {
     clearInterval(interval);
   }
 }, intervalTime);
+
 
