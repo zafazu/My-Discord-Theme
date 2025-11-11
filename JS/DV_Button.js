@@ -21,7 +21,7 @@
         styles: {
           padding: "6px 8px",
           borderRadius: "6px",
-          marginLeft: "8px",
+          marginLeft: "16px",
           cursor: "pointer",
           background: "transparent",
           color: "#9B9CA3",
