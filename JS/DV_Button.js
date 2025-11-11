@@ -12,7 +12,7 @@
     };
 
     const inject = () => {
-      const target = document.querySelector(".trailing_c38106");
+      const target = document.querySelector(".upperContainer__9293f");
       if (!target || document.querySelector(".injected-js-btn")) return;
 
       const btn = createEl("button", {
