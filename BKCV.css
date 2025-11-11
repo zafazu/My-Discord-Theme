@@ -14,7 +14,7 @@
                                                                         @import "https://raw.githubusercontent.com/zafazu/My-Discord-Theme/refs/heads/main/CV_main.css";
 										/* https://clearvision.github.io/ClearVision-v6/main.css */
                                                                         :root {
-									    --theme-version: "1.47 - [01.11.2025] - Made by zafazu";
+									    --theme-version: "1.48 - [11.11.2025] - Made by zafazu";
                                                                             --main-color: #a69589;
                                                                             --main-color-border: #5c4e47;
                                                                             --hover-color: #747474;
@@ -852,8 +852,8 @@
 				    outline: none !important;
 				}
 
-
-
+/*
+	OLD
             .visual-refresh:not(.platform-osx) .leading_c38106::before {
             content: "Dark Vision";
             position: static;
@@ -867,6 +867,30 @@
             .leading_c38106::after {
                 content: var(--theme-version) !important;
             }
+*/
+
+
+			body:has(.injected-js-btn) .visual-refresh:not(.platform-osx) .leading_c38106::before {
+			    content: "DarkVision&JS";
+			}
+			
+			body:not(:has(.injected-js-btn)) .visual-refresh:not(.platform-osx) .leading_c38106::before {
+			    content: "DarkVision";
+			}
+			
+			.visual-refresh:not(.platform-osx) .leading_c38106::before {
+			    position: static;
+			    margin-left: 10px;
+			    font-size: 16px;
+			    font-weight: 600;
+			    color: var(--text-default);
+			    order: 2;
+			    filter: drop-shadow(0 0 5px var(--hsl-main-color));
+			}
+			
+			.leading_c38106::after {
+			    content: var(--theme-version) !important;
+			}
 
 
         .leading_c38106::before{content:"ClearVision";position:static;margin-left:10px;font-size:16px;font-weight:600;color:var(--text-default);order:2;filter:drop-shadow(0 0 5px var(--hsl-main-color))}.visual-refresh:not(.platform-osx) .leading_c38106::after{content:"7.0.1";position:static;margin-top:-5px;margin-left:5px;font-family:var(--code-font);font-size:11px;font-weight:600;color:var(--text-muted);order:3}
