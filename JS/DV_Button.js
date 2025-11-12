@@ -12,21 +12,7 @@
     const inject = () => {
       const target = document.querySelector(".upperContainer__9293f");
       if (!target || document.querySelector(".injected-js-btn")) return;
-      const btn = createEl("button", {
-        class: "injected-js-btn",
-        text: "DV",
-        styles: {
-          padding: "6px 8px",
-          borderRadius: "6px",
-          marginLeft: "16px",
-          cursor: "pointer",
-          background: "transparent",
-          color: "#9B9CA3",
-          fontWeight: "700",
-          border: "none"
-        },
-        onclick: () => (frame.style.display = "block")
-      });
+
       const frame = createEl("div", {
         styles: {
           position: "fixed",
@@ -45,6 +31,7 @@
           boxShadow: "0 8px 30px rgba(0,0,0,0.6)"
         }
       });
+
       const header = createEl("div", {
         styles: {
           position: "relative",
@@ -72,133 +59,41 @@
       });
       header.append(title, closeBtn);
       frame.appendChild(header);
-      
-      const content = createEl("div", {
-        styles: { padding: "20px" }
-      });
-      
+
+      const content = createEl("div", { styles: { padding: "20px" } });
+
       const settingsTitle = createEl("h2", {
         text: "Settings",
-        styles: {
-          margin: "0 0 24px 0",
-          fontSize: "18px",
-          fontWeight: "600",
-          color: "#fff"
-        }
+        styles: { margin: "0 0 24px 0", fontSize: "18px", fontWeight: "600", color: "#fff" }
       });
-      
-      const settingRow = createEl("div", {
-        styles: {
-          marginBottom: "16px"
-        }
-      });
-      
-      const settingLabel = createEl("label", {
-        text: "Window Transparency",
-        styles: {
-          display: "block",
-          marginBottom: "8px",
-          fontSize: "14px",
-          fontWeight: "500",
-          color: "#fff"
-        }
-      });
-      
-      const sliderContainer = createEl("div", {
-        styles: {
-          display: "flex",
-          alignItems: "center",
-          gap: "12px"
-        }
-      });
-      
-      const slider = createEl("input");
-      slider.type = "range";
-      slider.min = "0";
-      slider.max = "100";
-      slider.value = "0";
-      Object.assign(slider.style, {
-        flex: "1",
-        height: "4px",
-        borderRadius: "2px",
-        outline: "none",
-        cursor: "pointer"
-      });
-      
-      const valueDisplay = createEl("span", {
-        text: "0%",
-        styles: {
-          minWidth: "45px",
-          fontSize: "14px",
-          color: "#9B9CA3",
-          fontWeight: "500"
-        }
-      });
-      
-      slider.oninput = (e) => {
-        valueDisplay.textContent = e.target.value + "%";
+
+      const createSliderRow = (labelText) => {
+        const row = createEl("div", { styles: { marginBottom: "16px" } });
+        const label = createEl("label", {
+          text: labelText,
+          styles: { display: "block", marginBottom: "8px", fontSize: "14px", fontWeight: "500", color: "#fff" }
+        });
+        const container = createEl("div", { styles: { display: "flex", alignItems: "center", gap: "12px" } });
+        const slider = createEl("input");
+        slider.type = "range";
+        slider.min = "0";
+        slider.max = "100";
+        slider.value = "0";
+        Object.assign(slider.style, { flex: "1", height: "4px", borderRadius: "2px", outline: "none", cursor: "pointer" });
+        const valueDisplay = createEl("span", {
+          text: "0%",
+          styles: { minWidth: "45px", fontSize: "14px", color: "#9B9CA3", fontWeight: "500" }
+        });
+        slider.oninput = (e) => { valueDisplay.textContent = e.target.value + "%"; };
+        container.append(slider, valueDisplay);
+        row.append(label, container);
+        return { row, slider };
       };
-      
-      sliderContainer.append(slider, valueDisplay);
-      settingRow.append(settingLabel, sliderContainer);
-      
-      // Window Blur setting
-      const blurSettingRow = createEl("div", {
-        styles: {
-          marginBottom: "24px"
-        }
-      });
-      
-      const blurLabel = createEl("label", {
-        text: "Window Blur",
-        styles: {
-          display: "block",
-          marginBottom: "8px",
-          fontSize: "14px",
-          fontWeight: "500",
-          color: "#fff"
-        }
-      });
-      
-      const blurSliderContainer = createEl("div", {
-        styles: {
-          display: "flex",
-          alignItems: "center",
-          gap: "12px"
-        }
-      });
-      
-      const blurSlider = createEl("input");
-      blurSlider.type = "range";
-      blurSlider.min = "0";
-      blurSlider.max = "100";
-      blurSlider.value = "0";
-      Object.assign(blurSlider.style, {
-        flex: "1",
-        height: "4px",
-        borderRadius: "2px",
-        outline: "none",
-        cursor: "pointer"
-      });
-      
-      const blurValueDisplay = createEl("span", {
-        text: "0%",
-        styles: {
-          minWidth: "45px",
-          fontSize: "14px",
-          color: "#9B9CA3",
-          fontWeight: "500"
-        }
-      });
-      
-      blurSlider.oninput = (e) => {
-        blurValueDisplay.textContent = e.target.value + "%";
-      };
-      
-      blurSliderContainer.append(blurSlider, blurValueDisplay);
-      blurSettingRow.append(blurLabel, blurSliderContainer);
-      
-      // Set button
+
+      const { row: transparencyRow, slider: transparencySlider } = createSliderRow("Window Transparency");
+      const { row: blurRow, slider: blurSlider } = createSliderRow("Window Blur");
+      blurRow.style.marginBottom = "24px";
+
       const setButton = createEl("button", {
         text: "Set Window Settings",
         styles: {
@@ -212,26 +107,51 @@
           fontSize: "14px",
           transition: "background 0.2s"
         },
-        onclick: () => {
-          // Will set the settings later
-          console.log("Transparency:", slider.value + "%");
-          console.log("Blur:", blurSlider.value + "%");
+        onclick: async () => {
+          try {
+            const data = {
+              windowTransparency: parseInt(transparencySlider.value),
+              windowBlur: parseInt(blurSlider.value)
+            };
+            const res = await fetch("http://127.0.0.1:8899", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(data)
+            });
+            const json = await res.json();
+            if (json.success) console.log("Settings updated:", data);
+            else console.error("Failed to update settings:", json.error);
+          } catch (err) { console.error("Error posting settings:", err); }
         }
       });
-      
-      setButton.onmouseenter = () => {
-        setButton.style.background = "#2563eb";
-      };
-      setButton.onmouseleave = () => {
-        setButton.style.background = "#3b82f6";
-      };
-      
-      content.append(settingsTitle, settingRow, blurSettingRow, setButton);
+      setButton.onmouseenter = () => { setButton.style.background = "#2563eb"; };
+      setButton.onmouseleave = () => { setButton.style.background = "#3b82f6"; };
+
+      content.append(settingsTitle, transparencyRow, blurRow, setButton);
       frame.appendChild(content);
-      
+
+      const btn = createEl("button", {
+        class: "injected-js-btn",
+        text: "DV",
+        styles: { padding: "6px 8px", borderRadius: "6px", marginLeft: "16px", cursor: "pointer", background: "transparent", color: "#9B9CA3", fontWeight: "700", border: "none" },
+        onclick: () => (frame.style.display = "block")
+      });
+
       document.body.appendChild(frame);
       target.appendChild(btn);
+
+      (async () => {
+        try {
+          const res = await fetch("http://127.0.0.1:8899");
+          const settings = await res.json();
+          if (settings.windowTransparency !== undefined) transparencySlider.value = settings.windowTransparency;
+          if (settings.windowBlur !== undefined) blurSlider.value = settings.windowBlur;
+          transparencySlider.oninput({ target: transparencySlider });
+          blurSlider.oninput({ target: blurSlider });
+        } catch (e) { console.warn("Could not load settings:", e); }
+      })();
     };
+
     const observer = new MutationObserver(inject);
     observer.observe(document.documentElement, { childList: true, subtree: true });
     inject();
