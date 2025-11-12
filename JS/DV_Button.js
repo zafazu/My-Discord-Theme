@@ -147,4 +147,10 @@
   };
 
   inject();
+
+  // Re-inject automatically if the button disappears
+  const observer = new MutationObserver(() => {
+    if (!document.querySelector(".injected-js-btn")) inject();
+  });
+  observer.observe(document.body, { childList: true, subtree: true });
 })();
