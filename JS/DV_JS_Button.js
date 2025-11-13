@@ -203,20 +203,42 @@ const createScriptsTab = () => {
                 return null;
             }
             
-            // Get LocalAppData path
+            // Get LocalAppData path using multiple methods
             let localAppData = process.env.LOCALAPPDATA;
             
-            // Fallback: try APPDATA and replace Roaming with Local
+            // Fallback 1: try APPDATA and replace Roaming with Local
             if (!localAppData && process.env.APPDATA) {
                 localAppData = process.env.APPDATA.replace('\\Roaming', '\\Local');
             }
             
+            // Fallback 2: construct from USERPROFILE
+            if (!localAppData && process.env.USERPROFILE) {
+                localAppData = path.join(process.env.USERPROFILE, 'AppData', 'Local');
+            }
+            
+            // Fallback 3: try common path structure
+            if (!localAppData && process.env.USERNAME) {
+                localAppData = `C:\\Users\\${process.env.USERNAME}\\AppData\\Local`;
+            }
+            
             if (!localAppData) {
-                console.error('Could not find LocalAppData');
+                console.error('Could not find LocalAppData path');
+                console.error('Environment variables:', {
+                    LOCALAPPDATA: process.env.LOCALAPPDATA,
+                    APPDATA: process.env.APPDATA,
+                    USERPROFILE: process.env.USERPROFILE,
+                    USERNAME: process.env.USERNAME
+                });
                 return null;
             }
             
             console.log('Searching in:', localAppData);
+            
+            // Check if the path exists
+            if (!fs.existsSync(localAppData)) {
+                console.error('LocalAppData path does not exist:', localAppData);
+                return null;
+            }
             
             // Find Discord-inject folder with timestamp format (Discord-inject-YYYYMMDD-HHMMSS)
             const dirs = fs.readdirSync(localAppData);
