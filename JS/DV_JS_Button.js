@@ -1,115 +1,511 @@
-const createNewButton = () => {
+const createScriptsTab = () => {
     const sidebar = document.querySelector('.side_aa8da2');
     const section = document.querySelector('.contentColumn__23e6b');
-    if (!sidebar || !section || document.querySelector('.vc-themes-cloned')) return;
-
+    if (!sidebar || !section || document.querySelector('.vc-scripts-tab')) return;
+    
     const original = document.querySelector('.vc-themes');
     if (!original) return;
-
-    const clone = original.cloneNode(true);
-    clone.classList.add('vc-themes-cloned');
-    clone.textContent = 'JavaScript';
-    original.insertAdjacentElement('afterend', clone);
-
-    // Input 
-    const input = document.createElement('input');
-    input.type = 'text';
-    input.style.width = section.offsetWidth + 'px';
-    input.style.height = section.offsetHeight * 0.8 + 'px'; 
-    input.style.boxSizing = 'border-box';
-    input.style.display = 'none';
-    input.style.backgroundColor = 'transparent';
-    input.style.border = '2px solid var(--main-color)';
-    input.style.color = '#FFFFFF';
-    input.style.fontSize = '1.2em';
-    input.style.textAlign = 'left';
-    input.style.paddingTop = '0';
-    input.style.paddingLeft = '5px';
-    input.style.lineHeight = 'normal';
-    input.style.verticalAlign = 'top';
-    section.parentElement.appendChild(input);
-
-    // Load Button
-    const loadBtn = document.createElement('button');
-    loadBtn.textContent = 'Load';
-    loadBtn.style.display = 'none';
-    loadBtn.style.marginTop = '5px';
-    loadBtn.style.padding = '5px 10px';
-    loadBtn.style.backgroundColor = 'var(--main-color)';
-    loadBtn.style.color = '#FFFFFF';
-    loadBtn.style.border = 'none';
-    loadBtn.style.cursor = 'pointer';
-    section.parentElement.appendChild(loadBtn);
-
-    loadBtn.addEventListener('click', () => {
+    
+    // Create Scripts tab button
+    const scriptsTab = original.cloneNode(true);
+    scriptsTab.classList.add('vc-scripts-tab');
+    scriptsTab.textContent = 'Scripts';
+    original.insertAdjacentElement('afterend', scriptsTab);
+    
+    // Create main container
+    const container = document.createElement('div');
+    container.className = 'scripts-container';
+    container.style.cssText = `
+        display: none;
+        width: ${section.offsetWidth}px;
+        height: ${section.offsetHeight}px;
+        box-sizing: border-box;
+        background-color: transparent;
+        padding: 20px;
+        overflow: hidden;
+    `;
+    section.parentElement.appendChild(container);
+    
+    // Create layout
+    const layout = document.createElement('div');
+    layout.style.cssText = `
+        display: flex;
+        gap: 15px;
+        height: 100%;
+    `;
+    container.appendChild(layout);
+    
+    // Left side - Saved scripts list
+    const leftPanel = document.createElement('div');
+    leftPanel.style.cssText = `
+        width: 200px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    `;
+    
+    const listTitle = document.createElement('div');
+    listTitle.textContent = 'Saved Scripts';
+    listTitle.style.cssText = `
+        font-size: 14px;
+        font-weight: 600;
+        color: #FFFFFF;
+        margin-bottom: 5px;
+    `;
+    
+    const scriptsList = document.createElement('div');
+    scriptsList.className = 'scripts-list';
+    scriptsList.style.cssText = `
+        flex: 1;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    `;
+    
+    leftPanel.appendChild(listTitle);
+    leftPanel.appendChild(scriptsList);
+    layout.appendChild(leftPanel);
+    
+    // Right side - Editor
+    const rightPanel = document.createElement('div');
+    rightPanel.style.cssText = `
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    `;
+    
+    // Script name input
+    const nameInput = document.createElement('input');
+    nameInput.type = 'text';
+    nameInput.placeholder = 'Script name...';
+    nameInput.style.cssText = `
+        padding: 8px 12px;
+        background-color: rgba(255, 255, 255, 0.05);
+        border: 1px solid var(--main-color);
+        border-radius: 4px;
+        color: #FFFFFF;
+        font-size: 14px;
+        outline: none;
+    `;
+    
+    // Code editor (textarea)
+    const editor = document.createElement('textarea');
+    editor.placeholder = '// Write your JavaScript code here...\n// Example:\nconsole.log("Hello from custom script!");';
+    editor.style.cssText = `
+        flex: 1;
+        padding: 12px;
+        background-color: rgba(255, 255, 255, 0.05);
+        border: 1px solid var(--main-color);
+        border-radius: 4px;
+        color: #FFFFFF;
+        font-family: 'Consolas', 'Monaco', monospace;
+        font-size: 13px;
+        line-height: 1.5;
+        resize: none;
+        outline: none;
+    `;
+    
+    // Console output
+    const consoleOutput = document.createElement('div');
+    consoleOutput.style.cssText = `
+        height: 100px;
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0.3);
+        border: 1px solid var(--main-color);
+        border-radius: 4px;
+        color: #10b981;
+        font-family: 'Consolas', 'Monaco', monospace;
+        font-size: 12px;
+        overflow-y: auto;
+        white-space: pre-wrap;
+    `;
+    consoleOutput.textContent = '> Console output will appear here...';
+    
+    // Buttons container
+    const buttonsContainer = document.createElement('div');
+    buttonsContainer.style.cssText = `
+        display: flex;
+        gap: 8px;
+    `;
+    
+    // Run button
+    const runBtn = document.createElement('button');
+    runBtn.textContent = '▶ Run';
+    runBtn.style.cssText = `
+        padding: 8px 20px;
+        background-color: #10b981;
+        color: #FFFFFF;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 14px;
+        transition: background-color 0.2s;
+    `;
+    runBtn.addEventListener('mouseenter', () => runBtn.style.backgroundColor = '#059669');
+    runBtn.addEventListener('mouseleave', () => runBtn.style.backgroundColor = '#10b981');
+    
+    // Save button
+    const saveBtn = document.createElement('button');
+    saveBtn.textContent = '💾 Save';
+    saveBtn.style.cssText = `
+        padding: 8px 20px;
+        background-color: var(--main-color);
+        color: #FFFFFF;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 14px;
+        transition: opacity 0.2s;
+    `;
+    saveBtn.addEventListener('mouseenter', () => saveBtn.style.opacity = '0.8');
+    saveBtn.addEventListener('mouseleave', () => saveBtn.style.opacity = '1');
+    
+    // Clear button
+    const clearBtn = document.createElement('button');
+    clearBtn.textContent = '🗑 Clear';
+    clearBtn.style.cssText = `
+        padding: 8px 20px;
+        background-color: #ef4444;
+        color: #FFFFFF;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 14px;
+        transition: background-color 0.2s;
+    `;
+    clearBtn.addEventListener('mouseenter', () => clearBtn.style.backgroundColor = '#dc2626');
+    clearBtn.addEventListener('mouseleave', () => clearBtn.style.backgroundColor = '#ef4444');
+    
+    buttonsContainer.appendChild(runBtn);
+    buttonsContainer.appendChild(saveBtn);
+    buttonsContainer.appendChild(clearBtn);
+    
+    rightPanel.appendChild(nameInput);
+    rightPanel.appendChild(editor);
+    rightPanel.appendChild(consoleOutput);
+    rightPanel.appendChild(buttonsContainer);
+    layout.appendChild(rightPanel);
+    
+    // File system helper functions
+    const fs = window.require?.('fs');
+    const path = window.require?.('path');
+    const { ipcRenderer } = window.require?.('electron') || {};
+    
+    const getScriptsFolder = () => {
         try {
-            eval(input.value); 
+            // Try to get AppData path
+            const appData = process.env.LOCALAPPDATA || process.env.APPDATA;
+            if (!appData) return null;
+            
+            // Find Discord-inject folder
+            const localAppData = appData.replace('Roaming', 'Local');
+            if (!fs) return null;
+            
+            const dirs = fs.readdirSync(localAppData);
+            const discordInject = dirs.find(d => d.startsWith('Discord-inject-'));
+            
+            if (!discordInject) return null;
+            
+            const scriptsPath = path.join(localAppData, discordInject, 'Vencord', 'scripts');
+            
+            // Create folder if it doesn't exist
+            if (!fs.existsSync(scriptsPath)) {
+                fs.mkdirSync(scriptsPath, { recursive: true });
+            }
+            
+            return scriptsPath;
         } catch (e) {
-            console.error(e);
+            console.error('Error finding scripts folder:', e);
+            return null;
+        }
+    };
+    
+    const saveScriptToFile = (name, code) => {
+        const scriptsFolder = getScriptsFolder();
+        
+        if (!scriptsFolder) {
+            consoleOutput.textContent = '> Error: Could not find Discord-inject folder\n> Path should be: AppData\\Local\\Discord-inject-NUMBERS\\Vencord\\scripts\n> Make sure Vencord is properly installed';
+            return false;
+        }
+        
+        if (!fs) {
+            consoleOutput.textContent = '> Error: File system access not available\n> This feature requires Node.js integration (Electron)';
+            return false;
+        }
+        
+        try {
+            const fileName = name.endsWith('.js') ? name : `${name}.js`;
+            const filePath = path.join(scriptsFolder, fileName);
+            fs.writeFileSync(filePath, code, 'utf8');
+            consoleOutput.textContent = `> Script saved successfully!\n> Location: ${filePath}`;
+            return true;
+        } catch (e) {
+            consoleOutput.textContent = `> Error saving script: ${e.message}`;
+            return false;
+        }
+    };
+    
+    const loadScriptsFromFolder = () => {
+        const scriptsFolder = getScriptsFolder();
+        
+        if (!scriptsFolder || !fs) {
+            return [];
+        }
+        
+        try {
+            const files = fs.readdirSync(scriptsFolder);
+            return files
+                .filter(f => f.endsWith('.js'))
+                .map(f => {
+                    const filePath = path.join(scriptsFolder, f);
+                    const code = fs.readFileSync(filePath, 'utf8');
+                    const stats = fs.statSync(filePath);
+                    return {
+                        name: f.replace('.js', ''),
+                        code: code,
+                        path: filePath,
+                        modified: stats.mtime.getTime()
+                    };
+                });
+        } catch (e) {
+            console.error('Error loading scripts:', e);
+            return [];
+        }
+    };
+    
+    const deleteScriptFile = (name) => {
+        const scriptsFolder = getScriptsFolder();
+        
+        if (!scriptsFolder || !fs) {
+            consoleOutput.textContent = '> Error: Cannot delete file - file system access not available';
+            return false;
+        }
+        
+        try {
+            const fileName = name.endsWith('.js') ? name : `${name}.js`;
+            const filePath = path.join(scriptsFolder, fileName);
+            fs.unlinkSync(filePath);
+            consoleOutput.textContent = `> Script deleted: ${name}`;
+            return true;
+        } catch (e) {
+            consoleOutput.textContent = `> Error deleting script: ${e.message}`;
+            return false;
+        }
+    };
+    
+    const renderScriptsList = () => {
+        const scripts = loadScriptsFromFolder();
+        scriptsList.innerHTML = '';
+        
+        if (scripts.length === 0) {
+            const emptyMsg = document.createElement('div');
+            emptyMsg.textContent = 'No saved scripts';
+            emptyMsg.style.cssText = `
+                color: rgba(255, 255, 255, 0.4);
+                font-size: 12px;
+                text-align: center;
+                padding: 20px 0;
+            `;
+            scriptsList.appendChild(emptyMsg);
+            return;
+        }
+        
+        scripts.forEach((script) => {
+            const item = document.createElement('div');
+            item.style.cssText = `
+                padding: 8px 10px;
+                background-color: rgba(255, 255, 255, 0.05);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                border-radius: 4px;
+                cursor: pointer;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                transition: background-color 0.2s;
+            `;
+            
+            const nameSpan = document.createElement('span');
+            nameSpan.textContent = script.name;
+            nameSpan.style.cssText = `
+                font-size: 13px;
+                color: #FFFFFF;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                flex: 1;
+            `;
+            
+            const deleteBtn = document.createElement('button');
+            deleteBtn.textContent = '×';
+            deleteBtn.style.cssText = `
+                background: transparent;
+                border: none;
+                color: #ef4444;
+                cursor: pointer;
+                font-size: 18px;
+                font-weight: 700;
+                padding: 0 5px;
+            `;
+            
+            item.addEventListener('mouseenter', () => {
+                item.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
+            });
+            item.addEventListener('mouseleave', () => {
+                item.style.backgroundColor = 'rgba(255, 255, 255, 0.05)';
+            });
+            
+            item.addEventListener('click', () => {
+                nameInput.value = script.name;
+                editor.value = script.code;
+                consoleOutput.textContent = `> Script loaded: ${script.name}\n> Path: ${script.path}`;
+            });
+            
+            deleteBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                if (deleteScriptFile(script.name)) {
+                    renderScriptsList();
+                }
+            });
+            
+            item.appendChild(nameSpan);
+            item.appendChild(deleteBtn);
+            scriptsList.appendChild(item);
+        });
+    };
+    
+    // Button event handlers
+    runBtn.addEventListener('click', () => {
+        const code = editor.value.trim();
+        if (!code) {
+            consoleOutput.textContent = '> Error: No code to run';
+            return;
+        }
+        
+        const oldLog = console.log;
+        const oldError = console.error;
+        const logs = [];
+        
+        console.log = (...args) => {
+            logs.push(args.map(a => typeof a === 'object' ? JSON.stringify(a, null, 2) : String(a)).join(' '));
+            oldLog.apply(console, args);
+        };
+        
+        console.error = (...args) => {
+            logs.push('ERROR: ' + args.map(a => typeof a === 'object' ? JSON.stringify(a, null, 2) : String(a)).join(' '));
+            oldError.apply(console, args);
+        };
+        
+        try {
+            consoleOutput.textContent = '> Running script...\n';
+            const result = eval(code);
+            if (result !== undefined) {
+                logs.push('=> ' + (typeof result === 'object' ? JSON.stringify(result, null, 2) : String(result)));
+            }
+            consoleOutput.textContent += logs.join('\n');
+            if (logs.length === 0) {
+                consoleOutput.textContent += 'Script executed successfully (no output)';
+            }
+        } catch (err) {
+            consoleOutput.textContent += `ERROR: ${err.message}\n${err.stack || ''}`;
+        } finally {
+            console.log = oldLog;
+            console.error = oldError;
         }
     });
-
+    
+    saveBtn.addEventListener('click', () => {
+        const name = nameInput.value.trim();
+        const code = editor.value.trim();
+        
+        if (!name) {
+            consoleOutput.textContent = '> Error: Please enter a script name';
+            return;
+        }
+        if (!code) {
+            consoleOutput.textContent = '> Error: Cannot save empty script';
+            return;
+        }
+        
+        if (saveScriptToFile(name, code)) {
+            renderScriptsList();
+        }
+    });
+    
+    clearBtn.addEventListener('click', () => {
+        editor.value = '';
+        nameInput.value = '';
+        consoleOutput.textContent = '> Editor cleared';
+    });
+    
+    // Tab switching logic
     const getMajorityTextColor = () => {
         const colors = {};
         sidebar.querySelectorAll('div').forEach(div => {
-            if (div === clone) return;
+            if (div === scriptsTab) return;
             const c = window.getComputedStyle(div).color;
             colors[c] = (colors[c] || 0) + 1;
         });
-        return Object.entries(colors).sort((a,b)=>b[1]-a[1])[0]?.[0] || '';
+        return Object.entries(colors).sort((a, b) => b[1] - a[1])[0]?.[0] || '';
     };
-
+    
     const updateBackgrounds = (active) => {
         const majorityColor = getMajorityTextColor();
         sidebar.querySelectorAll('div').forEach(div => {
-            if (div === clone) return;
+            if (div === scriptsTab) return;
             div.style.setProperty('background-color', active ? 'transparent' : '', 'important');
             div.style.color = active ? majorityColor : '';
         });
     };
-
-    const updateNewButtonStyle = (active) => {
+    
+    const updateTabStyle = (active) => {
         if (active) {
-            clone.style.setProperty('background-color', 'var(--main-color)', 'important');
-            clone.style.color = '#E3E3E6';
+            scriptsTab.style.setProperty('background-color', 'var(--main-color)', 'important');
+            scriptsTab.style.color = '#E3E3E6';
         } else {
-            clone.style.setProperty('background-color', 'transparent', 'important');
-            clone.style.color = '';
+            scriptsTab.style.setProperty('background-color', 'transparent', 'important');
+            scriptsTab.style.color = '';
         }
     };
-
-    clone.addEventListener('click', (e) => {
+    
+    scriptsTab.addEventListener('click', (e) => {
         e.stopPropagation();
-        const active = clone.dataset.active !== 'true';
-        clone.dataset.active = active ? 'true' : 'false';
+        const active = scriptsTab.dataset.active !== 'true';
+        scriptsTab.dataset.active = active ? 'true' : 'false';
+        
         updateBackgrounds(active);
-        updateNewButtonStyle(active);
-
+        updateTabStyle(active);
+        
         section.style.display = active ? 'none' : '';
-        input.style.display = active ? '' : 'none';
-        loadBtn.style.display = active ? '' : 'none';
-    });
-
-    sidebar.addEventListener('click', (e) => {
-        if (!clone.contains(e.target)) {
-            clone.dataset.active = 'false';
-            updateBackgrounds(false);
-            updateNewButtonStyle(false);
-
-            section.style.display = '';
-            input.style.display = 'none';
-            loadBtn.style.display = 'none';
+        container.style.display = active ? 'block' : 'none';
+        
+        if (active) {
+            renderScriptsList();
         }
     });
+    
+    sidebar.addEventListener('click', (e) => {
+        if (!scriptsTab.contains(e.target) && !container.contains(e.target)) {
+            scriptsTab.dataset.active = 'false';
+            updateBackgrounds(false);
+            updateTabStyle(false);
+            section.style.display = '';
+            container.style.display = 'none';
+        }
+    });
+    
+    // Initial render
+    renderScriptsList();
 };
 
-
-
 const observer = new MutationObserver(() => {
-    createNewButton();
+    createScriptsTab();
 });
-
 observer.observe(document.body, { childList: true, subtree: true });
 
-// Initial
-createNewButton();
+// Initial call
+createScriptsTab();
