@@ -198,23 +198,48 @@ const createScriptsTab = () => {
     
     const getScriptsFolder = () => {
         try {
-            // Try to get AppData path
-            const appData = process.env.LOCALAPPDATA || process.env.APPDATA;
-            if (!appData) return null;
+            if (!fs || !path) {
+                console.error('fs or path module not available');
+                return null;
+            }
             
-            // Find Discord-inject folder
-            const localAppData = appData.replace('Roaming', 'Local');
-            if (!fs) return null;
+            // Get LocalAppData path
+            let localAppData = process.env.LOCALAPPDATA;
             
+            // Fallback: try APPDATA and replace Roaming with Local
+            if (!localAppData && process.env.APPDATA) {
+                localAppData = process.env.APPDATA.replace('\\Roaming', '\\Local');
+            }
+            
+            if (!localAppData) {
+                console.error('Could not find LocalAppData');
+                return null;
+            }
+            
+            console.log('Searching in:', localAppData);
+            
+            // Find Discord-inject folder with timestamp format (Discord-inject-YYYYMMDD-HHMMSS)
             const dirs = fs.readdirSync(localAppData);
-            const discordInject = dirs.find(d => d.startsWith('Discord-inject-'));
+            const discordInjectPattern = /^Discord-inject-\d{8}-\d{6}$/;
+            const discordInjectFolders = dirs.filter(d => discordInjectPattern.test(d));
             
-            if (!discordInject) return null;
+            console.log('Found Discord-inject folders:', discordInjectFolders);
+            
+            if (discordInjectFolders.length === 0) {
+                console.error('No Discord-inject folder found with format Discord-inject-YYYYMMDD-HHMMSS');
+                return null;
+            }
+            
+            // Use the most recent one (sort by timestamp)
+            const discordInject = discordInjectFolders.sort().reverse()[0];
+            console.log('Using folder:', discordInject);
             
             const scriptsPath = path.join(localAppData, discordInject, 'Vencord', 'scripts');
+            console.log('Full scripts path:', scriptsPath);
             
             // Create folder if it doesn't exist
             if (!fs.existsSync(scriptsPath)) {
+                console.log('Creating scripts folder...');
                 fs.mkdirSync(scriptsPath, { recursive: true });
             }
             
