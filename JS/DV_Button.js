@@ -40,7 +40,7 @@
     }
 
     const showError = (msg) => {
-      const audio = new Audio("data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEA..."); // Placeholder for Windows error sound
+      const audio = new Audio("data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEA..."); // Placeholder
       audio.play().catch(() => {});
 
       const errorFrame = createEl("div", {
@@ -68,7 +68,6 @@
         onclick: () => { errorFrame.remove(); }
       });
 
-      // Timer bar
       const timerBar = createEl("div", {
         styles: {
           height: "4px",
@@ -81,7 +80,7 @@
       errorFrame.append(msgSpan, closeBtn, timerBar);
       errorContainer.appendChild(errorFrame);
 
-      let duration = 10; // seconds
+      let duration = 10;
       let elapsed = 0;
       const interval = setInterval(() => {
         elapsed += 0.1;
@@ -139,7 +138,30 @@
       const closeBtn = createEl("div", { text: "✕", styles: { cursor: "pointer" }, onclick: () => frame.style.display = "none" });
       header.append(title, closeBtn);
       frame.appendChild(header);
-      // --- END: Header ---
+
+      // --- START: Drag Fix ---
+      let isDragging = false;
+      let offsetX = 0;
+      let offsetY = 0;
+
+      header.addEventListener("mousedown", (e) => {
+        isDragging = true;
+        offsetX = e.clientX - frame.offsetLeft;
+        offsetY = e.clientY - frame.offsetTop;
+        header.style.cursor = "grabbing";
+      });
+
+      document.addEventListener("mousemove", (e) => {
+        if (!isDragging) return;
+        frame.style.left = e.clientX - offsetX + "px";
+        frame.style.top = e.clientY - offsetY + "px";
+      });
+
+      document.addEventListener("mouseup", () => {
+        if (isDragging) header.style.cursor = "grab";
+        isDragging = false;
+      });
+      // --- END: Drag Fix ---
 
       // --- START: Content & Sliders ---
       const content = createEl("div", { styles: { padding: "20px" } });
@@ -214,12 +236,7 @@
     // END: Test Error with F4
 
   } catch (e) {
-    // =========================
-    // START: Catch-all Error
-    // =========================
     console.error("Script Error:", e);
     showError("Unexpected Error: " + e.message);
-    // =========================
-    // END: Catch-all Error
   }
 })();
