@@ -1,13 +1,5 @@
-const start = performance.now();
+const statusSpan = document.querySelector('.splash-status span');
 
-const interval = setInterval(() => {
-    const el = document.querySelector('.splash-text');
-    if (el) {
-        el.textContent = 'Starting DarkVision...';
-        clearInterval(interval);
-    }
-
-    if (performance.now() - start > 5000) {
-        clearInterval(interval);
-    }
-}, 50); 
+if (statusSpan && statusSpan.textContent.includes('Starting…')) {
+    statusSpan.textContent = 'Starting DarkVision:';
+}
