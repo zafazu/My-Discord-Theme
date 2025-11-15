@@ -191,44 +191,110 @@ const createScriptsTab = () => {
     rightPanel.appendChild(buttonsContainer);
     layout.appendChild(rightPanel);
     
-    // File system helper functions
-    const fs = window.require?.('fs');
-    const path = window.require?.('path');
-    const { ipcRenderer } = window.require?.('electron') || {};
+    // File system helper functions with improved module loading
+    let fs = null;
+    let path = null;
+    let electron = null;
+    
+    const getNodeModules = () => {
+        try {
+            console.log('=== Checking for Node.js modules ===');
+            console.log('window.require:', typeof window.require);
+            console.log('window.electronRequire:', typeof window.electronRequire);
+            console.log('global require:', typeof (typeof require !== 'undefined' ? require : undefined));
+            console.log('process:', typeof process);
+            
+            // Try multiple methods to get require
+            let nodeRequire = null;
+            
+            if (typeof window.require === 'function') {
+                console.log('Using window.require');
+                nodeRequire = window.require;
+            } else if (typeof window.electronRequire === 'function') {
+                console.log('Using window.electronRequire');
+                nodeRequire = window.electronRequire;
+            } else if (typeof require === 'function') {
+                console.log('Using global require');
+                nodeRequire = require;
+            }
+            
+            if (!nodeRequire) {
+                console.error('No require function found');
+                return false;
+            }
+            
+            // Try to load modules
+            try {
+                fs = nodeRequire('fs');
+                console.log('✓ fs module loaded');
+            } catch (e) {
+                console.error('Failed to load fs:', e.message);
+                return false;
+            }
+            
+            try {
+                path = nodeRequire('path');
+                console.log('✓ path module loaded');
+            } catch (e) {
+                console.error('Failed to load path:', e.message);
+                return false;
+            }
+            
+            try {
+                electron = nodeRequire('electron');
+                console.log('✓ electron module loaded');
+            } catch (e) {
+                console.warn('electron module not available:', e.message);
+                // electron is optional, so don't fail here
+            }
+            
+            console.log('=== Node.js modules loaded successfully ===');
+            return true;
+        } catch (e) {
+            console.error('Error loading Node modules:', e);
+            return false;
+        }
+    };
     
     const getScriptsFolder = () => {
+        if (!fs || !path) {
+            console.error('fs or path module not available');
+            return null;
+        }
+        
         try {
-            if (!fs || !path) {
-                console.error('fs or path module not available');
-                return null;
-            }
-            
             // Get LocalAppData path using multiple methods
-            let localAppData = process.env.LOCALAPPDATA;
+            let localAppData = null;
             
-            // Fallback 1: try APPDATA and replace Roaming with Local
-            if (!localAppData && process.env.APPDATA) {
-                localAppData = process.env.APPDATA.replace('\\Roaming', '\\Local');
-            }
-            
-            // Fallback 2: construct from USERPROFILE
-            if (!localAppData && process.env.USERPROFILE) {
-                localAppData = path.join(process.env.USERPROFILE, 'AppData', 'Local');
-            }
-            
-            // Fallback 3: try common path structure
-            if (!localAppData && process.env.USERNAME) {
-                localAppData = `C:\\Users\\${process.env.USERNAME}\\AppData\\Local`;
+            if (typeof process !== 'undefined' && process.env) {
+                localAppData = process.env.LOCALAPPDATA;
+                
+                // Fallback 1: try APPDATA and replace Roaming with Local
+                if (!localAppData && process.env.APPDATA) {
+                    localAppData = process.env.APPDATA.replace('\\Roaming', '\\Local');
+                }
+                
+                // Fallback 2: construct from USERPROFILE
+                if (!localAppData && process.env.USERPROFILE) {
+                    localAppData = path.join(process.env.USERPROFILE, 'AppData', 'Local');
+                }
+                
+                // Fallback 3: try common path structure
+                if (!localAppData && process.env.USERNAME) {
+                    localAppData = `C:\\Users\\${process.env.USERNAME}\\AppData\\Local`;
+                }
             }
             
             if (!localAppData) {
                 console.error('Could not find LocalAppData path');
-                console.error('Environment variables:', {
-                    LOCALAPPDATA: process.env.LOCALAPPDATA,
-                    APPDATA: process.env.APPDATA,
-                    USERPROFILE: process.env.USERPROFILE,
-                    USERNAME: process.env.USERNAME
-                });
+                if (typeof process !== 'undefined' && process.env) {
+                    console.error('Environment variables:', {
+                        LOCALAPPDATA: process.env.LOCALAPPDATA,
+                        APPDATA: process.env.APPDATA,
+                        USERPROFILE: process.env.USERPROFILE,
+                        USERNAME: process.env.USERNAME
+                    });
+                }
                 return null;
             }
             
@@ -273,15 +339,15 @@ const createScriptsTab = () => {
     };
     
     const saveScriptToFile = (name, code) => {
-        const scriptsFolder = getScriptsFolder();
-        
-        if (!scriptsFolder) {
-            consoleOutput.textContent = '> Error: Could not find Discord-inject folder\n> Path should be: AppData\\Local\\Discord-inject-NUMBERS\\Vencord\\scripts\n> Make sure Vencord is properly installed';
+        if (!fs || !path) {
+            consoleOutput.textContent = '> Error: File system modules not available\n> This feature requires Node.js integration (Electron)\n> Please ensure you\'re running in Discord desktop client';
             return false;
         }
         
-        if (!fs) {
-            consoleOutput.textContent = '> Error: File system access not available\n> This feature requires Node.js integration (Electron)';
+        const scriptsFolder = getScriptsFolder();
+        
+        if (!scriptsFolder) {
+            consoleOutput.textContent = '> Error: Could not find Discord-inject folder\n> Path should be: AppData\\Local\\Discord-inject-YYYYMMDD-HHMMSS\\Vencord\\scripts\n> Make sure Vencord is properly installed';
             return false;
         }
         
@@ -298,9 +364,13 @@ const createScriptsTab = () => {
     };
     
     const loadScriptsFromFolder = () => {
+        if (!fs || !path) {
+            return [];
+        }
+        
         const scriptsFolder = getScriptsFolder();
         
-        if (!scriptsFolder || !fs) {
+        if (!scriptsFolder) {
             return [];
         }
         
@@ -326,10 +396,15 @@ const createScriptsTab = () => {
     };
     
     const deleteScriptFile = (name) => {
+        if (!fs || !path) {
+            consoleOutput.textContent = '> Error: Cannot delete file - file system access not available';
+            return false;
+        }
+        
         const scriptsFolder = getScriptsFolder();
         
-        if (!scriptsFolder || !fs) {
-            consoleOutput.textContent = '> Error: Cannot delete file - file system access not available';
+        if (!scriptsFolder) {
+            consoleOutput.textContent = '> Error: Cannot find scripts folder';
             return false;
         }
         
@@ -351,7 +426,7 @@ const createScriptsTab = () => {
         
         if (scripts.length === 0) {
             const emptyMsg = document.createElement('div');
-            emptyMsg.textContent = 'No saved scripts';
+            emptyMsg.textContent = fs && path ? 'No saved scripts' : 'File system not available';
             emptyMsg.style.cssText = `
                 color: rgba(255, 255, 255, 0.4);
                 font-size: 12px;
@@ -544,6 +619,15 @@ const createScriptsTab = () => {
             container.style.display = 'none';
         }
     });
+    
+    // Try to load Node modules on initialization
+    const modulesLoaded = getNodeModules();
+    
+    if (!modulesLoaded) {
+        consoleOutput.textContent = '> Warning: Node.js modules not available\n> File save/load features will not work\n> Please ensure you\'re running in Discord desktop client';
+    } else {
+        consoleOutput.textContent = '> Scripts tab ready!\n> File system access: OK\n> You can now create and save scripts';
+    }
     
     // Initial render
     renderScriptsList();
