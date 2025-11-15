@@ -94,7 +94,7 @@ const createScriptsTab = () => {
     const editor = document.createElement('textarea');
     editor.placeholder = '// Write your JavaScript code here...\n// Example:\nconsole.log("Hello from custom script!");';
     editor.style.cssText = `
-        flex: 1;
+        height: 250px;
         padding: 12px;
         background-color: rgba(255, 255, 255, 0.05);
         border: 1px solid var(--main-color);
@@ -103,7 +103,7 @@ const createScriptsTab = () => {
         font-family: 'Consolas', 'Monaco', monospace;
         font-size: 13px;
         line-height: 1.5;
-        resize: none;
+        resize: vertical;
         outline: none;
     `;
     
@@ -149,7 +149,7 @@ const createScriptsTab = () => {
     
     // Save button
     const saveBtn = document.createElement('button');
-    saveBtn.textContent = '💾 Save';
+    saveBtn.textContent = 'Save';
     saveBtn.style.cssText = `
         padding: 8px 20px;
         background-color: var(--main-color);
@@ -181,8 +181,26 @@ const createScriptsTab = () => {
     clearBtn.addEventListener('mouseenter', () => clearBtn.style.backgroundColor = '#dc2626');
     clearBtn.addEventListener('mouseleave', () => clearBtn.style.backgroundColor = '#ef4444');
     
+    // Export button
+    const exportBtn = document.createElement('button');
+    exportBtn.textContent = 'Export';
+    exportBtn.style.cssText = `
+        padding: 8px 20px;
+        background-color: #6366f1;
+        color: #FFFFFF;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 14px;
+        transition: background-color 0.2s;
+    `;
+    exportBtn.addEventListener('mouseenter', () => exportBtn.style.backgroundColor = '#4f46e5');
+    exportBtn.addEventListener('mouseleave', () => exportBtn.style.backgroundColor = '#6366f1');
+    
     buttonsContainer.appendChild(runBtn);
     buttonsContainer.appendChild(saveBtn);
+    buttonsContainer.appendChild(exportBtn);
     buttonsContainer.appendChild(clearBtn);
     
     rightPanel.appendChild(nameInput);
@@ -191,171 +209,18 @@ const createScriptsTab = () => {
     rightPanel.appendChild(buttonsContainer);
     layout.appendChild(rightPanel);
     
-    // File system helper functions with improved module loading
-    let fs = null;
-    let path = null;
-    let electron = null;
+    // Storage functions using localStorage
+    const STORAGE_KEY = 'vencord_custom_scripts';
     
-    const getNodeModules = () => {
+    const saveScriptToStorage = (name, code) => {
         try {
-            console.log('=== Checking for Node.js modules ===');
-            console.log('window.require:', typeof window.require);
-            console.log('window.electronRequire:', typeof window.electronRequire);
-            console.log('global require:', typeof (typeof require !== 'undefined' ? require : undefined));
-            console.log('process:', typeof process);
-            
-            // Try multiple methods to get require
-            let nodeRequire = null;
-            
-            if (typeof window.require === 'function') {
-                console.log('Using window.require');
-                nodeRequire = window.require;
-            } else if (typeof window.electronRequire === 'function') {
-                console.log('Using window.electronRequire');
-                nodeRequire = window.electronRequire;
-            } else if (typeof require === 'function') {
-                console.log('Using global require');
-                nodeRequire = require;
-            }
-            
-            if (!nodeRequire) {
-                console.error('No require function found');
-                return false;
-            }
-            
-            // Try to load modules
-            try {
-                fs = nodeRequire('fs');
-                console.log('✓ fs module loaded');
-            } catch (e) {
-                console.error('Failed to load fs:', e.message);
-                return false;
-            }
-            
-            try {
-                path = nodeRequire('path');
-                console.log('✓ path module loaded');
-            } catch (e) {
-                console.error('Failed to load path:', e.message);
-                return false;
-            }
-            
-            try {
-                electron = nodeRequire('electron');
-                console.log('✓ electron module loaded');
-            } catch (e) {
-                console.warn('electron module not available:', e.message);
-                // electron is optional, so don't fail here
-            }
-            
-            console.log('=== Node.js modules loaded successfully ===');
-            return true;
-        } catch (e) {
-            console.error('Error loading Node modules:', e);
-            return false;
-        }
-    };
-    
-    const getScriptsFolder = () => {
-        if (!fs || !path) {
-            console.error('fs or path module not available');
-            return null;
-        }
-        
-        try {
-            // Get LocalAppData path using multiple methods
-            let localAppData = null;
-            
-            if (typeof process !== 'undefined' && process.env) {
-                localAppData = process.env.LOCALAPPDATA;
-                
-                // Fallback 1: try APPDATA and replace Roaming with Local
-                if (!localAppData && process.env.APPDATA) {
-                    localAppData = process.env.APPDATA.replace('\\Roaming', '\\Local');
-                }
-                
-                // Fallback 2: construct from USERPROFILE
-                if (!localAppData && process.env.USERPROFILE) {
-                    localAppData = path.join(process.env.USERPROFILE, 'AppData', 'Local');
-                }
-                
-                // Fallback 3: try common path structure
-                if (!localAppData && process.env.USERNAME) {
-                    localAppData = `C:\\Users\\${process.env.USERNAME}\\AppData\\Local`;
-                }
-            }
-            
-            if (!localAppData) {
-                console.error('Could not find LocalAppData path');
-                if (typeof process !== 'undefined' && process.env) {
-                    console.error('Environment variables:', {
-                        LOCALAPPDATA: process.env.LOCALAPPDATA,
-                        APPDATA: process.env.APPDATA,
-                        USERPROFILE: process.env.USERPROFILE,
-                        USERNAME: process.env.USERNAME
-                    });
-                }
-                return null;
-            }
-            
-            console.log('Searching in:', localAppData);
-            
-            // Check if the path exists
-            if (!fs.existsSync(localAppData)) {
-                console.error('LocalAppData path does not exist:', localAppData);
-                return null;
-            }
-            
-            // Find Discord-inject folder with timestamp format (Discord-inject-YYYYMMDD-HHMMSS)
-            const dirs = fs.readdirSync(localAppData);
-            const discordInjectPattern = /^Discord-inject-\d{8}-\d{6}$/;
-            const discordInjectFolders = dirs.filter(d => discordInjectPattern.test(d));
-            
-            console.log('Found Discord-inject folders:', discordInjectFolders);
-            
-            if (discordInjectFolders.length === 0) {
-                console.error('No Discord-inject folder found with format Discord-inject-YYYYMMDD-HHMMSS');
-                return null;
-            }
-            
-            // Use the most recent one (sort by timestamp)
-            const discordInject = discordInjectFolders.sort().reverse()[0];
-            console.log('Using folder:', discordInject);
-            
-            const scriptsPath = path.join(localAppData, discordInject, 'Vencord', 'scripts');
-            console.log('Full scripts path:', scriptsPath);
-            
-            // Create folder if it doesn't exist
-            if (!fs.existsSync(scriptsPath)) {
-                console.log('Creating scripts folder...');
-                fs.mkdirSync(scriptsPath, { recursive: true });
-            }
-            
-            return scriptsPath;
-        } catch (e) {
-            console.error('Error finding scripts folder:', e);
-            return null;
-        }
-    };
-    
-    const saveScriptToFile = (name, code) => {
-        if (!fs || !path) {
-            consoleOutput.textContent = '> Error: File system modules not available\n> This feature requires Node.js integration (Electron)\n> Please ensure you\'re running in Discord desktop client';
-            return false;
-        }
-        
-        const scriptsFolder = getScriptsFolder();
-        
-        if (!scriptsFolder) {
-            consoleOutput.textContent = '> Error: Could not find Discord-inject folder\n> Path should be: AppData\\Local\\Discord-inject-YYYYMMDD-HHMMSS\\Vencord\\scripts\n> Make sure Vencord is properly installed';
-            return false;
-        }
-        
-        try {
-            const fileName = name.endsWith('.js') ? name : `${name}.js`;
-            const filePath = path.join(scriptsFolder, fileName);
-            fs.writeFileSync(filePath, code, 'utf8');
-            consoleOutput.textContent = `> Script saved successfully!\n> Location: ${filePath}`;
+            const scripts = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+            scripts[name] = {
+                code: code,
+                modified: Date.now()
+            };
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(scripts));
+            consoleOutput.textContent = `> Script saved successfully!\n> Storage: Browser localStorage\n> Name: ${name}`;
             return true;
         } catch (e) {
             consoleOutput.textContent = `> Error saving script: ${e.message}`;
@@ -363,55 +228,25 @@ const createScriptsTab = () => {
         }
     };
     
-    const loadScriptsFromFolder = () => {
-        if (!fs || !path) {
-            return [];
-        }
-        
-        const scriptsFolder = getScriptsFolder();
-        
-        if (!scriptsFolder) {
-            return [];
-        }
-        
+    const loadScriptsFromStorage = () => {
         try {
-            const files = fs.readdirSync(scriptsFolder);
-            return files
-                .filter(f => f.endsWith('.js'))
-                .map(f => {
-                    const filePath = path.join(scriptsFolder, f);
-                    const code = fs.readFileSync(filePath, 'utf8');
-                    const stats = fs.statSync(filePath);
-                    return {
-                        name: f.replace('.js', ''),
-                        code: code,
-                        path: filePath,
-                        modified: stats.mtime.getTime()
-                    };
-                });
+            const scripts = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+            return Object.entries(scripts).map(([name, data]) => ({
+                name: name,
+                code: data.code,
+                modified: data.modified
+            })).sort((a, b) => b.modified - a.modified);
         } catch (e) {
             console.error('Error loading scripts:', e);
             return [];
         }
     };
     
-    const deleteScriptFile = (name) => {
-        if (!fs || !path) {
-            consoleOutput.textContent = '> Error: Cannot delete file - file system access not available';
-            return false;
-        }
-        
-        const scriptsFolder = getScriptsFolder();
-        
-        if (!scriptsFolder) {
-            consoleOutput.textContent = '> Error: Cannot find scripts folder';
-            return false;
-        }
-        
+    const deleteScriptFromStorage = (name) => {
         try {
-            const fileName = name.endsWith('.js') ? name : `${name}.js`;
-            const filePath = path.join(scriptsFolder, fileName);
-            fs.unlinkSync(filePath);
+            const scripts = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+            delete scripts[name];
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(scripts));
             consoleOutput.textContent = `> Script deleted: ${name}`;
             return true;
         } catch (e) {
@@ -420,13 +255,32 @@ const createScriptsTab = () => {
         }
     };
     
+    const exportAllScripts = () => {
+        try {
+            const scripts = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+            const dataStr = JSON.stringify(scripts, null, 2);
+            const dataBlob = new Blob([dataStr], { type: 'application/json' });
+            const url = URL.createObjectURL(dataBlob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = `vencord-scripts-${Date.now()}.json`;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            URL.revokeObjectURL(url);
+            consoleOutput.textContent = '> All scripts exported successfully!\n> Check your downloads folder';
+        } catch (e) {
+            consoleOutput.textContent = `> Error exporting scripts: ${e.message}`;
+        }
+    };
+    
     const renderScriptsList = () => {
-        const scripts = loadScriptsFromFolder();
+        const scripts = loadScriptsFromStorage();
         scriptsList.innerHTML = '';
         
         if (scripts.length === 0) {
             const emptyMsg = document.createElement('div');
-            emptyMsg.textContent = fs && path ? 'No saved scripts' : 'File system not available';
+            emptyMsg.textContent = 'No saved scripts';
             emptyMsg.style.cssText = `
                 color: rgba(255, 255, 255, 0.4);
                 font-size: 12px;
@@ -484,13 +338,16 @@ const createScriptsTab = () => {
             item.addEventListener('click', () => {
                 nameInput.value = script.name;
                 editor.value = script.code;
-                consoleOutput.textContent = `> Script loaded: ${script.name}\n> Path: ${script.path}`;
+                const date = new Date(script.modified).toLocaleString();
+                consoleOutput.textContent = `> Script loaded: ${script.name}\n> Last modified: ${date}`;
             });
             
             deleteBtn.addEventListener('click', (e) => {
                 e.stopPropagation();
-                if (deleteScriptFile(script.name)) {
-                    renderScriptsList();
+                if (confirm(`Delete script "${script.name}"?`)) {
+                    if (deleteScriptFromStorage(script.name)) {
+                        renderScriptsList();
+                    }
                 }
             });
             
@@ -553,9 +410,13 @@ const createScriptsTab = () => {
             return;
         }
         
-        if (saveScriptToFile(name, code)) {
+        if (saveScriptToStorage(name, code)) {
             renderScriptsList();
         }
+    });
+    
+    exportBtn.addEventListener('click', () => {
+        exportAllScripts();
     });
     
     clearBtn.addEventListener('click', () => {
@@ -620,14 +481,8 @@ const createScriptsTab = () => {
         }
     });
     
-    // Try to load Node modules on initialization
-    const modulesLoaded = getNodeModules();
-    
-    if (!modulesLoaded) {
-        consoleOutput.textContent = '> Warning: Node.js modules not available\n> File save/load features will not work\n> Please ensure you\'re running in Discord desktop client';
-    } else {
-        consoleOutput.textContent = '> Scripts tab ready!\n> File system access: OK\n> You can now create and save scripts';
-    }
+    // Initial setup
+    consoleOutput.textContent = '> Scripts tab ready!\n> Storage: Browser localStorage\n> Scripts persist across sessions\n> Use Export button to backup your scripts';
     
     // Initial render
     renderScriptsList();
