@@ -14,7 +14,7 @@
                                                                         @import "https://raw.githubusercontent.com/zafazu/My-Discord-Theme/refs/heads/main/CV_main.css";
 										/* https://clearvision.github.io/ClearVision-v6/main.css */
                                                                         :root {
-									    --theme-version: "1.49 - [11.11.2025] - Made by zafazu";
+									    --theme-version: "1.50 - [15.11.2025] - Made by zafazu";
                                                                             --main-color: #a69589;
                                                                             --main-color-border: #5c4e47;
                                                                             --hover-color: #747474;
@@ -1176,5 +1176,55 @@
 .sidebarList__5e434{
  border-color: var(--main-color-border) !important;
 }
+
+
+
+
+/* NITRO PROFILE CARD FREEDOM */
+
+
+.profileBody__9c3be {
+    background-color: transparent !important;
+}
+
+
+.tabPanelScroller__37bfc {
+    background-color: transparent !important;
+}
+
+
+.button_fb7f94 {
+    background-color:  #a69589 !important;
+    border-radius: 10px;
+}
+
+
+.icon_a22cb0 {
+    color: white;
+}
+
+.listScroller__9d78f {
+    background-color: transparent !important;
+}
+
+.container__8061a {
+    background-color: transparent !important;
+}
+
+
+.bannerButton_de8008 {
+    background-color: #a69589 ;
+    border-radius: 10px ;
+}
+
+
+.icon__0c4c4 {
+    margin-top: 7px !important;
+}
+
+
+
+
+
 
 
