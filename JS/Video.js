@@ -1,6 +1,11 @@
 (function() {
     'use strict';
     
+    if (document.title === "Discord Updater") {
+        console.log('Skipping video - Discord Updater detected');
+        return; 
+    }
+    
     const video = document.createElement('video');
     
     video.src = 'https://i.imgur.com/CeXOTkU.mp4'; 
@@ -16,7 +21,6 @@
     video.style.objectFit = 'cover';
     video.style.zIndex = '999999';
     
-
     const originalBodyDisplay = document.body.style.display;
     document.body.style.display = 'none';
     
