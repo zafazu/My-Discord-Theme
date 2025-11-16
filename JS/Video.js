@@ -1,7 +1,12 @@
 (function() {
     'use strict';
     
-    if (document.title === "Discord Updater") {
+    const isDiscordUpdater = 
+        document.title === "Discord Updater" &&
+        document.getElementById('splash-mount') &&
+        document.querySelector('video[src*="connecting.webm"]');
+    
+    if (isDiscordUpdater) {
         console.log('Skipping video - Discord Updater detected');
         return; 
     }
