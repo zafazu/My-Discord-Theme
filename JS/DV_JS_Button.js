@@ -448,7 +448,7 @@ const createScriptsTab = () => {
     const updateTabStyle = (active) => {
         if (active) {
             scriptsTab.style.setProperty('background-color', '#97979F3D', 'important');
-            scriptsTab.style.color = '#97979F3D';
+            scriptsTab.style.color = '#E3E3E6';
         } else {
             scriptsTab.style.setProperty('background-color', 'transparent', 'important');
             scriptsTab.style.color = '';
@@ -495,4 +495,5 @@ observer.observe(document.body, { childList: true, subtree: true });
 
 // Initial call
 createScriptsTab();
+
 
