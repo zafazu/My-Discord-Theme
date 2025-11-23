@@ -266,7 +266,7 @@
       });
 
       const settingsTitle = createEl("h2", {
-        text: "Window Transparency",
+        text: "Window Visibility",
         styles: {
           fontSize: "18px",
           fontWeight: "600",
@@ -283,7 +283,7 @@
       });
 
       const label = createEl("label", {
-        text: "Transparency Level",
+        text: "Visibility Level",
         styles: {
           display: "block",
           marginBottom: "12px",
