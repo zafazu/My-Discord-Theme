@@ -361,7 +361,7 @@
               "windowTransparency": parseInt(slider.value)
             }
           };
-          console.log(table);
+          console.log("[DV_SETTINGS]", JSON.stringify(table));
           showSuccess(`${slider.value}% transparency applied`);
         }
       });
