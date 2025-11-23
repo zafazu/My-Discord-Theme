@@ -266,7 +266,7 @@
       });
 
       const settingsTitle = createEl("h2", {
-        text: "Window Visibility",
+        text: "Window Visibility [UNSTABLE]",
         styles: {
           fontSize: "18px",
           fontWeight: "600",
