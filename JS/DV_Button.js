@@ -2,9 +2,6 @@
   try {
     if (typeof window === "undefined" || typeof document === "undefined") return;
 
-    // =========================
-    // START: Helper Functions
-    // =========================
     const createEl = (tag, options = {}) => {
       const el = document.createElement(tag);
       if (options.text) el.textContent = options.text;
@@ -13,13 +10,43 @@
       if (options.onclick) el.onclick = options.onclick;
       return el;
     };
-    // =========================
-    // END: Helper Functions
-    // =========================
 
-    // =========================
-    // START: Error Message Function
-    // =========================
+    function sendTransparencyCommand(command) {
+      const ws = new WebSocket('ws://localhost:8899');
+
+      ws.onopen = function () {
+        ws.send(JSON.stringify(command));
+        setTimeout(() => ws.close(), 1000);
+      };
+
+      ws.onerror = function () {
+        showError('Needed Script is not running');
+      };
+    }
+
+    function setOpacity(percent) {
+      sendTransparencyCommand({
+        type: 'set_opacity',
+        opacity: percent
+      });
+    }
+
+    function toggleTransparent() {
+      sendTransparencyCommand({
+        type: 'toggle_transparent'
+      });
+    }
+
+    function resetTransparency() {
+      sendTransparencyCommand({
+        type: 'reset'
+      });
+    }
+
+    window.setOpacity = setOpacity;
+    window.toggleTransparent = toggleTransparent;
+    window.resetTransparency = resetTransparency;
+
     const errorContainerId = "dv-error-container";
     let errorContainer = document.getElementById(errorContainerId);
     if (!errorContainer) {
@@ -40,9 +67,6 @@
     }
 
     const showError = (msg) => {
-      const audio = new Audio("data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEA..."); // Placeholder
-      audio.play().catch(() => {});
-
       const errorFrame = createEl("div", {
         styles: {
           width: "320px",
@@ -64,7 +88,17 @@
       const msgSpan = createEl("span", { text: msg, styles: { marginBottom: "8px" } });
       const closeBtn = createEl("button", {
         text: "✕",
-        styles: { position: "absolute", top: "8px", right: "8px", background: "transparent", border: "none", color: "#ff5555", cursor: "pointer", fontWeight: "700", fontSize: "16px" },
+        styles: {
+          position: "absolute",
+          top: "8px",
+          right: "8px",
+          background: "transparent",
+          border: "none",
+          color: "#ff5555",
+          cursor: "pointer",
+          fontWeight: "700",
+          fontSize: "16px"
+        },
         onclick: () => { errorFrame.remove(); }
       });
 
@@ -92,13 +126,68 @@
         }
       }, 100);
     };
-    // =========================
-    // END: Error Message Function
-    // =========================
 
-    // =========================
-    // START: DV Button / Window UI
-    // =========================
+    const showSuccess = (msg) => {
+      const successFrame = createEl("div", {
+        styles: {
+          width: "320px",
+          padding: "12px",
+          background: "#1e1e1e",
+          color: "#fff",
+          border: "1px solid #10b981",
+          borderRadius: "8px",
+          boxShadow: "0 4px 12px rgba(0,0,0,0.5)",
+          display: "flex",
+          flexDirection: "column",
+          fontSize: "14px",
+          lineHeight: "1.4",
+          position: "relative",
+          overflow: "hidden"
+        }
+      });
+
+      const msgSpan = createEl("span", { text: msg, styles: { marginBottom: "8px" } });
+      const closeBtn = createEl("button", {
+        text: "✕",
+        styles: {
+          position: "absolute",
+          top: "8px",
+          right: "8px",
+          background: "transparent",
+          border: "none",
+          color: "#10b981",
+          cursor: "pointer",
+          fontWeight: "700",
+          fontSize: "16px"
+        },
+        onclick: () => { successFrame.remove(); }
+      });
+
+      const timerBar = createEl("div", {
+        styles: {
+          height: "4px",
+          background: "#10b981",
+          width: "100%",
+          transition: "width 0.1s linear"
+        }
+      });
+
+      successFrame.append(msgSpan, closeBtn, timerBar);
+      errorContainer.appendChild(successFrame);
+
+      let duration = 10;
+      let elapsed = 0;
+      const interval = setInterval(() => {
+        elapsed += 0.1;
+        const widthPercent = Math.max(0, 100 - (elapsed / duration) * 100);
+        timerBar.style.width = widthPercent + "%";
+        if (elapsed >= duration) {
+          clearInterval(interval);
+          successFrame.remove();
+        }
+      }, 100);
+    };
+
     const inject = async () => {
       const target = document.querySelector(".upperContainer__9293f");
       if (!target || document.querySelector(".injected-js-btn")) return;
@@ -109,19 +198,19 @@
           top: "50%",
           left: "50%",
           transform: "translate(-50%, -50%)",
-          width: "500px",
-          height: "500px",
+          width: "350px",
+          height: "320px",
           background: "#1e1e1e",
           color: "#fff",
           borderRadius: "8px",
           boxShadow: "0 8px 30px rgba(0,0,0,0.6)",
           zIndex: 2147483647,
           display: "none",
-          userSelect: "none"
+          userSelect: "none",
+          overflow: "hidden"
         }
       });
 
-      // --- START: Header ---
       const header = createEl("div", {
         styles: {
           display: "flex",
@@ -134,12 +223,17 @@
           cursor: "grab"
         }
       });
+
       const title = createEl("span", { text: "DarkVisionJS v1" });
-      const closeBtn = createEl("div", { text: "✕", styles: { cursor: "pointer" }, onclick: () => frame.style.display = "none" });
+      const closeBtn = createEl("div", {
+        text: "✕",
+        styles: { cursor: "pointer" },
+        onclick: () => frame.style.display = "none"
+      });
+
       header.append(title, closeBtn);
       frame.appendChild(header);
 
-      // --- START: Drag Fix ---
       let isDragging = false;
       let offsetX = 0;
       let offsetY = 0;
@@ -161,54 +255,138 @@
         if (isDragging) header.style.cursor = "grab";
         isDragging = false;
       });
-      // --- END: Drag Fix ---
 
-      // --- START: Content & Sliders ---
-      const content = createEl("div", { styles: { padding: "20px" } });
-      const settingsTitle = createEl("h2", { text: "Settings", styles: { fontSize: "18px", fontWeight: "600", color: "#fff", margin: "0 0 24px 0" } });
-
-      const createSliderRow = (labelText) => {
-        const row = createEl("div", { styles: { marginBottom: "16px" } });
-        const label = createEl("label", { text: labelText, styles: { display: "block", marginBottom: "8px", fontSize: "14px", fontWeight: "500", color: "#fff" } });
-        const container = createEl("div", { styles: { display: "flex", alignItems: "center", gap: "12px" } });
-        const slider = createEl("input");
-        slider.type = "range"; slider.min = "0"; slider.max = "100"; slider.value = "0";
-        Object.assign(slider.style, { flex: "1", height: "4px", borderRadius: "2px", outline: "none", cursor: "pointer" });
-        const valueDisplay = createEl("span", { text: "0%", styles: { minWidth: "45px", fontSize: "14px", color: "#9B9CA3", fontWeight: "500" } });
-        slider.oninput = (e) => valueDisplay.textContent = e.target.value + "%";
-        container.append(slider, valueDisplay);
-        row.append(label, container);
-        return { row, slider };
-      };
-
-      const { row: transparencyRow, slider: transparencySlider } = createSliderRow("Window Transparency");
-      const { row: blurRow, slider: blurSlider } = createSliderRow("Window Blur");
-      blurRow.style.marginBottom = "24px";
-
-      const setButton = createEl("button", {
-        text: "Set Window Settings",
-        styles: { padding: "10px 24px", borderRadius: "6px", cursor: "pointer", background: "#3b82f6", color: "#fff", fontWeight: "600", border: "none", fontSize: "14px", transition: "background 0.2s" },
-        onclick: async () => {
-          try {
-            const data = { windowTransparency: parseInt(transparencySlider.value), windowBlur: parseInt(blurSlider.value) };
-            const res = await fetch("http://127.0.0.1:8899", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data) });
-            console.log(await res.text());
-          } catch (err) { console.error(err); showError("Error sending settings: " + err.message); }
+      const content = createEl("div", {
+        styles: {
+          padding: "20px",
+          height: "calc(100% - 49px)",
+          display: "flex",
+          flexDirection: "column"
         }
       });
-      setButton.onmouseenter = () => setButton.style.background = "#2563eb";
-      setButton.onmouseleave = () => setButton.style.background = "#3b82f6";
 
-      content.append(settingsTitle, transparencyRow, blurRow, setButton);
+      const settingsTitle = createEl("h2", {
+        text: "Window Transparency",
+        styles: {
+          fontSize: "18px",
+          fontWeight: "600",
+          color: "#fff",
+          margin: "0 0 20px 0"
+        }
+      });
+
+      const sliderContainer = createEl("div", {
+        styles: {
+          marginBottom: "20px",
+          flex: "1"
+        }
+      });
+
+      const label = createEl("label", {
+        text: "Transparency Level",
+        styles: {
+          display: "block",
+          marginBottom: "12px",
+          fontSize: "14px",
+          fontWeight: "500",
+          color: "#fff"
+        }
+      });
+
+      const sliderWrapper = createEl("div", {
+        styles: {
+          display: "flex",
+          alignItems: "center",
+          gap: "12px"
+        }
+      });
+
+      const slider = createEl("input");
+      slider.type = "range";
+      slider.min = "0";
+      slider.max = "100";
+      slider.value = "100";
+      Object.assign(slider.style, {
+        flex: "1",
+        height: "6px",
+        borderRadius: "3px",
+        outline: "none",
+        cursor: "pointer",
+        background: "#333"
+      });
+
+      const valueDisplay = createEl("span", {
+        text: "100%",
+        styles: {
+          minWidth: "45px",
+          fontSize: "14px",
+          color: "#9B9CA3",
+          fontWeight: "500"
+        }
+      });
+
+      slider.oninput = (e) => {
+        valueDisplay.textContent = e.target.value + "%";
+      };
+
+      sliderWrapper.append(slider, valueDisplay);
+      sliderContainer.append(label, sliderWrapper);
+
+      const buttonContainer = createEl("div", {
+        styles: {
+          display: "flex",
+          justifyContent: "flex-end",
+          paddingTop: "-30px",
+          borderTop: "1px solid rgba(255,255,255,0.08)"
+        }
+      });
+
+      const applyButton = createEl("button", {
+        text: "Apply",
+        styles: {
+          padding: "8px 20px",
+          borderRadius: "6px",
+          cursor: "pointer",
+          background: "#10b981",
+          color: "#fff",
+          fontWeight: "600",
+          border: "none",
+          fontSize: "14px",
+          transition: "background 0.2s",
+          marginTop: "10px"
+        },
+        onclick: () => {
+          const table = {
+            "DV_CHANGE": {
+              "windowTransparency": parseInt(slider.value)
+            }
+          };
+          console.log(table);
+          showSuccess(`${slider.value}% transparency applied`);
+        }
+      });
+
+      applyButton.onmouseenter = () => applyButton.style.background = "#059669";
+      applyButton.onmouseleave = () => applyButton.style.background = "#10b981";
+
+      buttonContainer.appendChild(applyButton);
+      content.append(settingsTitle, sliderContainer, buttonContainer);
       frame.appendChild(content);
       document.body.appendChild(frame);
-      // --- END: Content & Sliders ---
 
-      // --- START: DV Button ---
       const btn = createEl("button", {
         class: "injected-js-btn",
         text: "DV",
-        styles: { padding: "6px 8px", borderRadius: "6px", marginLeft: "16px", cursor: "pointer", background: "transparent", color: "#9B9CA3", fontWeight: "700", border: "none" },
+        styles: {
+          padding: "6px 8px",
+          borderRadius: "6px",
+          marginLeft: "16px",
+          cursor: "pointer",
+          background: "transparent",
+          color: "#9B9CA3",
+          fontWeight: "700",
+          border: "none"
+        },
         onclick: () => {
           frame.style.display = "block";
           if (!frame.dataset.positioned) {
@@ -220,20 +398,15 @@
           }
         }
       });
-      target.appendChild(btn);
-      // --- END: DV Button ---
 
+      target.appendChild(btn);
     };
+
     inject();
     const observer = new MutationObserver(inject);
     observer.observe(document.documentElement, { childList: true, subtree: true });
 
-    // =========================
-    // START: Test Error with F4
-    // =========================
-    window.addEventListener("keydown", (e) => { if (e.key === "F4" && document.hasFocus()) showError("Test Error: F4 pressed"); });
-    // =========================
-    // END: Test Error with F4
+
 
   } catch (e) {
     console.error("Script Error:", e);
