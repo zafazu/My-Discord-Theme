@@ -37,7 +37,6 @@ VERBOSE = False
 SETTINGS = {}
 HANDLERS = {}
 _lock = threading.Lock()
-_last_applied_values = {}
 
 # Parsing helpers (same as before)
 PAIR_RE = re.compile(r'([A-Za-z0-9_.-]+)\s*=\s*(".*?"|\'.*?\'|[^,;}\n]+)', re.DOTALL)
@@ -215,19 +214,8 @@ if IS_WINDOWS:
         try:
             if percent < 0: percent = 0
             if percent > 100: percent = 100
-            
-            ex = GetWindowLong(hwnd, GWL_EXSTYLE)
-            
-            # If 100%, remove layered style to restore default behavior
-            if percent == 100:
-                if ex & WS_EX_LAYERED:
-                    SetWindowLong(hwnd, GWL_EXSTYLE, ex & ~WS_EX_LAYERED)
-                    if VERBOSE:
-                        print(f"Removed layered style for hwnd={hwnd} (restored to default)")
-                return True
-            
-            # Otherwise apply transparency
             alpha = int(percent * 255 / 100)  # 0..255
+            ex = GetWindowLong(hwnd, GWL_EXSTYLE)
             if not (ex & WS_EX_LAYERED):
                 SetWindowLong(hwnd, GWL_EXSTYLE, ex | WS_EX_LAYERED)
             res = SetLayeredWindowAttributes(hwnd, 0, alpha, LWA_ALPHA)
@@ -398,7 +386,6 @@ def monitor_ws(ws_url, timeout=60.0):
     return False
 
 def main_loop():
-    print("DV_SETTINGS loader + transparency handler started.")
     while True:
         ws_url = get_renderer_ws()
         if not ws_url:
@@ -419,16 +406,6 @@ def handler_window_transparency(new, old, keypath):
     except Exception:
         print("windowTransparency handler: value not int:", new)
         return
-    
-    # Only apply if the value actually changed
-    global _last_applied_values
-    last_value = _last_applied_values.get("windowTransparency")
-    if last_value == percent:
-        if VERBOSE:
-            print(f"[HANDLER] Skipping transparency - already at {percent}%")
-        return
-    
-    _last_applied_values["windowTransparency"] = percent
     print(f"[HANDLER] Setting Discord window transparency to {percent}%")
     ok = apply_window_transparency(percent)
     if not ok:
