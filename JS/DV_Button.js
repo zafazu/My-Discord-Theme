@@ -357,7 +357,7 @@
         },
         onclick: () => {
           const table = {
-            "DV_CHANGE": {
+            "DV_SETTINGS": {
               "windowTransparency": parseInt(slider.value)
             }
           };
