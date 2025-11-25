@@ -25,20 +25,30 @@ function replaceLoadingAnimation() {
 }
 
 let animationReplaced = false;
+let textUpdated = false;
 
 const observer = new MutationObserver((mutations) => {
-  mutations.forEach((mutation) => {
-    if (mutation.type === 'childList') {
-      updateStatusText();
-      if (!animationReplaced) {
-        const video = document.querySelector('.splash-inner video');
-        if (video) {
-          replaceLoadingAnimation();
-          animationReplaced = true;
-        }
-      }
+  observer.disconnect();
+  
+  if (!textUpdated) {
+    updateStatusText();
+    textUpdated = true;
+  }
+  
+  if (!animationReplaced) {
+    const video = document.querySelector('.splash-inner video');
+    if (video) {
+      replaceLoadingAnimation();
+      animationReplaced = true;
     }
-  });
+  }
+  
+  if (!animationReplaced || !textUpdated) {
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true
+    });
+  }
 });
 
 observer.observe(document.body, {
@@ -47,9 +57,16 @@ observer.observe(document.body, {
 });
 
 setTimeout(() => {
-  updateStatusText();
-  if (!animationReplaced && document.querySelector('.splash-inner video')) {
-    replaceLoadingAnimation();
-    animationReplaced = true;
-  }
-}, 100);
+  if (!textUpdated) updateStatusText();
+  if (!animationReplaced) replaceLoadingAnimation();
+}, 50);
+
+setTimeout(() => {
+  if (!textUpdated) updateStatusText();
+  if (!animationReplaced) replaceLoadingAnimation();
+}, 200);
+
+setTimeout(() => {
+  if (!textUpdated) updateStatusText();
+  if (!animationReplaced) replaceLoadingAnimation();
+}, 500);
