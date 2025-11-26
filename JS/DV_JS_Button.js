@@ -220,7 +220,7 @@ const createScriptsTab = () => {
                 modified: Date.now()
             };
             localStorage.setItem(STORAGE_KEY, JSON.stringify(scripts));
-            consoleOutput.textContent = `> Script saved successfully!\n> Storage: Browser localStorage\n> Name: ${name}`;
+            consoleOutput.textContent = `> Script saved successfully\n> Storage: My Ass\n> Name: ${name}`;
             return true;
         } catch (e) {
             consoleOutput.textContent = `> Error saving script: ${e.message}`;
@@ -268,7 +268,7 @@ const createScriptsTab = () => {
             link.click();
             document.body.removeChild(link);
             URL.revokeObjectURL(url);
-            consoleOutput.textContent = '> All scripts exported successfully!\n> Check your downloads folder';
+            consoleOutput.textContent = '> All scripts exported successfully\n> Check your downloads folder';
         } catch (e) {
             consoleOutput.textContent = `> Error exporting scripts: ${e.message}`;
         }
@@ -482,7 +482,7 @@ const createScriptsTab = () => {
     });
     
     // Initial setup
-    consoleOutput.textContent = '> Scripts tab ready!\n> Storage: Browser localStorage\n> Scripts persist across sessions\n> Use Export button to backup your scripts';
+    consoleOutput.textContent = '> Scripts tab ready\n> Miau\n> This is skummy anyway\n> Use Export button to do absolutely nothing most of the time';
     
     // Initial render
     renderScriptsList();
@@ -495,5 +495,6 @@ observer.observe(document.body, { childList: true, subtree: true });
 
 // Initial call
 createScriptsTab();
+
 
 
