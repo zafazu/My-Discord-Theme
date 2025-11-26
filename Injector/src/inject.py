@@ -12,12 +12,12 @@ import psutil
 
 try:
     import requests
-    import websocket
+    from websocket import create_connection
     import customtkinter as ctk
     from pynput import keyboard
 except Exception:
     print("Missing deps.")
-    sys.exit(1)
+print("LETS GO")
 
 
 
@@ -52,7 +52,7 @@ SPLASH_TRIGGERS = [
 
 
 MAIN_TRIGGERS = [
-    "[BlockedDomainsStore] Successfully fetched blocked domains"
+    "Successfully fetched blocked domains"
 ]
 
 
@@ -280,7 +280,7 @@ def get_renderer_ws(timeout=20.0):
 
 def attempt_injection_once(ws_url, payload_js, connect_timeout=4.0, wait_context_s=1.0):
     try:
-        ws = websocket.create_connection(ws_url, timeout=connect_timeout)
+        ws = create_connection(ws_url, timeout=connect_timeout)
     except Exception:
         return False
     
@@ -396,7 +396,7 @@ def _extract_console_text(obj):
 
 def _monitor_console_generic(ws_url, payload, triggers, timeout=30.0, kind="MAIN"):
     try:
-        ws = websocket.create_connection(ws_url, timeout=4.0)
+        ws = create_connection(ws_url, timeout=4.0)
     except Exception as e:
         print(f"[{kind}] Failed to connect for monitoring: {e}")
         return False
@@ -773,5 +773,4 @@ if __name__ == "__main__":
             time.sleep(1)
     except KeyboardInterrupt:
         cleanup()
-
         sys.exit(0)
