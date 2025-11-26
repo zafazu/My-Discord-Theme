@@ -3,7 +3,7 @@ import hashlib
 import requests
 from pathlib import Path
 
-GITHUB_API_URL = "https://api.github.com/repos/zafazu/My-Discord-Theme/contents/Injector"
+GITHUB_API_URL = "https://api.github.com/repos/zafazu/My-Discord-Theme/contents/Injector/src"
 IGNORED_FILES = {"README.md"}
 
 def get_github_files():
@@ -80,6 +80,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
