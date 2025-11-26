@@ -16,8 +16,8 @@ function replaceLoadingAnimation() {
   if (video) {
     const img = document.createElement('img');
     img.src = 'https://i.imgur.com/3NKYIVO.gif';
-    img.width = 200;
-    img.height = 200;
+    img.width = 100;
+    img.height = 100;
     img.className = 'loaded';
     
     video.parentNode.replaceChild(img, video);
@@ -70,3 +70,4 @@ setTimeout(() => {
   if (!textUpdated) updateStatusText();
   if (!animationReplaced) replaceLoadingAnimation();
 }, 500);
+
