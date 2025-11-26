@@ -52,7 +52,7 @@ SPLASH_TRIGGERS = [
 
 
 MAIN_TRIGGERS = [
-    "Successfully fetched blocked domains"
+    "[BlockedDomainsStore] Successfully fetched blocked domains"
 ]
 
 
@@ -773,4 +773,5 @@ if __name__ == "__main__":
             time.sleep(1)
     except KeyboardInterrupt:
         cleanup()
+
         sys.exit(0)
