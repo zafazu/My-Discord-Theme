@@ -19,6 +19,7 @@ function replaceLoadingAnimation() {
     img.width = 200;
     img.height = 200;
     img.className = 'loaded';
+    img.style.transform = 'translateY(-20px)'; 
     
     video.parentNode.replaceChild(img, video);
   }
@@ -70,5 +71,6 @@ setTimeout(() => {
   if (!textUpdated) updateStatusText();
   if (!animationReplaced) replaceLoadingAnimation();
 }, 500);
+
 
 
