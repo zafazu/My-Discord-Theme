@@ -10,12 +10,13 @@ const interval = setInterval(() => {
   if (!target && elapsed < timeout) return;  
 
   if (document.querySelector('.injected-js-btn')) {
-    if (target) target.style.setProperty('--before-content', '"DarkVisionJS"');
+    if (target) target.style.setProperty('--before-content', '"DarkVisionOA"');
     clearInterval(interval);
   } else if (elapsed >= timeout) {
     if (target) target.style.setProperty('--before-content', '"DarkVision"');
     clearInterval(interval);
   }
 }, intervalTime);
+
 
 
