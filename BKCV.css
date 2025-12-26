@@ -14,7 +14,7 @@
                                                                         @import "https://raw.githubusercontent.com/zafazu/My-Discord-Theme/refs/heads/main/CV_main.css";
 										/* https://clearvision.github.io/ClearVision-v6/main.css */
                                                                         :root {
-									    --theme-version: "1.54 - [17.12.2025] - Made by zafazu";
+									    --theme-version: "1.55 - [26.12.2025] - Made by zafazu";
                                                                             --main-color: #a69589;
                                                                             --main-color-border: #5c4e47;
                                                                             --hover-color: #747474;
@@ -101,7 +101,7 @@
                                                                             border-bottom: none;
                                                                         }
                                                                         
-                                                                        /* MINIMALISTIC SEARCHING [NOT MINE] */
+                                                                        /* MINIMALISTIC SEARCHING [NOT MINE] 
                                                                         ._496769951eb140fe-search {
                                                                             order: var(--search-order, 1);
                                                                         }
@@ -121,7 +121,8 @@
                                                                             display: none;
                                                                         }
                                     
-                                    
+																		*/
+
                                                                         /* BETTER FRIENDLIST */
                                                                         ._19b6da809e654e70-text, .customStatusEmoji__19b6d {
                                                                             display: none;
@@ -1061,7 +1062,8 @@
     border-radius:10px !important;
 }
 
-/* JAPANESE WORDS FIX */
+/* JAPANESE WORDS FIX 
+
 
 ._752971923a1e6683-markup, _4bd5201c86a2042b-defaultColor, .c19a557985eb7793-username, ._972a0d22c8afa7f0-overflowTooltip {
   font-family: "gg sans", Helvetica, Arial, sans-serif !important;
@@ -1074,7 +1076,7 @@
                "Noto Sans", Helvetica, Arial, sans-serif !important;
 }
 
-/* NITRO HOME FIX */
+ NITRO HOME FIX */
 
 ._972a0d22c8afa7f0-link:last-child .b0dfc2ed9c57037d-overflow:first-child {
   visibility: hidden;
