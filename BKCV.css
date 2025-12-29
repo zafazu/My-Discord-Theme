@@ -1,20 +1,5 @@
-																			/*  INFORMATION */
-
-
-/**
- * @name Boykisser CV v.2.0
- * @author zafazu, ClearVision Team
- * @version 1.6_zafazu_custom
- * @description Desktop Only!
-*/
-
-
-																		/*  CSS INFORMATION */
-
-                                                                        @import "https://raw.githubusercontent.com/zafazu/My-Discord-Theme/refs/heads/main/CV_main.css";
-										/* https://clearvision.github.io/ClearVision-v6/main.css */
-                                                                        :root {
-									    --theme-version: "1.55 - [26.12.2025] - Made by zafazu";
+   :root {
+									    --theme-version: "2.0 - [29.12.2025] - Made by zafazu";
                                                                             --main-color: #a69589;
                                                                             --main-color-border: #5c4e47;
                                                                             --hover-color: #747474;
@@ -101,28 +86,7 @@
                                                                             border-bottom: none;
                                                                         }
                                                                         
-                                                                        /* MINIMALISTIC SEARCHING [NOT MINE] 
-                                                                        ._496769951eb140fe-search {
-                                                                            order: var(--search-order, 1);
-                                                                        }
-                                                                        ._496769951eb140fe-search ._974928fe84ca9647-searchBar {
-                                                                            background: rgba(0, 0, 0, 0);
-                                                                        }
-                                                                        ._496769951eb140fe-search ._974928fe84ca9647-searchBar:not(:focus-within, :hover, :has(.clear_fea832)) {
-                                                                            width: 24px;
-                                                                        }
-                                                                        ._496769951eb140fe-search ._974928fe84ca9647-searchBar:not(:focus-within, :hover, :has(.clear_fea832)) .iconContainer_fea832 {
-                                                                            width: 24px;
-                                                                            height: 24px;
-                                                                            cursor: pointer;
-                                                                        }
-                                                                        
-                                                                        .e6b7699ce8339e1c-searchBar {
-                                                                            display: none;
-                                                                        }
-                                    
-																		*/
-
+  
                                                                         /* BETTER FRIENDLIST */
                                                                         ._19b6da809e654e70-text, .customStatusEmoji__19b6d {
                                                                             display: none;
@@ -131,19 +95,6 @@
                                                                             display: none;
                                                                         }
                                                                         
-                                                                        /* CLEAR VISION WATERMARK REMOVAL */
-                                                                        ._421edea01cb52e16-typeWindows>._421edea01cb52e16-wordmark:before {
-                                                                            content: "";
-                                                                            color: rgba(255, 255, 255, .7);
-                                                                            font-size: 14px;
-                                                                            text-shadow: 0 0 3px #000;
-                                                                        }
-                                                                        ._421edea01cb52e16-typeWindows>._421edea01cb52e16-wordmark:after {
-                                                                            content: "";
-                                                                            color: rgba(255, 255, 255, .3);
-                                                                            font-family: var(--code-font);
-                                                                            font-size: 10px;
-                                                                        }
                                                                         
                                                                         /* SEARCHBAR REMOVAL */
                                                                         .searchBarComponent__35e86,
@@ -205,12 +156,7 @@
 					                                }
                                 
                                                                         
-                                                                        /* QUESTS BOYKISSER */
-                                                                        .b6bcee13c278a88d-content ._33d1236760f7073e-wrapper ._33d1236760f7073e-text {
-                                                                            visibility: hidden;
-                                                                            position: relative;
-                                                                        }
-                                                                        
+
                                                                         .b6bcee13c278a88d-content ._33d1236760f7073e-wrapper ._33d1236760f7073e-text:after {
                                                                             visibility: visible;
                                                                             position: absolute;
@@ -245,77 +191,8 @@
                                                                             background-color: transparent !important;
                                                                         }
                                                                         
-                                                                        /* SETTINGS BLUR EFFECT */
-                                                                        ._23e6b439306f125a-contentColumn {
-                                                                            backdrop-filter: blur(8px);
-                                                                        }
-                                                                        .a3002d7de5be5280-app {
-                                                                            backdrop-filter: blur(0);
-                                                                            transition: backdrop-filter 1.5s ease-in-out;
-                                                                        }
-                                                                        .a3002d7de5be5280-app:has(._23e6b439306f125a-contentColumn) {
-                                                                            backdrop-filter: blur(3px);
-                                                                        }
-                                                                        .contentTransitionwrap_c25c6d {
-                                                                            backdrop-filter: blur(3px);
-                                                                        }
-                                                                        .app-3xd6de {
-                                                                            backdrop-filter: blur(0);
-                                                                            transition: backdrop-filter 1.5s ease-in-out;
-                                                                        }
-                                                                        .a3002d7de5be5280-app:has(.contentTransitionwrap_c25c6d) {
-                                                                            backdrop-filter: blur(3px);
-                                                                          }
-                                                                          
-                                                                          ._23e6b439306f125a-sidebar ._23e6b439306f125a-sidebarRegionScroller ._23e6b439306f125a-sidebarRegion {
-                                                                              margin: 30px 8px 30px 0 !important;
-                                                                              background: transparent !important;
-                                                                              backdrop-filter: blur(8px) !important;
-                                                                              -webkit-mask-image: linear-gradient(to bottom, transparent, #000 5%, #000 95%, transparent) !important;
-                                                                              mask-image: linear-gradient(to bottom, transparent, #000 5%, #000 95%, transparent) !important;
-                                                                              position: relative !important;
-                                                                              left: 8px;
-                                                                          }
-                                                                          
-                                                                          ._1fed1dd06c7aabf7-accountProfileCard {
-                                                                              background-color: transparent !important;
-                                                                          }
-                                                                          
-                                                                          .biteSizeInner_c69a7b {
-                                                                              background-color: transparent !important;
-                                                                          }
-                                                                          
-                                                                          /* ACTIVITY DINGENS UEBER MEMEBERS REMOVAL */
-                                                                          ._0f2e83213c878a13-container {
-                                                                              display: none;
-                                                                          }
-                                                                          
-                                                                          ._095fe51feb41b3bb-headerContainer {
-                                                                              display: none;
-                                                                          }
-                                    
-                                                                          ._0f2e83213c878a13-container {
-                                                                            display: none;
-                                                                          }
-                                                                          
-                                                                          ._13cf1aa56cd732d2-container:has(._99f8cc7ad4790ce9-content:focus) ._13cf1aa56cd732d2-container:nth-child(2) {
-                                                                              display: none;
-                                                                          }
-                                                                          
-                                                                          ._99f8cc7ad4790ce9-content:has(._0f2e83213c878a13-container) {
-                                                                              position: relative !important;
-                                                                              top: -50px !important;
-                                                                          }
-                                                                          
-                                                                          /* ACTIVITY FIX FOR ClearVision */
-                                                                          .vc-membercount-member-list {
-                                                                              position: relative;
-										 height: 20px;
-										 top: -10px;   
-										 background-color: #000 !important;
-										 z-index: 1;
-
-                                                                          }
+                                                                      
+      
                                                                           
                                                                           /* STREAM PREVIEW BLACK BACKGROUND */
                                                                           ._6da2d8abf659f945-streamPreviewWrapper {
@@ -355,6 +232,8 @@
                                                                             display: none;
                                                                         }
                                     
+
+
                                                                         /* REMOVE GREEN ICONS */
                                                                         
                                                                         .icon__8ac07 {
@@ -368,13 +247,7 @@
                                     
                                     
                                                                             
-                                                                       ._9293f6b2fc12398a-children ._6ec1a06139ec3b27-topic {
-                                                                        max-width: 500px;
-                                                                     }
-                                                                        ._6981dc6d72610110-tileWrapper {
-                                                                        position: absolute;
-                                                                        }
-                                                                    
+                                                                  
                                     /* --------------------------------------------------- NEW UI --------------------------------------------------- */
                                     
                                     
@@ -420,30 +293,7 @@
                                     ._37e49614b9f110a9-panelSubtextContainer {
 					    display: none !important;
 					}
-                                    /* SERVERLIST */
-                                    
-                                       [class*="closedFolderIconWrapper_"] > [class*="guildIcon_"],
-                                    [data-list-item-id*="guildsnav_"] > [class*="icon_"] {
-                                        border-radius: 50% !important;
-                                    }
-                                    
-                                    
-                                    .expandedFolderIconWrapper__4 {
-                                        width: 50px;          
-                                        height: 50px; 
-                                    }
-                                    
-                                    ._48112cbe77dc5022-folderPreviewWrapper {
-                                        width: 50px;          
-                                        height: 50px; 
-                                        position: relative;
-                                        left: 2px;
-                                        border-radius: 50%;    
-                                        overflow: hidden;      
-                                        display: inline-block; 
-                                    }
-                                    
-                                    
+
                                     
                                     
                                     ._48112cbe77dc5022-folderGroup {
@@ -549,15 +399,7 @@
 
   
                                     
-                                    /* HOME ICON */
 
-                                    ._6e9f8dce4cc18de3-childWrapper {
-                                    width: 40px;
-                                    height: 40px;
-                                    color: #000 !important;
-                                    background-color: #000 !important;
-                                     }
-                                
                                 
  
  
@@ -715,25 +557,7 @@
 				    border-color: transparent !important;
 				}
 
-				          /* FIX server memberlist 20.06.2025 */
 
-			                ._91a9d7f7e5248a56-childContainer {
-			
-			                    height: 40px !important;
-			                    
-			                }
-			
-			                .c8ffbb79449f399c-membersGroup {
-			                    height: 30px;
-			                }
-			
-			                ._5d473ecff348c314-member {
-			                   top:7px
-			                }
-			
-			                ._703b91fc872193e8-username {
-			                    top:1px;
-			                }
 			/* SERVER MEMBER ACCEPTING THINGS */
 
 			._6b10264bda9ba40e-actionButton {
@@ -853,22 +677,6 @@
 				    outline: none !important;
 				}
 
-/*
-	OLD
-            .visual-refresh:not(.platform-osx) .c38106a3f0c3ca76-leading::before {
-            content: "Dark Vision";
-            position: static;
-            margin-left: 10px;
-            font-size: 16px;
-            font-weight: 600;
-            color: var(--text-default);
-            order: 2;
-            filter: drop-shadow(0 0 5px var(--hsl-main-color));
-                }
-            .c38106a3f0c3ca76-leading::after {
-                content: var(--theme-version) !important;
-            }
-*/
 
 
 			.visual-refresh:not(.platform-osx) .c38106a3f0c3ca76-leading::before {
@@ -940,17 +748,6 @@
 
 /*ACTIVITY FIX 2.0 */
 
-.c8ffbb79449f399c-members {
-    position: relative;
-    bottom: 40px !important;
-}
-
-.vc-membercount-widget {
-    position: relative;
-    top: 33px;
-    background-color: black;
-}
-
 
 
 /* SERVER BANNER BLACK BOX FIX */
@@ -1002,20 +799,13 @@
 
   white-space: pre;
   display: block;
-  padding:  20px;
+  padding:  40px;
   color: rgba(255, 255, 255, 0.503);
   text-align: center;
   font-size: 15%;
   line-height: 1.2;
 }
 
-/* SPOTIFY MODAL GRABBER FIX */
-
-.vc-spotify-player .a562c840daab72a7-grabber. {
-    position: relative; 
-    top: -0px; 
-
-}
 
 
 
@@ -1062,35 +852,8 @@
     border-radius:10px !important;
 }
 
-/* JAPANESE WORDS FIX 
 
 
-._752971923a1e6683-markup, _4bd5201c86a2042b-defaultColor, .c19a557985eb7793-username, ._972a0d22c8afa7f0-overflowTooltip {
-  font-family: "gg sans", Helvetica, Arial, sans-serif !important;
-}
-
-
-._752971923a1e6683-markup, _4bd5201c86a2042b-defaultColor, .c19a557985eb7793-username, ._972a0d22c8afa7f0-overflowTooltip {
-  font-family: "gg sans", "Hiragino Sans", "ヒラギノ角ゴ ProN W3",
-               "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, Osaka, "MS PGothic",
-               "Noto Sans", Helvetica, Arial, sans-serif !important;
-}
-
- NITRO HOME FIX */
-
-._972a0d22c8afa7f0-link:last-child .b0dfc2ed9c57037d-overflow:first-child {
-  visibility: hidden;
-  content: "" !important;
-
-}
-
-._972a0d22c8afa7f0-link:last-child .b0dfc2ed9c57037d-overflow:first-child::after {
-  visibility: visible;
-  position: relative;
-  right: 70px;
-  content: "Nitro";
-
-}
 
 /* BUTTON FIX */
 
@@ -1252,9 +1015,14 @@
 
 /* delete Gift icon */
 
-.c0c49a3e5c8626ac-container {
-   display: none;
-}
 
+.d125d22cdfd32cfe-content:has(._0f2e83213c878a13-container) {
+._0f2e83213c878a13-container, ._095fe51feb41b3bb-headerContainer {
+    display: none;
+}
+._13cf1aa56cd732d2-header:nth-child(2) {
+    display: none;
+}
+}
 
 
