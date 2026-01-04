@@ -1,1028 +1,1017 @@
    :root {
-									    --theme-version: "2.0 - [29.12.2025] - Made by zafazu";
-                                                                            --main-color: #a69589;
-                                                                            --main-color-border: #5c4e47;
-                                                                            --hover-color: #747474;
-                                                                            --success-color: #8411b9;
-                                                                            --danger-color: #06c516;
-                                                                            --url-color: #5c4e47;
-                                                                            --online-color: #43b581;
-                                                                            --idle-color: #faa61a;
-                                                                            --dnd-color: #982929;
-                                                                            --streaming-color: #593695;
-                                                                            --offline-color: #808080;
-                                                                            --main-font: gg sans, Helvetica Neue, Helvetica, Arial, sans-serif;
-                                                                            --code-font: Consolas, Liberation Mono, Menlo, Courier, monospace;
-                                                                            --text-normal: rgb(220, 221, 222);
-                                                                            --text-muted: rgb(114, 118, 125);
-                                                                            --channels-width: 220px;
-                                                                            --members-width: 240px;
-                                                                            --background-shading: 160%;
-                                                                            --background-overlay: rgba(0, 0, 0, 0.6);
-                                                                            --background-image: url();
-                                                                            --background-position: center;
-                                                                            --background-size: 125%;
-                                                                            --background-repeat: repeat;
-                                                                            --background-attachment: fixed;
-                                                                            --background-brightness: 100%;
-                                                                            --background-contrast: 100%;
-                                                                            --background-saturation: 100%;
-                                                                            --background-invert: 0%;
-                                                                            --background-grayscale: 0%;
-                                                                            --background-sepia: 0%;
-                                                                            --home-icon: url(https://discord.com/assets/7ebbc1790864207a.webp);
-                                                                            --home-position: center;
-                                                                            --home-size: 50px;
-                                                                            --channel-unread: var(--main-color);
-                                                                            --channel-color: rgba(255, 255, 255, 0.3);
-                                                                            --channel-text-selected: #fff;
-                                                                            --muted-color: rgba(255, 255, 255, 0.1);
-                                                                            --backdrop-overlay: rgba(0, 0, 0, 0.8);
-                                                                            --backdrop-image: var(--background-image);
-                                                                            --backdrop-position: var(--background-position);
-                                                                            --backdrop-size: var(--background-size);
-                                                                            --backdrop-repeat: var(--background-repeat);
-                                                                            --backdrop-attachment: var(--background-attachment);
-                                                                            --backdrop-brightness: var(--background-brightness);
-                                                                            --backdrop-contrast: var(--background-contrast);
-                                                                            --backdrop-saturation: var(--background-saturation);
-                                                                            --backdrop-invert: var(--background-invert);
-                                                                            --backdrop-grayscale: var(--background-grayscale);
-                                                                            --backdrop-sepia: var(--background-sepia);
-                                                                            --backdrop-blur: var(--background-blur);
-                                                                            --user-popout-image: var(--background-image);
-                                                                            --user-popout-position: var(--background-position);
-                                                                            --user-popout-size: var(--background-size);
-                                                                            --user-popout-repeat: var(--background-repeat);
-                                                                            --user-popout-attachment: var(--background-attachment);
-                                                                            --user-popout-brightness: var(--background-brightness);
-                                                                            --user-popout-contrast: var(--background-contrast);
-                                                                            --user-popout-saturation: var(--background-saturation);
-                                                                            --user-popout-invert: var(--background-invert);
-                                                                            --user-popout-grayscale: var(--background-grayscale);
-                                                                            --user-popout-sepia: var(--background-sepia);
-                                                                            --user-popout-blur: calc(var(--background-blur) + 3px);
-                                                                            --user-popout-overlay: rgba(0, 0, 0, 0.6);
-                                                                            --user-modal-image: var(--background-image);
-                                                                            --user-modal-position: var(--background-position);
-                                                                            --user-modal-size: var(--background-size);
-                                                                            --user-modal-repeat: var(--background-repeat);
-                                                                            --user-modal-attachment: var(--background-attachment);
-                                                                            --user-modal-brightness: var(--background-brightness);
-                                                                            --user-modal-contrast: var(--background-contrast);
-                                                                            --user-modal-saturation: var(--background-saturation);
-                                                                            --user-modal-invert: var(--background-invert);
-                                                                            --user-modal-grayscale: var(--background-grayscale);
-                                                                            --user-modal-sepia: var(--background-sepia);
-                                                                            --user-modal-blur: calc(var(--background-blur) + 3px);
-                                                                            --bd-blue: var(--main-color);
-                                                                            --bd-blue-hover: var(--hover-color);
-                                                                            --bd-blue-active: var(--hover-color);
-                                                                        }
-                                                                        
-                                                                        /* FRIENDLIST LINES */
-                                                                        .cc61794aab086a2e-peopleListItem  { 
-                                                                            border-top: none;
-                                                                            border-bottom: none;
-                                                                        }
-                                                                        
+       --theme-version: "2.1 - [04.01.2026] - Made by zafazu";
+       --main-color: #6c6c6c;
+       --main-color-border: #5c4e47;
+       --hover-color: #747474;
+       --success-color: #8411b9;
+       --danger-color: #06c516;
+       --url-color: #5c4e47;
+       --online-color: #43b581;
+       --idle-color: #faa61a;
+       --dnd-color: #982929;
+       --streaming-color: #593695;
+       --offline-color: #808080;
+       --main-font: gg sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+       --code-font: Consolas, Liberation Mono, Menlo, Courier, monospace;
+       --text-normal: rgb(220, 221, 222);
+       --text-muted: rgb(114, 118, 125);
+       --channels-width: 220px;
+       --members-width: 240px;
+       --background-shading: 160%;
+       --background-overlay: rgba(0, 0, 0, 0.6);
+       --background-image: url();
+       --background-position: center;
+       --background-size: 125%;
+       --background-repeat: repeat;
+       --background-attachment: fixed;
+       --background-brightness: 100%;
+       --background-contrast: 100%;
+       --background-saturation: 100%;
+       --background-invert: 0%;
+       --background-grayscale: 0%;
+       --background-sepia: 0%;
+       --home-icon: url(https://discord.com/assets/7ebbc1790864207a.webp);
+       --home-position: center;
+       --home-size: 50px;
+       --channel-unread: var(--main-color);
+       --channel-color: rgba(255, 255, 255, 0.3);
+       --channel-text-selected: #fff;
+       --muted-color: rgba(255, 255, 255, 0.1);
+       --backdrop-overlay: rgba(0, 0, 0, 0.8);
+       --backdrop-image: var(--background-image);
+       --backdrop-position: var(--background-position);
+       --backdrop-size: var(--background-size);
+       --backdrop-repeat: var(--background-repeat);
+       --backdrop-attachment: var(--background-attachment);
+       --backdrop-brightness: var(--background-brightness);
+       --backdrop-contrast: var(--background-contrast);
+       --backdrop-saturation: var(--background-saturation);
+       --backdrop-invert: var(--background-invert);
+       --backdrop-grayscale: var(--background-grayscale);
+       --backdrop-sepia: var(--background-sepia);
+       --backdrop-blur: var(--background-blur);
+       --user-popout-image: var(--background-image);
+       --user-popout-position: var(--background-position);
+       --user-popout-size: var(--background-size);
+       --user-popout-repeat: var(--background-repeat);
+       --user-popout-attachment: var(--background-attachment);
+       --user-popout-brightness: var(--background-brightness);
+       --user-popout-contrast: var(--background-contrast);
+       --user-popout-saturation: var(--background-saturation);
+       --user-popout-invert: var(--background-invert);
+       --user-popout-grayscale: var(--background-grayscale);
+       --user-popout-sepia: var(--background-sepia);
+       --user-popout-blur: calc(var(--background-blur) + 3px);
+       --user-popout-overlay: rgba(0, 0, 0, 0.6);
+       --user-modal-image: var(--background-image);
+       --user-modal-position: var(--background-position);
+       --user-modal-size: var(--background-size);
+       --user-modal-repeat: var(--background-repeat);
+       --user-modal-attachment: var(--background-attachment);
+       --user-modal-brightness: var(--background-brightness);
+       --user-modal-contrast: var(--background-contrast);
+       --user-modal-saturation: var(--background-saturation);
+       --user-modal-invert: var(--background-invert);
+       --user-modal-grayscale: var(--background-grayscale);
+       --user-modal-sepia: var(--background-sepia);
+       --user-modal-blur: calc(var(--background-blur) + 3px);
+       --bd-blue: var(--main-color);
+       --bd-blue-hover: var(--hover-color);
+       --bd-blue-active: var(--hover-color);
+   }
+
+   /* FRIENDLIST LINES */
+   .cc61794aab086a2e-peopleListItem {
+       border-top: none;
+       border-bottom: none;
+   }
+
+
+
+   /* BETTER FRIENDLIST */
+   ._19b6da809e654e70-text,
+   .customStatusEmoji__19b6d {
+       display: none;
+   }
+
+   .cc61794aab086a2e-peopleListItem .c9d15c8a962de3c8-icon {
+       display: none;
+   }
+
+
+
+   /* SEARCHBAR REMOVAL */
+   .searchBarComponent__35e86,
+   .e6b7699ce8339e1c-searchBar {
+       display: none;
+   }
+
+   ._33d1236760f7073e-image {
+       visibility: hidden;
+       position: relative;
+   }
+
+
+   ._33d1236760f7073e-text:after {
+       visibility: visible;
+       position: absolute;
+       top: 0;
+       left: 0;
+       content: "Sadly, there's nothing to see here.";
+   }
+
+   .c7ea19a1be2e0a89-friendsEmpty .abf7060e6f2beabe-vertical ._33d1236760f7073e-text {
+
+       visibility: hidden;
+       position: relative;
+   }
+
+
+
+   /* MESSAGE TOOL BAR FIX 06.08.2024 */
+
+   /* ACTIVE NOW TEXT */
+
+   ._7d20cf18f8a2784c-header {
+       text-indent: -9999px;
+       position: relative;
+       display: flex;
+       justify-content: center;
+   }
+
+
+   ._7d20cf18f8a2784c-header::after {
+       text-indent: 1px;
+       content: "";
+       text-align: left;
+       position: absolute;
+       left: 50%;
+       transform: translateX(-39%);
+   }
+
+
+
+   .b6bcee13c278a88d-content ._33d1236760f7073e-wrapper ._33d1236760f7073e-text:after {
+       visibility: visible;
+       position: absolute;
+       top: 0;
+       left: 15%;
+       content: "You haven't completed any quests silly";
+   }
+
+
+   /* REMOVE EDIT BUTTON ON PROFILE */
+   ._0c74f6fd004aa317-wrapper .button_fb7f94 {
+       display: none;
+   }
+
+   /* TEXT PREVIEW REMOVAL */
+   ._3e443c6b2569044a-preview,
+   .input_fea832,
+   .inner_fea832 {
+       display: none;
+   }
+
+
+   ._67645e1530f1195d-button:active {
+       backdrop-filter: blur(8px);
+   }
+
+   /* ACTIVITY BACKGROUND TRANSPARENT LOL TRANS + PARENT FUNNY */
+   .overlayBackground_c69a7b {
+       background-color: transparent !important;
+   }
+
+   /* REACTION FIX */
+   ._23977d5b7cef7361-reactionBtn {
+       background-color: transparent !important;
+   }
+
+
+
+
+   /* STREAM PREVIEW BLACK BACKGROUND */
+   ._6da2d8abf659f945-streamPreviewWrapper {
+       background-color: #000 !important;
+   }
+
+   .biteSizeInner_c69a7b {
+       background-color: #000 !important;
+   }
+
+   ._740174f3d6a2c8fe-innerDisabled {
+       pointer-events: auto !important;
+       opacity: 1;
+   }
+
+
+   .e6e74fd4d1221f53-button {
+       display: none !important;
+   }
+
+
+   ._740174f3d6a2c8fe-scrollableContainer {
+       background-color: transparent !important;
+   }
+
+   ._740174f3d6a2c8fe-themedBackground {
+       background-color: transparent !important;
+   }
+
+
+
+   /* ???????????????????????? 
+
+   .f75fb00fb7356cbe-channelTextArea {
+       background-color: transparent !important;
+   }
+
+   /* -----------------------*/
+
+
+   ._11054c9baccea7a2-wrapper {
+       display: none;
+   }
+
+
+
+
+
+
+
+
+
+
+   /* --------------------------------------------------- NEW UI --------------------------------------------------- */
+
+
+   /* BAR */
+
+   ._5e434347c823b592-base .c38106a3f0c3ca76-bar .c38106a3f0c3ca76-title .text-sm\/medium_cf4812 {
+       font-size: 0;
+   }
+
+   ._5e434347c823b592-base .c38106a3f0c3ca76-bar .c38106a3f0c3ca76-title .text-sm\/medium_cf4812::before {
+       content: "";
+       font-size: 11px;
+       opacity: 50%;
+       position: fixed;
+
+   }
+
+   ._5e434347c823b592-base .c38106a3f0c3ca76-title .title__85643 svg {
+       display: none !important;
+   }
+
+   .c38106a3f0c3ca76-title .title__85643 .guildIcon__85643 {
+       display: none;
+   }
+
+   .c38106a3f0c3ca76-bar .c38106a3f0c3ca76-title .title__85643 {
+       transform: translateX(-100%);
+       margin-right: 88%;
+       position: relative;
+       top: 5px;
+   }
+
+
+
+   @media screen and (min-width: 1500px) {
+       .c38106a3f0c3ca76-bar .c38106a3f0c3ca76-title .title__85643 {
+           left: -2.1%;
+       }
+   }
+
+
+
+   ._37e49614b9f110a9-panelSubtextContainer {
+       display: none !important;
+   }
+
+
+
+   ._48112cbe77dc5022-folderGroup {
+       height: auto;
+       display: block;
+   }
+
+
+
+
+
+
+   /* SEARCH BAR */
+
+   ._5ec2fb8b5de26b21-searchBar {
+       display: none;
+   }
+
+
+
+
+   /* SEARCH BAR POS FIX */
+
+   ._9293f6b2fc12398a-children {
+       position: relative;
+       top: 5px;
+   }
+
+
+
+
+
+   /* BORDERS */
+   .c8ffbb79449f399c-container {
+       border: none !important;
+   }
+
+   .cb9592ad77576717-callContainer {
+       border-top-color: var(--main-color-border) !important;
+   }
+
+   .cb9592ad77576717-callContainer {
+       border-left-color: var(--main-color-border) !important;
+   }
+
+   .cb9592ad77576717-callContainer {
+       border-left: none !important;
+   }
+
+
+   ._133bf5eea8e33a34-container {
+       border-color: var(--main-color-border) !important;
+   }
+
+
+   ._5e434347c823b592-sidebarListRounded {
+       border-color: var(--main-color-border) !important;
+   }
+
+
+
+
+   ._133bf5eea8e33a34-tabBody {
+       border: none !important;
+   }
+
+
+   ._9293f6b2fc12398a-container {
+       border-bottom: none !important;
+   }
+
+
+   .d125d22cdfd32cfe-scrollerBase {
+       border: none !important;
+   }
+
+
+   .f75fb00fb7356cbe-subtitleContainer {
+       border: none !important;
+   }
+
+   .f75fb00fb7356cbe-chat {
+       border-color: var(--main-color-border) !important;
+   }
+
+   .f37cb1984c371ee5-header {
+       border: none !important;
+       box-shadow: none !important;
+   }
+
+   .f75fb00fb7356cbe-content {
+       border: none !important;
+   }
+
+
+
+
+   /* ADD FRIEND */
+
+
+   ._133bf5eea8e33a34-tabBar :last-child {
+       background-color: var(--main-color) !important;
+   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   /* FRIEND STATUS FIX */
+
+   .c9d15c8a962de3c8-container {
+       display: none;
+   }
+
+
+
+
+
+   /* USER POPUP FIX */
+
+
+   .faf9c0f0be1b8685-didRender {
+       background-color: black;
+   }
+
+
+
+   ._5126c0cd07f243a0-buttonsInner {
+       background-color: black !important;
+       border-color: var(--main-color-border);
+   }
+
+
+
+   ._5126c0cd07f243a0-buttonsInner {
+       background-color: black !important;
+       border-color: var(--main-color-border);
+   }
+
+
+   .c0bea05627c5dc35-inner {
+       background-color: #000 !important;
+   }
+
+   ._00943886e1cf89d1-section {
+       background-color: transparent !important;
+
+   }
+
+   ._5e434347c823b592-panels {
+       background-color: black !important;
+   }
+
+   ._5d473ecff348c314-memberInner {
+       &:has(._10651c5cfe637db6-chipletContainerInner) {
+           ._10651c5cfe637db6-chipletContainerInner {
+               display: none;
+           }
+       }
+   }
+
+
+   /* NEWS */
+
+   ._957962c2bd49881b-recentMentionsPopout {
+       background-color: black !important;
+       color: black !important;
+   }
+
+   .ab66419eae73260f-header {
+       background-color: black !important;
+       color: black !important;
+   }
+
+   ._35a7ecf3aba351b2-channelHeader {
+       background-color: black !important;
+       color: black !important;
+   }
+
+   ._957962c2bd49881b-messageContainer {
+       background-color: black !important;
+       color: black !important;
+   }
+
+   ._1ccd1ba5cb2270c2-messages {
+       background-color: black !important;
+       color: black !important;
+   }
+
+   ._6fddf2ee3574a18a-row {
+       background-color: black !important;
+       color: black !important;
+   }
+
+   .d125d22cdfd32cfe-scrollerBase {
+       background-color: black !important;
+       color: black !important;
+   }
+
+   ._614244fbcb264b94-sectionContainer {
+       background-color: black !important;
+   }
+
+   ._614244fbcb264b94-soundRow {
+       background-color: black !important;
+   }
+
+   /* CLAN TAGS */
+
+   .dca174a2baed7ac1-avatarContainer {
+       background: none !important;
+   }
+
+   .dca174a2baed7ac1-container {
+       background-color: transparent !important;
+   }
+
+   ._2338f50c3988e5ec-svg {
+       background-color: transparent !important;
+       border-radius: 20% !important;
+   }
+
+   .dca174a2baed7ac1-avatarWrapper {
+       background-color: transparent !important;
+   }
+
+
+
+   ._10651c5cfe637db6-chipletContainerInner {
+       background-color: transparent !important;
+   }
+
+   .dca174a2baed7ac1-body {
+       background-color: black !important;
+   }
+
+   .dca174a2baed7ac1-buttonContainer {
+       background-color: black !important;
+   }
+
+   ._6e5000705ad8bf77-header {
+       background-color: black !important;
+   }
+
+   .faf9c0f0be1b8685-animatorLeft {
+       border-radius: 20px !important;
+   }
+
+   /* ANSWER TO PFP OR STATUS MÜLL */
+   ._2d0abf0638bcaa3f-popover {
+       display: none !important;
+   }
+
+   /* Guild in UserCard Fix */
+   span._63ed30c16c7151f2-guildTagContainer {
+       border-color: transparent !important;
+   }
+
+
+   /* SERVER MEMBER ACCEPTING THINGS */
+
+   ._6b10264bda9ba40e-actionButton {
+       background-color: black;
+   }
+
+   ._6b10264bda9ba40e-infoContainer {
+       background-color: black;
+   }
+
+   ._6b10264bda9ba40e-cardContainer {
+       background-color: black;
+   }
+
+
+   /* FIX SUMMARIES PLUGIN */
+
+   ._36d072eab2b2e737-messagesWrapper:has(._0f481cbbd7530492-topicsPill) ._0f481cbbd7530492-topicsPill {
+       background-color: black !important;
+       border: none !important;
+   }
+
+   ._36d072eab2b2e737-messagesWrapper:has(._0f481cbbd7530492-topicsPillContainer) ._0f481cbbd7530492-topicsPillContainer {
+       border: none !important;
+   }
+
+   /* FIX MESSAGE SEARCHBAR */
+
+   .DraftEditor-root {
+       background-color: black;
+   }
+
+   ._974928fe84ca9647-searchBar {
+       border-radius: 5px;
+   }
+
+   ._974928fe84ca9647-icon {
+       background-color: black;
+       height: 40px !important;
+       position: relative;
+       top: -7px;
+   }
+
+
+   /* SERVER BANNER FIX */
+
+   .f37cb1984c371ee5-bannerImg {
+       width: max-content;
+   }
+
+
+   /* BUTTON FIX */
+   .a22cb0c66246f5d3-buttonChildrenWrapper {
+       background-color: var(--main-color);
+   }
+
+   .a22cb0c66246f5d3-button {
+       border: none !important;
+   }
+
+   ._5e434347c823b592-sidebarList {
+       border-top-color: #5c4e47 !important;
+   }
+
+   .f37cb1984c371ee5-header {
+       border-top-color: #5c4e47 !important;
+   }
+
+   .f37cb1984c371ee5-container {
+
+       border-top-color: #5c4e47 !important;
+   }
+
+   ._2637a2609f343032-container {
+       border-top-color: #5c4e47 !important;
+
+   }
+
+   /* new SERVER NITRO */
+   ._0d0f9ddd12a3ace3-progress {
+       border-radius: 4px !important;
+       background-color: transparent;
+       background: none;
+       background-color: rgb(56, 26, 52);
+   }
+
+   ._0d0f9ddd12a3ace3-progress:hover {
+       border-radius: 4px !important;
+       background-color: transparent;
+       background: none;
+       background-color: rgb(56, 26, 52);
+   }
+
+
+
+
+   .visual-refresh:not(.platform-osx) .c38106a3f0c3ca76-leading::before {
+       content: var(--before-content, "DarkVision");
+       position: static;
+       margin-left: 10px;
+       font-size: 16px;
+       font-weight: 600;
+       color: var(--text-default);
+       order: 2;
+       filter: drop-shadow(0 0 5px var(--hsl-main-color));
+   }
+
+   .c38106a3f0c3ca76-leading::after {
+       content: var(--theme-version) !important;
+   }
+
+
+
+
+
+   .visual-refresh:not(.platform-osx) .c38106a3f0c3ca76-leading::after {
+       content: "7.0.1";
+       position: static;
+       margin-top: -5px;
+       margin-left: 5px;
+       font-family: var(--code-font);
+       font-size: 11px;
+       font-weight: 600;
+       color: var(--text-muted);
+       order: 3
+   }
+
+
+
+   ._37bfcf3d457db7a9-tabListScroller {
+       background-color: transparent !important;
+   }
+
+
+   .c38106a3f0c3ca76-title .edbb22df99c39831-title .f34534e8a5d3ca64-icon {
+       display: none;
+   }
+
+   .edbb22df99c39831-title {
+       display: none;
+   }
+
+
+
+
+
+
+   /*PROFILE TEXT FIX */
+
+   ._37e49614b9f110a9-panelTitleContainer [class*="cf48127484dbde85-text-md/medium"] {
+       opacity: 80%;
+       font-size: 15px;
+   }
+
+
+   /*SETTINGS SEARCHBAR FIX */
+
+   ._0ed4fc708cdbac0d-input {
+       background-color: transparent;
+       box-shadow: none !important;
+   }
+
+   /*ACTIVITY FIX 2.0 */
+
+
+
+   /* SERVER BANNER BLACK BOX FIX */
+
+
+
+   ._629e4c86564a4ee7-scroller {
+       background-color: transparent !important;
+   }
+
+
+
+
+
+   /* CAT */
+
+   /*  THANKS TO Computing Cat for this snippet and help ^^  */
+
+
+   .user-profile-sidebar>[class^="inner_"]>[class^="footer__"] {
+       border: none;
+
+       &::before {
+           display: block;
+           border-bottom: 1px solid var(--user-profile-border);
+       }
+   }
+
+   ._7e549558f336cddb-emptyCard::before {
+       content:
+           "╱|、   \a"
+           "(˚ˎ 。7  \a"
+           "|、˜〵\  \a"
+           "  じしˍ,)ノ";
+
+       white-space: pre;
+       inset: 0;
+       padding: 20px 0;
+       color: rgba(255, 255, 255, 0.547);
+       text-align: center;
+       font-size: 150%;
+   }
+
+   .c38106a3f0c3ca76-title {
+       justify-content: left !important;
+       padding: 0 320px;
+   }
+
+   .c38106a3f0c3ca76-title::before {
+       /* The cat */
+       content:
+           "  ╱|、   \a"
+           "  (˚ˎ 。7  \a"
+           "  |、˜〵\  \a"
+           "    じしˍ,)ノ";
+
+       white-space: pre;
+       display: block;
+       padding: 40px;
+       color: rgba(255, 255, 255, 0.503);
+       text-align: center;
+       font-size: 15%;
+       line-height: 1.2;
+   }
+
+
+
+
+
+   /* Textbox MESSAGE MSG fix */
+
   
-                                                                        /* BETTER FRIENDLIST */
-                                                                        ._19b6da809e654e70-text, .customStatusEmoji__19b6d {
-                                                                            display: none;
-                                                                        }
-                                                                        .cc61794aab086a2e-peopleListItem .c9d15c8a962de3c8-icon {
-                                                                            display: none;
-                                                                        }
-                                                                        
-                                                                        
-                                                                        /* SEARCHBAR REMOVAL */
-                                                                        .searchBarComponent__35e86,
-                                                                        .e6b7699ce8339e1c-searchBar {
-                                                                            display: none;
-                                                                        }
-                                                                        
-                                                                        ._33d1236760f7073e-image {
-                                                                            visibility: hidden;
-                                                                            position: relative;
-                                                                        }
-                                                                        
-                                                                        /* BOYKISSER FRIEND THING */
-                                                                        ._33d1236760f7073e-image:after {
-                                                                            visibility: visible;
-                                                                            display: flex;
-                                                                            justify-content: center;
-                                                                            align-items: center;
-                                                                            content: url("https://i.imgur.com/XR6MnAZ.png");
-                                                                        }
-                                                                        
-                                                                        ._33d1236760f7073e-text {
-                                                                            visibility: hidden;
-                                                                            position: relative;
-                                                                        }
-                                                                        
-                                                                        ._33d1236760f7073e-text:after {
-                                                                            visibility: visible;
-                                                                            position: absolute;
-                                                                            top: 0;
-                                                                            left: 0;
-                                                                            content: "Sadly, there's nothing to see here.";
-                                                                        }
-                                    
-                                                                        .c7ea19a1be2e0a89-friendsEmpty .abf7060e6f2beabe-vertical ._33d1236760f7073e-text {
-                                    
-                                                                            visibility: hidden;
-                                                                            position: relative;
-                                                                        }
-                                                                        
-                                                                        /* MESSAGE TOOL BAR FIX 06.08.2024 */
-                                                                        
-                                                                        /* ACTIVE NOW TEXT */
-                                    
-                                                                        ._7d20cf18f8a2784c-header {
-					                                    text-indent: -9999px;
-					                                    position: relative;
-					                                    display: flex;
-					                                    justify-content: center;
-					                                }
-					                                
-					                                ._7d20cf18f8a2784c-header::after {
-					                                    text-indent: 1px;
-					                                    content: "";
-					                                    text-align: left;
-					                                    position: absolute;
-					                                    left: 50%;
-					                                    transform: translateX(-39%);
-					                                }
-                                
-                                                                        
-
-                                                                        .b6bcee13c278a88d-content ._33d1236760f7073e-wrapper ._33d1236760f7073e-text:after {
-                                                                            visibility: visible;
-                                                                            position: absolute;
-                                                                            top: 0;
-                                                                            left: 15%;
-                                                                            content: "You haven't completed any quests silly";
-                                                                        }
-                                                                        
-                                                                        /* REMOVE EDIT BUTTON ON PROFILE */
-                                                                        ._0c74f6fd004aa317-wrapper .button_fb7f94 {
-                                                                            display: none;
-                                                                        }
-                                                                        
-                                                                        /* TEXT PREVIEW REMOVAL */
-                                                                        ._3e443c6b2569044a-preview,
-                                                                        .input_fea832,
-                                                                        .inner_fea832 {
-                                                                            display: none;
-                                                                        }
-                                                                        
-                                                                        ._67645e1530f1195d-button:active {
-                                                                            backdrop-filter: blur(8px);
-                                                                        }
-                                                                        
-                                                                        /* ACTIVITY BACKGROUND TRANSPARENT LOL TRANS + PARENT FUNNY */
-                                                                        .overlayBackground_c69a7b {
-                                                                            background-color: transparent !important;
-                                                                        }
-                                                                        
-                                                                        /* REACTION FIX */
-                                                                        ._23977d5b7cef7361-reactionBtn {
-                                                                            background-color: transparent !important;
-                                                                        }
-                                                                        
-                                                                      
-      
-                                                                          
-                                                                          /* STREAM PREVIEW BLACK BACKGROUND */
-                                                                          ._6da2d8abf659f945-streamPreviewWrapper {
-                                                                              background-color: #000 !important;
-                                                                          }
-                                                                          
-                                                                          .biteSizeInner_c69a7b {
-                                                                              background-color: #000 !important;
-                                                                          }
-                                                                          
-                                                                          ._740174f3d6a2c8fe-innerDisabled {
-                                                                              pointer-events: auto !important;
-                                                                              opacity: 1;
-                                                                          }
-                                                                          
-                                                                        
-                                                                          .e6e74fd4d1221f53-button {
-                                                                            display: none !important;
-                                                                          }
-                                    
-                                    
-                                                                          ._740174f3d6a2c8fe-scrollableContainer {
-                                                                            background-color: transparent !important;
-                                                                          }
-                                    
-                                                                          ._740174f3d6a2c8fe-themedBackground {
-                                                                            background-color: transparent !important;
-                                                                          }
-                                    
-                                    
-                                                                          .f75fb00fb7356cbe-channelTextArea {
-                                                                            background-color:  transparent !important;
-                                                                          }
-                                    
-                                    
-                                                                          ._11054c9baccea7a2-wrapper {
-                                                                            display: none;
-                                                                        }
-                                    
-
-
-                                                                        /* REMOVE GREEN ICONS */
-                                                                        
-                                                                        .icon__8ac07 {
-                                                                            display: none;
-                                                                        }
-                                    
-                                    
-                                                                        
-                                                                       
-                                                                       
-                                    
-                                    
-                                                                            
-                                                                  
-                                    /* --------------------------------------------------- NEW UI --------------------------------------------------- */
-                                    
-                                    
-                                   /* BAR */
-                                    
-                                    ._5e434347c823b592-base .c38106a3f0c3ca76-bar  .c38106a3f0c3ca76-title .text-sm\/medium_cf4812 {
-                                        font-size: 0;
-                                    }
-                                    
-                                    ._5e434347c823b592-base .c38106a3f0c3ca76-bar .c38106a3f0c3ca76-title .text-sm\/medium_cf4812::before {
-                                        content: "";
-                                        font-size: 11px; 
-                                        opacity: 50%;
-					position: fixed;
-        
-                                    }
-
-                                    ._5e434347c823b592-base .c38106a3f0c3ca76-title .title__85643 svg  {
-                                        display: none !important;
-                                    }
-
-                                    .c38106a3f0c3ca76-title .title__85643 .guildIcon__85643 {
-                                        display: none;
-                                    }
-
-                                    .c38106a3f0c3ca76-bar .c38106a3f0c3ca76-title .title__85643 {
-                                        transform: translateX(-100%);
-                                        margin-right: 88%;
-                                        position: relative;
-                                        top: 5px;
-                                    }
-
-
-
-					@media screen and (min-width: 1500px) {
-					  .c38106a3f0c3ca76-bar .c38106a3f0c3ca76-title .title__85643 {
-					    left: -2.1%; 
-					  }
-					}
-
-
-
-                                    ._37e49614b9f110a9-panelSubtextContainer {
-					    display: none !important;
-					}
-
-                                    
-                                    
-                                    ._48112cbe77dc5022-folderGroup {
-                                        height: auto;
-                                        display: block;
-                                    }
-                                    
-
-                                    
-                                    
-                                    
-                                    
-                                    /* SEARCH BAR */
-                                    
-                                     ._5ec2fb8b5de26b21-searchBar {
-                                        display: none;
-                                    } 
-                                    
-                                    
-                                    
-                                    
-                                    /* SEARCH BAR POS FIX */
-                                    
-                                    ._9293f6b2fc12398a-children {
-                                        position: relative;
-                                        top: 5px;
-                                    }
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    /* BORDERS */
-					.c8ffbb79449f399c-container {
-					    border: none !important;
-					}
-                                    .cb9592ad77576717-callContainer {
-                                        border-top-color: var(--main-color-border) !important;
-                                    }
-				 .cb9592ad77576717-callContainer {
-                                        border-left-color: var(--main-color-border) !important;
-                                    }
-                                    .cb9592ad77576717-callContainer {
-                                        border-left: none !important;
-                                    }
-                                    
-                                    
-                                    ._133bf5eea8e33a34-container {
-                                        border-color: var(--main-color-border) !important;
-                                    }
-                                    
-                                    
-                                    ._5e434347c823b592-sidebarListRounded {
-                                        border-color: var(--main-color-border) !important;
-                                    }
-                                    
-                                    
-                                    
-                                    
-                                    ._133bf5eea8e33a34-tabBody {
-                                        border: none !important;
-                                     }
-                                     
-                                     
-                                     ._9293f6b2fc12398a-container {
-                                         border-bottom: none !important;
-                                     }
-                                     
-                                     
-                                     .d125d22cdfd32cfe-scrollerBase {
-                                        border: none !important;
-                                    }
-                                    
-                                    
-                                    .f75fb00fb7356cbe-subtitleContainer {
-                                        border: none !important;
-                                    }
-                                    
-                                    .f75fb00fb7356cbe-chat {
-                                        border-color: var(--main-color-border) !important;
-                                    }
-                                    
-                                    .f37cb1984c371ee5-header {
-                                        border: none !important;
-                                        box-shadow: none !important;
-                                    }
-                                    
-                                    .f75fb00fb7356cbe-content {
-                                        border: none !important;
-                                    }
-                                    
-                                    
-                                    
-                                    
-                                    /* ADD FRIEND */
-                                    
-                                                    
-                                   ._133bf5eea8e33a34-tabBar :last-child {
-				    background-color: var(--main-color) !important;
-}
-
-
-
-  
-                                    
-
-                                
- 
- 
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-
-                                    /* FRIEND STATUS FIX */
-
-                                    .c9d15c8a962de3c8-container {
-                                        display: none;
-                                    }
-
-
-
-
-
-				/* USER POPUP FIX */
-
-
-				.faf9c0f0be1b8685-didRender {
-   				 background-color: black;
-				}
-
-
-
-				 ._5126c0cd07f243a0-buttonsInner {
-                                        background-color: black !important;
-                                        border-color: var(--main-color-border);
-                                    }
-
-
-				
-                                    ._5126c0cd07f243a0-buttonsInner {
-                                        background-color: black !important;
-                                        border-color: var(--main-color-border);
-                                    }
-
-
-                                    .c0bea05627c5dc35-inner {
-                                        background-color: #000 !important;
-                                    }
-
-				._00943886e1cf89d1-section {
-   				 background-color: transparent !important;
-    
-				}
-				._5e434347c823b592-panels {
-   				 background-color: black !important;
-				}
-
-				._5d473ecff348c314-memberInner {
-				  &:has(._10651c5cfe637db6-chipletContainerInner) {
-				    ._10651c5cfe637db6-chipletContainerInner {
-				      display: none;
-				    }
-				  }
-				}
-
-
-				/* NEWS */ 
-
-				._957962c2bd49881b-recentMentionsPopout {
-				    background-color: black !important;
-				    color: black !important;
-				}
-				
-				.ab66419eae73260f-header {
-				    background-color: black !important;
-				    color: black !important;
-				}
-				
-				._35a7ecf3aba351b2-channelHeader {
-				     background-color: black !important;
-				    color: black !important;
-				}
-				
-				._957962c2bd49881b-messageContainer {
-				        background-color: black !important;
-				    color: black !important;
-				}
-				
-				._1ccd1ba5cb2270c2-messages {
-				            background-color: black !important;
-				    color: black !important;
-				}
-				
-				._6fddf2ee3574a18a-row {
-				                background-color: black !important;
-				    color: black !important;
-				}
-				
-				.d125d22cdfd32cfe-scrollerBase {
-				                    background-color: black !important;
-				    color: black !important;
-				}
-				
-				._614244fbcb264b94-sectionContainer {
-				    background-color: black !important;
-				}
-				
-				._614244fbcb264b94-soundRow {
-				    background-color: black !important;
-				}
-				/* CLAN TAGS */
-
-				.dca174a2baed7ac1-avatarContainer {
-             			   background: none !important;
-				}
-				
-				.dca174a2baed7ac1-container {
-				    background-color: transparent !important;
-				}
-				
-				._2338f50c3988e5ec-svg {
-				    background-color: transparent !important;
-				    border-radius: 20% !important;
-				}
-				
-				.dca174a2baed7ac1-avatarWrapper  {
-				    background-color: transparent !important;
-				}
-
-				
-				
-				._10651c5cfe637db6-chipletContainerInner {
-				    background-color: transparent !important;
-				}
-				.dca174a2baed7ac1-body {
-				    background-color: black !important;
-				}
-				
-				.dca174a2baed7ac1-buttonContainer {
-				    background-color: black !important;
-				}
-				
-				._6e5000705ad8bf77-header {
-				    background-color: black !important;
-				}
-				.faf9c0f0be1b8685-animatorLeft {
-				    border-radius: 20px !important;
-				}
-
-				/* ANSWER TO PFP OR STATUS MÜLL */
-				._2d0abf0638bcaa3f-popover {
-				    display: none !important;
-				}
-
-				/* Guild in UserCard Fix */ 
-				span._63ed30c16c7151f2-guildTagContainer {
-				    border-color: transparent !important;
-				}
-
-
-			/* SERVER MEMBER ACCEPTING THINGS */
-
-			._6b10264bda9ba40e-actionButton {
-			    background-color: black;
-			}
-			
-			._6b10264bda9ba40e-infoContainer {
-			    background-color: black;
-			}
-			
-			._6b10264bda9ba40e-cardContainer {
-			    background-color: black;
-			}
-
-
-			/* FIX SUMMARIES PLUGIN */
-
-			._36d072eab2b2e737-messagesWrapper:has(._0f481cbbd7530492-topicsPill) ._0f481cbbd7530492-topicsPill {
-			    background-color: black !important;
-			    border: none !important;
-			}
-			
-			._36d072eab2b2e737-messagesWrapper:has(._0f481cbbd7530492-topicsPillContainer) ._0f481cbbd7530492-topicsPillContainer {
-			    border: none !important;
-			}
-
-			/* FIX MESSAGE SEARCHBAR */
-
-			.DraftEditor-root {
-			    background-color: black;
-			}
-			
-			._974928fe84ca9647-searchBar {
-			    border-radius: 5px;   
-			}
-			
-			._974928fe84ca9647-icon{
-			    background-color: black;
-			    height: 40px !important;
-			    position: relative;
-			    top: -7px;
-			}
-
-			
-			/* SERVER BANNER FIX */
-
-			.f37cb1984c371ee5-bannerImg {
-			    width: max-content;
-			}
-
-			/* BLACK BORDER PROFILE FIX */
-			
-			.c0bea05627c5dc35-outer {
-			    background-color: transparent !important;
-			    color: transparent !important;
-			}
-			
-			.faf9c0f0be1b8685-animatorRight {
-			    background-color: transparent !important;
-			}
-			
-			/* BUTTON FIX */
-			.a22cb0c66246f5d3-buttonChildrenWrapper{
-			    background-color: var(--main-color);
-			}
-	
-			.a22cb0c66246f5d3-button{
-			border: none !important;
-			}
-
-			._5e434347c823b592-sidebarList {
-			 border-top-color:    #5c4e47!important ;
-			}
-			
-			.f37cb1984c371ee5-header {
-			 border-top-color:    #5c4e47 !important;
-			}
-			
-			.f37cb1984c371ee5-container {
-			
-			 border-top-color:    #5c4e47 !important;
-			}
-			
-			._2637a2609f343032-container {
-			 border-top-color:    #5c4e47 !important;
-			
-			}
-/* new SERVER NITRO */
-			._0d0f9ddd12a3ace3-progress {
-			    border-radius: 4px !important;
-			    background-color: transparent;
-			    background: none;
-			    background-color: rgb(56, 26, 52);
-			}
-			
-			._0d0f9ddd12a3ace3-progress:hover {
-			    border-radius: 4px !important;
-			    background-color: transparent;
-			    background: none;
-			    background-color: rgb(56, 26, 52);
-			}
-/* new PROFILE */
-				._37bfcf3d457db7a9-tabListScroller {
-				    background-color: transparent !important;
-				}
-				
-				._764cdd81a2bebd88-scroller {
-				    background-color: transparent !important;
-				}
-				
-				._28fdc02c1d2fcad1-scroller {
-				    background-color: transparent !important;
-				}
-
-				._5e434347c823b592-page {
-				    border: none !important;
-				    outline: none !important;
-				}
-
-
-
-			.visual-refresh:not(.platform-osx) .c38106a3f0c3ca76-leading::before {
-			    content: var(--before-content, "DarkVision");
-			    position: static;
-			    margin-left: 10px;
-			    font-size: 16px;
-			    font-weight: 600;
-			    color: var(--text-default);
-			    order: 2;
-			    filter: drop-shadow(0 0 5px var(--hsl-main-color));
-			}
-			
-			.c38106a3f0c3ca76-leading::after {
-			    content: var(--theme-version) !important;
-			}
-
-			
-
-
-        .c38106a3f0c3ca76-leading::before{content:"ClearVision";position:static;margin-left:10px;font-size:16px;font-weight:600;color:var(--text-default);order:2;filter:drop-shadow(0 0 5px var(--hsl-main-color))}.visual-refresh:not(.platform-osx) .c38106a3f0c3ca76-leading::after{content:"7.0.1";position:static;margin-top:-5px;margin-left:5px;font-family:var(--code-font);font-size:11px;font-weight:600;color:var(--text-muted);order:3}
-
-
-
-		._37bfcf3d457db7a9-tabListScroller {
-    background-color: transparent !important;
-}
-
-
-.c38106a3f0c3ca76-title .edbb22df99c39831-title .f34534e8a5d3ca64-icon {
-    display: none;
-}
-
-.edbb22df99c39831-title{
-    display: none;
-}
-
-
-
-
-/*
-
-._740174f3d6a2c8fe-inner {
-    height: 60px;
-}
-
-
-._0923f156a0410684-attachWrapper {
-    position: relative;
-    bottom: 7px;
-}
-
-*/
-
-/*PROFILE TEXT FIX */
-
-._37e49614b9f110a9-panelTitleContainer [class*="cf48127484dbde85-text-md/medium"] {
-  opacity: 80%;
-  font-size: 15px;
-}
-
-
-/*SETTINGS SEARCHBAR FIX */
-
-._0ed4fc708cdbac0d-input {
-  background-color: transparent;
-  box-shadow: none !important;   
-}
-
-/*ACTIVITY FIX 2.0 */
-
-
-
-/* SERVER BANNER BLACK BOX FIX */
-
-
-
-._629e4c86564a4ee7-scroller {
-    background-color: transparent !important;
-}
-
-
-
-
-
-/* CAT */
-
-/*  THANKS TO Computing Cat for this snippet and help ^^  */
-
-
-.user-profile-sidebar > [class^="inner_"] > [class^="footer__"] 
-{border: none; &::before { display: block; border-bottom: 1px solid var(--user-profile-border); }}
- ._7e549558f336cddb-emptyCard::before{
-    content: 
-   "╱|、   \a"
- "(˚ˎ 。7  \a"
-  "|、˜〵\  \a"
-"  じしˍ,)ノ";
-
-    white-space: pre;
-    inset: 0;
-    padding:  20px 0;
-    color: rgba(255, 255, 255, 0.547);
-    text-align: center;
-    font-size: 150%;
-}
-
-.c38106a3f0c3ca76-title {
-    justify-content: left !important;
-    padding: 0 320px;
-}
-
-.c38106a3f0c3ca76-title::before {
-  /* The cat */
-  content: 
-    "  ╱|、   \a"
-    "  (˚ˎ 。7  \a"
-    "  |、˜〵\  \a"
-    "    じしˍ,)ノ";
-
-  white-space: pre;
-  display: block;
-  padding:  40px;
-  color: rgba(255, 255, 255, 0.503);
-  text-align: center;
-  font-size: 15%;
-  line-height: 1.2;
-}
-
-
-
-
-
-/* Textbox MESSAGE MSG fix */
-
-._740174f3d6a2c8fe-textArea {
-    margin-top: 9px;
-}
-
-._740174f3d6a2c8fe-button, .e6e74fd4d1221f53-button{
-    margin-bottom: -20px 
-}
-
-/* EMPTY FRIENDLIST FIX */
-
-._133bf5eea8e33a34-peopleColumn {
-    background-color: black !important;
-
-}
-
-/* FADE CAUSED SETTINGS SEARCHBAR BUG */
-
-.c7e9071ee8df9113-searchBar {
-   margin-top: 30px;
-}
-
-/* NVIDIA NOW FIX */
-
-.d6f39bdbd19328a0-popoverContentWithGradient {
-   display: none !important;
-}
-
-/* END BUTTON */
-
-.bfe55a0aaaf62375-bottomControls div:nth-child(3) div:nth-child(1)  div:nth-child(1) div:nth-child(1) div{
- color: rgb(255, 255, 255);
-
-}
-
-/* END BUTTON FRAME */
-
-.f1ceaca61b18918e-centerButton {
-    border-radius:10px !important;
-}
-
-
-
-
-/* BUTTON FIX */
-
-.a22cb0c66246f5d3-buttonChildrenWrapper {
-  background-color: var(--main-color);
-}
-
-
-.a22cb0c66246f5d3-button  {
-  border: none !important;
-
-}
-
-/* Gradient fix */
-
-
-._36d072eab2b2e737-chatGradientBase {
-    display: none;
-}
-
-/* ------------------------------------------------------------------*/
-
-@media (max-width: 1500px) {
-
-  /* MAKE THE OVERFLOW VISIBLE SO THE ICONS CAN SHOW ABOVE BAR */
-  .f75fb00fb7356cbe-form ._740174f3d6a2c8fe-scrollableContainer {
-    overflow: visible !important;
-  }
-
-  /* MAKE IT MOVE */
-  .f75fb00fb7356cbe-form ._740174f3d6a2c8fe-inner {
-    position: relative;  
-  }
-
-  /* DEFINE POS */
-  .f75fb00fb7356cbe-form ._740174f3d6a2c8fe-buttons {
-    position: absolute;  
-    top: 0;
-    right: 0;
-    z-index: 10;         
-    transition: top 0.3s ease;
-  }
-
-  /* MOVE BUTTONS */
-  .f75fb00fb7356cbe-form ._740174f3d6a2c8fe-inner:focus-within ._740174f3d6a2c8fe-buttons {
-    top: -70px;          
-  }
-
-  .f75fb00fb7356cbe-form ._740174f3d6a2c8fe-inner:focus-within ._752971923a1e6683-markup {
-    width: 100%;       
-  }
-
-  /* OTHERS */
-  .f75fb00fb7356cbe-form ._740174f3d6a2c8fe-buttons {
-    position: absolute; 
-    right: 0;
-    top: 0;
-  }
-
-  .f75fb00fb7356cbe-form ._740174f3d6a2c8fe-inner {
-    position: relative; 
-  }
-
-  .f75fb00fb7356cbe-form ._752971923a1e6683-markup {
-    display: block;
-    width: 150px;    
-    transition: width 0.3s ease;
-  }
-}
-
-
-._9293f6b2fc12398a-container, ._5dec784a68542d60-panel, ._37e49614b9f110a9-container, .ef3116c2da186559-itemsContainer, .e6b7699ce8339e1c-privateChannels, ._5e434347c823b592-sidebar {
-    background-color: black !important;
-    border: none !important;
-}
-
-/* ------------------------------------------------------------------*/
-
-
-.edbb22df99c39831-title, .e6b7699ce8339e1c-searchBar {
-    display: none;
-}
-
-
-._5e434347c823b592-sidebarList{
- border-color: var(--main-color-border) !important;
-}
-
-
-
-
-/* NITRO PROFILE CARD FREEDOM */
-
-
-._9c3bea41fd465666-profileBody {
-    background-color: transparent !important;
-}
-
-
-._37bfcf3d457db7a9-tabPanelScroller {
-    background-color: transparent !important;
-}
-
-
-.button_fb7f94 {
-    background-color:  #a69589 !important;
-    border-radius: 10px;
-}
-
-
-.a22cb0c66246f5d3-icon {
-    color: white;
-}
-
-._9d78f306fb3bc112-listScroller {
-    background-color: transparent !important;
-}
-
-._8061a5f9dbf6d829-container {
-    background-color: transparent !important;
-}
-
-
-.de800837163648e8-bannerButton {
-    background-color: #a69589 ;
-    border-radius: 10px ;
-}
-
-
-._0c4c409e1915aba4-icon {
-    margin-top: 7px !important;
-}
-
-._5be3ef42f92174b2-body {
-    background-color: transparent !important;
-}
-
-
-
-
-[data-list-item-id^="chat-messages"] {
-  animation: fadeUp 0.3s ease-out;
-}
-
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-._6e9f8dce4cc18de3-icon{
-    border-radius: 100%;
-}
-
-/* delete Gift icon */
-
-
-.d125d22cdfd32cfe-content:has(._0f2e83213c878a13-container) {
-._0f2e83213c878a13-container, ._095fe51feb41b3bb-headerContainer {
-    display: none;
-}
-._13cf1aa56cd732d2-header:nth-child(2) {
-    display: none;
-}
-}
 
 
+
+
+   
+
+   /* EMPTY FRIENDLIST FIX */
+
+   ._133bf5eea8e33a34-peopleColumn {
+       background-color: black !important;
+
+   }
+
+   /* FADE CAUSED SETTINGS SEARCHBAR BUG */
+
+   .c7e9071ee8df9113-searchBar {
+       margin-top: 30px;
+   }
+
+   /* NVIDIA NOW FIX */
+
+   .d6f39bdbd19328a0-popoverContentWithGradient {
+       display: none !important;
+   }
+
+   /* END BUTTON */
+
+   .bfe55a0aaaf62375-bottomControls div:nth-child(3) div:nth-child(1) div:nth-child(1) div:nth-child(1) div {
+       color: rgb(255, 255, 255);
+
+   }
+
+   /* END BUTTON FRAME */
+
+   .f1ceaca61b18918e-centerButton {
+       border-radius: 10px !important;
+   }
+
+
+
+
+   /* BUTTON FIX */
+
+   .a22cb0c66246f5d3-buttonChildrenWrapper {
+       background-color: var(--main-color);
+   }
+
+
+   .a22cb0c66246f5d3-button {
+       border: none !important;
+
+   }
+
+   /* Gradient fix */
+
+
+   ._36d072eab2b2e737-chatGradientBase {
+       display: none;
+   }
+
+   /* ------------------------------------------------------------------*/
+
+   @media (max-width: 1500px) {
+
+       /* MAKE THE OVERFLOW VISIBLE SO THE ICONS CAN SHOW ABOVE BAR */
+       .f75fb00fb7356cbe-form ._740174f3d6a2c8fe-scrollableContainer {
+           overflow: visible !important;
+       }
+
+       /* MAKE IT MOVE */
+       .f75fb00fb7356cbe-form ._740174f3d6a2c8fe-inner {
+           position: relative;
+       }
+
+       /* DEFINE POS */
+       .f75fb00fb7356cbe-form ._740174f3d6a2c8fe-buttons {
+           position: absolute;
+           top: 0;
+           right: 0;
+           z-index: 10;
+           transition: top 0.3s ease;
+       }
+
+       /* MOVE BUTTONS */
+       .f75fb00fb7356cbe-form ._740174f3d6a2c8fe-inner:focus-within ._740174f3d6a2c8fe-buttons {
+           top: -70px;
+       }
+
+       .f75fb00fb7356cbe-form ._740174f3d6a2c8fe-inner:focus-within ._752971923a1e6683-markup {
+           width: 100%;
+       }
+
+       /* OTHERS */
+       .f75fb00fb7356cbe-form ._740174f3d6a2c8fe-buttons {
+           position: absolute;
+           right: 0;
+           top: 0;
+       }
+
+       .f75fb00fb7356cbe-form ._740174f3d6a2c8fe-inner {
+           position: relative;
+       }
+
+       .f75fb00fb7356cbe-form ._752971923a1e6683-markup {
+           display: block;
+           width: 150px;
+           transition: width 0.3s ease;
+       }
+   }
+
+
+   ._9293f6b2fc12398a-container,
+   ._5dec784a68542d60-panel,
+   ._37e49614b9f110a9-container,
+   .ef3116c2da186559-itemsContainer,
+   .e6b7699ce8339e1c-privateChannels,
+   ._5e434347c823b592-sidebar {
+       background-color: black !important;
+       border: none !important;
+   }
+
+   /* ------------------------------------------------------------------*/
+
+
+   .edbb22df99c39831-title,
+   .e6b7699ce8339e1c-searchBar {
+       display: none;
+   }
+
+
+   ._5e434347c823b592-sidebarList {
+       border-color: var(--main-color-border) !important;
+   }
+
+
+
+
+   /* NITRO PROFILE CARD FREEDOM */
+
+
+   ._9c3bea41fd465666-profileBody {
+       background-color: transparent !important;
+   }
+
+
+   ._37bfcf3d457db7a9-tabPanelScroller {
+       background-color: transparent !important;
+   }
+
+
+   .button_fb7f94 {
+       background-color: #a69589 !important;
+       border-radius: 10px;
+   }
+
+
+   .a22cb0c66246f5d3-icon {
+       color: white;
+   }
+
+   ._9d78f306fb3bc112-listScroller {
+       background-color: transparent !important;
+   }
+
+   ._8061a5f9dbf6d829-container {
+       background-color: transparent !important;
+   }
+
+
+   .de800837163648e8-bannerButton {
+       background-color: #a69589;
+       border-radius: 10px;
+   }
+
+
+   ._0c4c409e1915aba4-icon {
+       margin-top: 7px !important;
+   }
+
+   ._5be3ef42f92174b2-body {
+       background-color: transparent !important;
+   }
+
+
+
+
+   [data-list-item-id^="chat-messages"] {
+       animation: fadeUp 0.3s ease-out;
+   }
+
+   @keyframes fadeUp {
+       from {
+           opacity: 0;
+           transform: translateY(10px);
+       }
+
+       to {
+           opacity: 1;
+           transform: translateY(0);
+       }
+   }
+
+   ._6e9f8dce4cc18de3-icon {
+       border-radius: 100%;
+   }
+
+   /* delete Gift icon */
+
+
+   .d125d22cdfd32cfe-content:has(._0f2e83213c878a13-container) {
+
+       ._0f2e83213c878a13-container,
+       ._095fe51feb41b3bb-headerContainer {
+           display: none;
+       }
+
+       ._13cf1aa56cd732d2-header:nth-child(2) {
+           display: none;
+       }
+   }
