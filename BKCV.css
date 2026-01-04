@@ -1,5 +1,5 @@
    :root {
-       --theme-version: "2.1 - [04.01.2026] - Made by zafazu";
+       --theme-version: "2.2 - [04.01.2026] - Made by zafazu";
        --main-color: #6c6c6c;
        --main-color-border: #5c4e47;
        --hover-color: #747474;
@@ -795,7 +795,16 @@
    /* Textbox MESSAGE MSG fix */
 
   
+._740174f3d6a2c8fe-scrollableContainer {
 
+  min-height: 75px; 
+
+}
+
+._740174f3d6a2c8fe-inner {
+ position: relative;
+ top: 10px;
+}
 
 
 
