@@ -1,5 +1,5 @@
    :root {
-       --theme-version: "2.2 - [04.01.2026] - Made by zafazu";
+       --theme-version: "2.3 - [17.01.2026] - Made by zafazu";
        --main-color: #6c6c6c;
        --main-color-border: #5c4e47;
        --hover-color: #747474;
@@ -1010,7 +1010,7 @@
        border-radius: 100%;
    }
 
-   /* delete Gift icon */
+   /* delete Gift icon 
 
 
    .d125d22cdfd32cfe-content:has(._0f2e83213c878a13-container) {
@@ -1024,3 +1024,4 @@
            display: none;
        }
    }
+*/
