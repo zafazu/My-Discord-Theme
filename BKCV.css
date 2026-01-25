@@ -1,5 +1,5 @@
    :root {
-       --theme-version: "2.4 - [17.01.2026] - Made by zafazu";
+       --theme-version: "2.5 - [25.01.2026] - Made by zafazu";
        --main-color: #6c6c6c;
        --main-color-border: #5c4e47;
        --hover-color: #747474;
@@ -81,7 +81,7 @@
    }
 
    /* FRIENDLIST LINES */
-   .cc61794aab086a2e-peopleListItem {
+   .peopleListItem_cc6179 {
        border-top: none;
        border-bottom: none;
    }
@@ -89,12 +89,12 @@
 
 
    /* BETTER FRIENDLIST */
-   ._19b6da809e654e70-text,
+   .text__19b6d,
    .customStatusEmoji__19b6d {
        display: none;
    }
 
-   .cc61794aab086a2e-peopleListItem .c9d15c8a962de3c8-icon {
+   .peopleListItem_cc6179 .icon_c9d15c {
        display: none;
    }
 
@@ -102,17 +102,17 @@
 
    /* SEARCHBAR REMOVAL */
    .searchBarComponent__35e86,
-   .e6b7699ce8339e1c-searchBar {
+   .searchBar_e6b769 {
        display: none;
    }
 
-   ._33d1236760f7073e-image {
+   .image__33d12 {
        visibility: hidden;
        position: relative;
    }
 
 
-   ._33d1236760f7073e-text:after {
+   .text__33d12:after {
        visibility: visible;
        position: absolute;
        top: 0;
@@ -120,7 +120,7 @@
        content: "Sadly, there's nothing to see here.";
    }
 
-   .c7ea19a1be2e0a89-friendsEmpty .abf7060e6f2beabe-vertical ._33d1236760f7073e-text {
+   .friendsEmpty_c7ea19 .vertical_abf706 .text__33d12 {
 
        visibility: hidden;
        position: relative;
@@ -132,7 +132,7 @@
 
    /* ACTIVE NOW TEXT */
 
-   ._7d20cf18f8a2784c-header {
+   .header__7d20c {
        text-indent: -9999px;
        position: relative;
        display: flex;
@@ -140,7 +140,7 @@
    }
 
 
-   ._7d20cf18f8a2784c-header::after {
+   .header__7d20c::after {
        text-indent: 1px;
        content: "";
        text-align: left;
@@ -151,7 +151,7 @@
 
 
 
-   .b6bcee13c278a88d-content ._33d1236760f7073e-wrapper ._33d1236760f7073e-text:after {
+   .content_b6bcee .wrapper__33d12 .text__33d12:after {
        visibility: visible;
        position: absolute;
        top: 0;
@@ -161,19 +161,19 @@
 
 
    /* REMOVE EDIT BUTTON ON PROFILE */
-   ._0c74f6fd004aa317-wrapper .button_fb7f94 {
+   .wrapper_d852db .button_fb7f94 {
        display: none;
    }
 
    /* TEXT PREVIEW REMOVAL */
-   ._3e443c6b2569044a-preview,
+   .preview__3e443,
    .input_fea832,
    .inner_fea832 {
        display: none;
    }
 
 
-   ._67645e1530f1195d-button:active {
+   .button__67645:active {
        backdrop-filter: blur(8px);
    }
 
@@ -183,7 +183,7 @@
    }
 
    /* REACTION FIX */
-   ._23977d5b7cef7361-reactionBtn {
+   .reactionBtn__23977 {
        background-color: transparent !important;
    }
 
@@ -191,7 +191,7 @@
 
 
    /* STREAM PREVIEW BLACK BACKGROUND */
-   ._6da2d8abf659f945-streamPreviewWrapper {
+   .streamPreviewWrapper__6da2d {
        background-color: #000 !important;
    }
 
@@ -199,22 +199,22 @@
        background-color: #000 !important;
    }
 
-   ._740174f3d6a2c8fe-innerDisabled {
+   .innerDisabled__74017 {
        pointer-events: auto !important;
        opacity: 1;
    }
 
 
-   .e6e74fd4d1221f53-button {
+   .button_e6e74f {
        display: none !important;
    }
 
 
-   ._740174f3d6a2c8fe-scrollableContainer {
+   .scrollableContainer__74017 {
        background-color: transparent !important;
    }
 
-   ._740174f3d6a2c8fe-themedBackground {
+   .themedBackground__74017 {
        background-color: transparent !important;
    }
 
@@ -222,14 +222,14 @@
 
    /* ???????????????????????? 
 
-   .f75fb00fb7356cbe-channelTextArea {
+   .channelTextArea_f75fb0 {
        background-color: transparent !important;
    }
 
    /* -----------------------*/
 
 
-   ._11054c9baccea7a2-wrapper {
+   .wrapper__11054 {
        display: none;
    }
 
@@ -247,11 +247,11 @@
 
    /* BAR */
 
-   ._5e434347c823b592-base .c38106a3f0c3ca76-bar .c38106a3f0c3ca76-title .text-sm\/medium_cf4812 {
+   .base__5e434 .bar_c38106 .title_c38106 .text-sm\/medium_cf4812 {
        font-size: 0;
    }
 
-   ._5e434347c823b592-base .c38106a3f0c3ca76-bar .c38106a3f0c3ca76-title .text-sm\/medium_cf4812::before {
+   .base__5e434 .bar_c38106 .title_c38106 .text-sm\/medium_cf4812::before {
        content: "";
        font-size: 11px;
        opacity: 50%;
@@ -259,15 +259,15 @@
 
    }
 
-   ._5e434347c823b592-base .c38106a3f0c3ca76-title .title__85643 svg {
+   .base__5e434 .title_c38106 .title__85643 svg {
        display: none !important;
    }
 
-   .c38106a3f0c3ca76-title .title__85643 .guildIcon__85643 {
+   .title_c38106 .title__85643 .guildIcon__85643 {
        display: none;
    }
 
-   .c38106a3f0c3ca76-bar .c38106a3f0c3ca76-title .title__85643 {
+   .bar_c38106 .title_c38106 .title__85643 {
        transform: translateX(-100%);
        margin-right: 88%;
        position: relative;
@@ -277,20 +277,20 @@
 
 
    @media screen and (min-width: 1500px) {
-       .c38106a3f0c3ca76-bar .c38106a3f0c3ca76-title .title__85643 {
+       .bar_c38106 .title_c38106 .title__85643 {
            left: -2.1%;
        }
    }
 
 
 
-   ._37e49614b9f110a9-panelSubtextContainer {
+   .panelSubtextContainer__37e49 {
        display: none !important;
    }
 
 
 
-   ._48112cbe77dc5022-folderGroup {
+   .folderGroup__48112 {
        height: auto;
        display: block;
    }
@@ -302,7 +302,7 @@
 
    /* SEARCH BAR */
 
-   ._5ec2fb8b5de26b21-searchBar {
+   .searchBar__5ec2f {
        display: none;
    }
 
@@ -311,7 +311,7 @@
 
    /* SEARCH BAR POS FIX */
 
-   ._9293f6b2fc12398a-children {
+   .children__9293f {
        position: relative;
        top: 5px;
    }
@@ -321,64 +321,64 @@
 
 
    /* BORDERS */
-   .c8ffbb79449f399c-container {
+   .container_c8ffbb {
        border: none !important;
    }
 
-   .cb9592ad77576717-callContainer {
+   .callContainer_cb9592 {
        border-top-color: var(--main-color-border) !important;
    }
 
-   .cb9592ad77576717-callContainer {
+   .callContainer_cb9592 {
        border-left-color: var(--main-color-border) !important;
    }
 
-   .cb9592ad77576717-callContainer {
+   .callContainer_cb9592 {
        border-left: none !important;
    }
 
 
-   ._133bf5eea8e33a34-container {
+   .container__133bf {
        border-color: var(--main-color-border) !important;
    }
 
 
-   ._5e434347c823b592-sidebarListRounded {
+   .sidebarListRounded__5e434 {
        border-color: var(--main-color-border) !important;
    }
 
 
 
 
-   ._133bf5eea8e33a34-tabBody {
+   .tabBody__133bf {
        border: none !important;
    }
 
 
-   ._9293f6b2fc12398a-container {
+   .container__9293f {
        border-bottom: none !important;
    }
 
 
-   .d125d22cdfd32cfe-scrollerBase {
+   .scrollerBase_d125d2 {
        border: none !important;
    }
 
 
-   .f75fb00fb7356cbe-subtitleContainer {
+   .subtitleContainer_f75fb0 {
        border: none !important;
    }
 
-   .f75fb00fb7356cbe-chat {
+   .chat_f75fb0 {
        border-color: var(--main-color-border) !important;
    }
 
-   .f37cb1984c371ee5-header {
+   .header_f37cb1 {
        border: none !important;
        box-shadow: none !important;
    }
 
-   .f75fb00fb7356cbe-content {
+   .content_f75fb0 {
        border: none !important;
    }
 
@@ -388,7 +388,7 @@
    /* ADD FRIEND */
 
 
-   ._133bf5eea8e33a34-tabBar :last-child {
+   .tabBar__133bf :last-child {
        background-color: var(--main-color) !important;
    }
 
@@ -410,7 +410,7 @@
 
    /* FRIEND STATUS FIX */
 
-   .c9d15c8a962de3c8-container {
+   .container_c9d15c {
        display: none;
    }
 
@@ -421,41 +421,41 @@
    /* USER POPUP FIX */
 
 
-   .faf9c0f0be1b8685-didRender {
+   .didRender_faf9c0 {
        background-color: black;
    }
 
 
 
-   ._5126c0cd07f243a0-buttonsInner {
+   .buttonsInner__5126c {
        background-color: black !important;
        border-color: var(--main-color-border);
    }
 
 
 
-   ._5126c0cd07f243a0-buttonsInner {
+   .buttonsInner__5126c {
        background-color: black !important;
        border-color: var(--main-color-border);
    }
 
 
-   .c0bea05627c5dc35-inner {
+   .inner_c0bea0 {
        background-color: #000 !important;
    }
 
-   ._00943886e1cf89d1-section {
+   .section__00943 {
        background-color: transparent !important;
 
    }
 
-   ._5e434347c823b592-panels {
+   .panels__5e434 {
        background-color: black !important;
    }
 
-   ._5d473ecff348c314-memberInner {
-       &:has(._10651c5cfe637db6-chipletContainerInner) {
-           ._10651c5cfe637db6-chipletContainerInner {
+   .memberInner__5d473 {
+       &:has(.chipletContainerInner__10651) {
+           .chipletContainerInner__10651 {
                display: none;
            }
        }
@@ -464,124 +464,124 @@
 
    /* NEWS */
 
-   ._957962c2bd49881b-recentMentionsPopout {
+   .recentMentionsPopout__95796 {
        background-color: black !important;
        color: black !important;
    }
 
-   .ab66419eae73260f-header {
+   .header_ab6641 {
        background-color: black !important;
        color: black !important;
    }
 
-   ._35a7ecf3aba351b2-channelHeader {
+   .channelHeader__35a7e {
        background-color: black !important;
        color: black !important;
    }
 
-   ._957962c2bd49881b-messageContainer {
+   .messageContainer__95796 {
        background-color: black !important;
        color: black !important;
    }
 
-   ._1ccd1ba5cb2270c2-messages {
+   .messages__1ccd1 {
        background-color: black !important;
        color: black !important;
    }
 
-   ._6fddf2ee3574a18a-row {
+   .row__6fddf {
        background-color: black !important;
        color: black !important;
    }
 
-   .d125d22cdfd32cfe-scrollerBase {
+   .scrollerBase_d125d2 {
        background-color: black !important;
        color: black !important;
    }
 
-   ._614244fbcb264b94-sectionContainer {
+   .sectionContainer__61424 {
        background-color: black !important;
    }
 
-   ._614244fbcb264b94-soundRow {
+   .soundRow__61424 {
        background-color: black !important;
    }
 
    /* CLAN TAGS */
 
-   .dca174a2baed7ac1-avatarContainer {
+   .avatarContainer_dca174 {
        background: none !important;
    }
 
-   .dca174a2baed7ac1-container {
+   .container_dca174 {
        background-color: transparent !important;
    }
 
-   ._2338f50c3988e5ec-svg {
+   .svg__2338f {
        background-color: transparent !important;
        border-radius: 20% !important;
    }
 
-   .dca174a2baed7ac1-avatarWrapper {
+   .avatarWrapper_dca174 {
        background-color: transparent !important;
    }
 
 
 
-   ._10651c5cfe637db6-chipletContainerInner {
+   .chipletContainerInner__10651 {
        background-color: transparent !important;
    }
 
-   .dca174a2baed7ac1-body {
+   .body_dca174 {
        background-color: black !important;
    }
 
-   .dca174a2baed7ac1-buttonContainer {
+   .buttonContainer_dca174 {
        background-color: black !important;
    }
 
-   ._6e5000705ad8bf77-header {
+   .header__6e500 {
        background-color: black !important;
    }
 
-   .faf9c0f0be1b8685-animatorLeft {
+   .animatorLeft_faf9c0 {
        border-radius: 20px !important;
    }
 
    /* ANSWER TO PFP OR STATUS MÜLL */
-   ._2d0abf0638bcaa3f-popover {
+   .popover__2d0ab {
        display: none !important;
    }
 
    /* Guild in UserCard Fix */
-   span._63ed30c16c7151f2-guildTagContainer {
+   span.guildTagContainer__63ed3 {
        border-color: transparent !important;
    }
 
 
    /* SERVER MEMBER ACCEPTING THINGS */
 
-   ._6b10264bda9ba40e-actionButton {
+   .actionButton__6b102 {
        background-color: black;
    }
 
-   ._6b10264bda9ba40e-infoContainer {
+   .infoContainer__6b102 {
        background-color: black;
    }
 
-   ._6b10264bda9ba40e-cardContainer {
+   .cardContainer__6b102 {
        background-color: black;
    }
 
 
    /* FIX SUMMARIES PLUGIN */
 
-   ._36d072eab2b2e737-messagesWrapper:has(._0f481cbbd7530492-topicsPill) ._0f481cbbd7530492-topicsPill {
+   .messagesWrapper__36d07:has(.topicsPill__0f481) .topicsPill__0f481 {
        background-color: black !important;
        border: none !important;
    }
 
-   ._36d072eab2b2e737-messagesWrapper:has(._0f481cbbd7530492-topicsPillContainer) ._0f481cbbd7530492-topicsPillContainer {
+   .messagesWrapper__36d07:has(.topicsPillContainer__0f481) .topicsPillContainer__0f481 {
        border: none !important;
    }
 
@@ -591,11 +591,11 @@
        background-color: black;
    }
 
-   ._974928fe84ca9647-searchBar {
+   .searchBar_c322aa {
        border-radius: 5px;
    }
 
-   ._974928fe84ca9647-icon {
+   .icon_c322aa {
        background-color: black;
        height: 40px !important;
        position: relative;
@@ -605,47 +605,47 @@
 
    /* SERVER BANNER FIX */
 
-   .f37cb1984c371ee5-bannerImg {
+   .bannerImg_f37cb1 {
        width: max-content;
    }
 
 
    /* BUTTON FIX */
-   .a22cb0c66246f5d3-buttonChildrenWrapper {
+   .buttonChildrenWrapper_a22cb0 {
        background-color: var(--main-color);
    }
 
-   .a22cb0c66246f5d3-button {
+   .button_a22cb0 {
        border: none !important;
    }
 
-   ._5e434347c823b592-sidebarList {
+   .sidebarList__5e434 {
        border-top-color: #5c4e47 !important;
    }
 
-   .f37cb1984c371ee5-header {
+   .header_f37cb1 {
        border-top-color: #5c4e47 !important;
    }
 
-   .f37cb1984c371ee5-container {
+   .container_f37cb1 {
 
        border-top-color: #5c4e47 !important;
    }
 
-   ._2637a2609f343032-container {
+   .container__2637a {
        border-top-color: #5c4e47 !important;
 
    }
 
    /* new SERVER NITRO */
-   ._0d0f9ddd12a3ace3-progress {
+   .progress__0d0f9 {
        border-radius: 4px !important;
        background-color: transparent;
        background: none;
        background-color: rgb(56, 26, 52);
    }
 
-   ._0d0f9ddd12a3ace3-progress:hover {
+   .progress__0d0f9:hover {
        border-radius: 4px !important;
        background-color: transparent;
        background: none;
@@ -655,7 +655,7 @@
 
 
 
-   .visual-refresh:not(.platform-osx) .c38106a3f0c3ca76-leading::before {
+   .visual-refresh:not(.platform-osx) .leading_c38106::before {
        content: var(--before-content, "DarkVision");
        position: static;
        margin-left: 10px;
@@ -666,7 +666,7 @@
        filter: drop-shadow(0 0 5px var(--hsl-main-color));
    }
 
-   .c38106a3f0c3ca76-leading::after {
+   .leading_c38106::after {
        content: var(--theme-version) !important;
    }
 
@@ -674,7 +674,7 @@
 
 
 
-   .visual-refresh:not(.platform-osx) .c38106a3f0c3ca76-leading::after {
+   .visual-refresh:not(.platform-osx) .leading_c38106::after {
        content: "7.0.1";
        position: static;
        margin-top: -5px;
@@ -688,16 +688,16 @@
 
 
 
-   ._37bfcf3d457db7a9-tabListScroller {
+   .tabListScroller__37bfc {
        background-color: transparent !important;
    }
 
 
-   .c38106a3f0c3ca76-title .edbb22df99c39831-title .f34534e8a5d3ca64-icon {
+   .title_c38106 .title_edbb22 .icon_f34534 {
        display: none;
    }
 
-   .edbb22df99c39831-title {
+   .title_edbb22 {
        display: none;
    }
 
@@ -708,7 +708,7 @@
 
    /*PROFILE TEXT FIX */
 
-   ._37e49614b9f110a9-panelTitleContainer [class*="cf48127484dbde85-text-md/medium"] {
+   .panelTitleContainer__37e49 [class*="cf48127484dbde85-text-md/medium"] {
        opacity: 80%;
        font-size: 15px;
    }
@@ -716,7 +716,7 @@
 
    /*SETTINGS SEARCHBAR FIX */
 
-   ._0ed4fc708cdbac0d-input {
+   .input__0ed4f {
        background-color: transparent;
        box-shadow: none !important;
    }
@@ -729,7 +729,7 @@
 
 
 
-   ._629e4c86564a4ee7-scroller {
+   .scroller__629e4 {
        background-color: transparent !important;
    }
 
@@ -751,7 +751,7 @@
        }
    }
 
-   ._7e549558f336cddb-emptyCard::before {
+   .emptyCard__7e549::before {
        content:
            "╱|、   \a"
            "(˚ˎ 。7  \a"
@@ -766,12 +766,12 @@
        font-size: 150%;
    }
 
-   .c38106a3f0c3ca76-title {
+   .title_c38106 {
        justify-content: left !important;
        padding: 0 320px;
    }
 
-   .c38106a3f0c3ca76-title::before {
+   .title_c38106::before {
        /* The cat */
        content:
            "  ╱|、   \a"
@@ -795,13 +795,13 @@
    /* Textbox MESSAGE MSG fix */
 
   
-._740174f3d6a2c8fe-scrollableContainer {
+.scrollableContainer__74017 {
 
   min-height: 75px; 
 
 }
 
-._740174f3d6a2c8fe-inner {
+.inner__74017 {
  position: relative;
  top: 10px;
 }
@@ -812,33 +812,33 @@
 
    /* EMPTY FRIENDLIST FIX */
 
-   ._133bf5eea8e33a34-peopleColumn {
+   .peopleColumn__133bf {
        background-color: black !important;
 
    }
 
    /* FADE CAUSED SETTINGS SEARCHBAR BUG */
 
-   .c7e9071ee8df9113-searchBar {
+   .searchBar_c7e907 {
        margin-top: 30px;
    }
 
    /* NVIDIA NOW FIX */
 
-   .d6f39bdbd19328a0-popoverContentWithGradient {
+   .popoverContentWithGradient_d6f39b {
        display: none !important;
    }
 
    /* END BUTTON */
 
-   .bfe55a0aaaf62375-bottomControls div:nth-child(3) div:nth-child(1) div:nth-child(1) div:nth-child(1) div {
+   .bottomControls_bfe55a div:nth-child(3) div:nth-child(1) div:nth-child(1) div:nth-child(1) div {
        color: rgb(255, 255, 255);
 
    }
 
    /* END BUTTON FRAME */
 
-   .f1ceaca61b18918e-centerButton {
+   .centerButton_f1ceac {
        border-radius: 10px !important;
    }
 
@@ -847,12 +847,12 @@
 
    /* BUTTON FIX */
 
-   .a22cb0c66246f5d3-buttonChildrenWrapper {
+   .buttonChildrenWrapper_a22cb0 {
        background-color: var(--main-color);
    }
 
 
-   .a22cb0c66246f5d3-button {
+   .button_a22cb0 {
        border: none !important;
 
    }
@@ -860,7 +860,7 @@
    /* Gradient fix */
 
 
-   ._36d072eab2b2e737-chatGradientBase {
+   .chatGradientBase__36d07 {
        display: none;
    }
 
@@ -869,17 +869,17 @@
    @media (max-width: 1500px) {
 
        /* MAKE THE OVERFLOW VISIBLE SO THE ICONS CAN SHOW ABOVE BAR */
-       .f75fb00fb7356cbe-form ._740174f3d6a2c8fe-scrollableContainer {
+       .form_f75fb0 .scrollableContainer__74017 {
            overflow: visible !important;
        }
 
        /* MAKE IT MOVE */
-       .f75fb00fb7356cbe-form ._740174f3d6a2c8fe-inner {
+       .form_f75fb0 .inner__74017 {
            position: relative;
        }
 
        /* DEFINE POS */
-       .f75fb00fb7356cbe-form ._740174f3d6a2c8fe-buttons {
+       .form_f75fb0 .buttons__74017 {
            position: absolute;
            top: 0;
            right: 0;
@@ -888,26 +888,26 @@
        }
 
        /* MOVE BUTTONS */
-       .f75fb00fb7356cbe-form ._740174f3d6a2c8fe-inner:focus-within ._740174f3d6a2c8fe-buttons {
+       .form_f75fb0 .inner__74017:focus-within .buttons__74017 {
            top: -70px;
        }
 
-       .f75fb00fb7356cbe-form ._740174f3d6a2c8fe-inner:focus-within ._752971923a1e6683-markup {
+       .form_f75fb0 .inner__74017:focus-within .markup__75297 {
            width: 100%;
        }
 
        /* OTHERS */
-       .f75fb00fb7356cbe-form ._740174f3d6a2c8fe-buttons {
+       .form_f75fb0 .buttons__74017 {
            position: absolute;
            right: 0;
            top: 0;
        }
 
-       .f75fb00fb7356cbe-form ._740174f3d6a2c8fe-inner {
+       .form_f75fb0 .inner__74017 {
            position: relative;
        }
 
-       .f75fb00fb7356cbe-form ._752971923a1e6683-markup {
+       .form_f75fb0 .markup__75297 {
            display: block;
            width: 150px;
            transition: width 0.3s ease;
@@ -915,12 +915,12 @@
    }
 
 
-   ._9293f6b2fc12398a-container,
-   ._5dec784a68542d60-panel,
-   ._37e49614b9f110a9-container,
-   .ef3116c2da186559-itemsContainer,
-   .e6b7699ce8339e1c-privateChannels,
-   ._5e434347c823b592-sidebar {
+   .container__9293f,
+   .panel__5dec7,
+   .container__37e49,
+   .itemsContainer_ef3116,
+   .privateChannels_e6b769,
+   .sidebar__5e434 {
        background-color: black !important;
        border: none !important;
    }
@@ -928,13 +928,13 @@
    /* ------------------------------------------------------------------*/
 
 
-   .edbb22df99c39831-title,
-   .e6b7699ce8339e1c-searchBar {
+   .title_edbb22,
+   .searchBar_e6b769 {
        display: none;
    }
 
 
-   ._5e434347c823b592-sidebarList {
+   .sidebarList__5e434 {
        border-color: var(--main-color-border) !important;
    }
 
@@ -944,12 +944,12 @@
    /* NITRO PROFILE CARD FREEDOM */
 
 
-   ._9c3bea41fd465666-profileBody {
+   .profileBody__9c3be {
        background-color: transparent !important;
    }
 
 
-   ._37bfcf3d457db7a9-tabPanelScroller {
+   .tabPanelScroller__37bfc {
        background-color: transparent !important;
    }
 
@@ -960,30 +960,30 @@
    }
 
 
-   .a22cb0c66246f5d3-icon {
+   .icon_a22cb0 {
        color: white;
    }
 
-   ._9d78f306fb3bc112-listScroller {
+   .listScroller__9d78f {
        background-color: transparent !important;
    }
 
-   ._8061a5f9dbf6d829-container {
+   .container__8061a {
        background-color: transparent !important;
    }
 
 
-   .de800837163648e8-bannerButton {
+   .bannerButton_fb7f94 {
        background-color: #a69589;
        border-radius: 10px;
    }
 
 
-   ._0c4c409e1915aba4-icon {
+   .icon__0c4c4 {
        margin-top: 7px !important;
    }
 
-   ._5be3ef42f92174b2-body {
+   .body__5be3e {
        background-color: transparent !important;
    }
 
@@ -1006,21 +1006,21 @@
        }
    }
 
-   ._6e9f8dce4cc18de3-icon {
+   .icon__6e9f8 {
        border-radius: 100%;
    }
 
    
 
 
-   .d125d22cdfd32cfe-content:has(._0f2e83213c878a13-container) {
+   .content_d125d2:has(.container__0f2e8) {
 
-       ._0f2e83213c878a13-container,
-       ._095fe51feb41b3bb-headerContainer {
+       .container__0f2e8,
+       .headerContainer__095fe {
            display: none;
        }
 
-       ._13cf1aa56cd732d2-header:nth-child(2) {
+       .header__13cf1:nth-child(2) {
            display: none;
        }
    }
