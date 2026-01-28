@@ -1,5 +1,5 @@
    :root {
-       --theme-version: "2.5 - [25.01.2026] - Made by zafazu";
+       --theme-version: "2.6 - [28.01.2026] - Made by zafazu";
        --main-color: #6c6c6c;
        --main-color-border: #5c4e47;
        --hover-color: #747474;
@@ -1024,4 +1024,6 @@
            display: none;
        }
    }
-
+.backForwardButtons__63abb {
+    display: none;
+}
