@@ -1,5 +1,7 @@
-   :root {
-       --theme-version: "2.6 - [28.01.2026] - Made by zafazu";
+ :root {
+       --theme-version: "2.7 - [19.03.2026] - Made by zafazu";
+       --theme-transparency-amount: 0.5;
+       --theme-blur-amount: 1px;
        --main-color: #6c6c6c;
        --main-color-border: #5c4e47;
        --hover-color: #747474;
@@ -18,7 +20,6 @@
        --channels-width: 220px;
        --members-width: 240px;
        --background-shading: 160%;
-       --background-overlay: rgba(0, 0, 0, 0.6);
        --background-image: url();
        --background-position: center;
        --background-size: 125%;
@@ -75,10 +76,130 @@
        --user-modal-grayscale: var(--background-grayscale);
        --user-modal-sepia: var(--background-sepia);
        --user-modal-blur: calc(var(--background-blur) + 3px);
-       --bd-blue: var(--main-color);
-       --bd-blue-hover: var(--hover-color);
-       --bd-blue-active: var(--hover-color);
-   }
+}
+
+
+
+/* TRANSPARENCY */
+
+
+
+    :root,
+    .theme-dark {
+        --background-scrim: #00000020;
+        --background-surface-high: #00000070 !important;
+
+    }
+
+    .theme-white {
+        --background-scrim: #00000020;
+    }
+
+    .inner_c0bea0{
+        background-color: #000;
+    }
+
+    .guildTooltipWrapper_b1f768 {
+        background-color: #000 !important;
+        border-radius: 10px;
+    }
+  
+
+    .scroller_c1e9c4, .contentWrapper__08434 {
+        background-color: #000;
+    }
+
+    /*CONFIG*/
+
+    .scroller__99e7c, .chatContent_f75fb0 {
+        background-color: rgb(0 0 0 / var(--theme-transparency-amount));
+        backdrop-filter: blur(var(--theme-blur-amount));
+    }
+
+
+
+
+
+
+
+
+
+/* ACTIVITY ITEMCARDS */
+.itemCard__7e549 {
+    background-color: transparent !important;
+}
+
+
+/* SETTINGS*/
+.scroller__6131a, .contentBody_e9e3ed {
+    background-color: transparent !important;
+}
+
+.navScroller__409aa {
+    background-color: transparent !important;
+}
+
+/* ABOUT ME / BIO BG */
+.overlay_c0bea0 {
+    background-color: transparent !important;
+}
+
+/* MESSAGE BOX TYPING*/
+.channelTextArea_f75fb0 {
+    background-color: transparent !important;
+}
+
+.textArea__74017 {
+    color: transparent !important;
+}
+
+/* FRIENDLIST BUTTONS */
+.actionButton_f8fa06 {
+    background-color: var(--main-color);
+    color: oklab(lightness a b);
+}
+
+/* DM NAMES TEXT */
+.name__20a53 .overflowTooltip__972a0 {
+    color: rgb(121, 121, 121);
+}
+
+/* DM MESSAGE SEARCHBAR */
+.DraftEditor-root, .icon_c322aa {
+    background-color: transparent !important;
+}
+
+
+
+
+
+
+.images-light {
+background-color: transparent !important;
+color: transparent !important;
+}
+
+
+
+.title_c38106 {
+    background-color: transparent !important;
+}
+
+
+
+.theme-light {
+--channels-default: grey;
+}
+
+
+
+
+
+
+
+
+
+
 
    /* FRIENDLIST LINES */
    .peopleListItem_cc6179 {
@@ -189,15 +310,6 @@
 
 
 
-
-   /* STREAM PREVIEW BLACK BACKGROUND */
-   .streamPreviewWrapper__6da2d {
-       background-color: #000 !important;
-   }
-
-   .biteSizeInner_c69a7b {
-       background-color: #000 !important;
-   }
 
    .innerDisabled__74017 {
        pointer-events: auto !important;
@@ -418,40 +530,12 @@
 
 
 
-   /* USER POPUP FIX */
-
-
-   .didRender_faf9c0 {
-       background-color: black;
-   }
-
-
-
-   .buttonsInner__5126c {
-       background-color: black !important;
-       border-color: var(--main-color-border);
-   }
-
-
-
-   .buttonsInner__5126c {
-       background-color: black !important;
-       border-color: var(--main-color-border);
-   }
-
-
-   .inner_c0bea0 {
-       background-color: #000 !important;
-   }
 
    .section__00943 {
        background-color: transparent !important;
 
    }
 
-   .panels__5e434 {
-       background-color: black !important;
-   }
 
    .memberInner__5d473 {
        &:has(.chipletContainerInner__10651) {
@@ -464,48 +548,6 @@
 
    /* NEWS */
 
-   .recentMentionsPopout__95796 {
-       background-color: black !important;
-       color: black !important;
-   }
-
-   .header_ab6641 {
-       background-color: black !important;
-       color: black !important;
-   }
-
-   .channelHeader__35a7e {
-       background-color: black !important;
-       color: black !important;
-   }
-
-   .messageContainer__95796 {
-       background-color: black !important;
-       color: black !important;
-   }
-
-   .messages__1ccd1 {
-       background-color: black !important;
-       color: black !important;
-   }
-
-   .row__6fddf {
-       background-color: black !important;
-       color: black !important;
-   }
-
-   .scrollerBase_d125d2 {
-       background-color: black !important;
-       color: black !important;
-   }
-
-   .sectionContainer__61424 {
-       background-color: black !important;
-   }
-
-   .soundRow__61424 {
-       background-color: black !important;
-   }
 
    /* CLAN TAGS */
 
@@ -532,17 +574,6 @@
        background-color: transparent !important;
    }
 
-   .body_dca174 {
-       background-color: black !important;
-   }
-
-   .buttonContainer_dca174 {
-       background-color: black !important;
-   }
-
-   .header__6e500 {
-       background-color: black !important;
-   }
 
    .animatorLeft_faf9c0 {
        border-radius: 20px !important;
@@ -561,25 +592,10 @@
 
    /* SERVER MEMBER ACCEPTING THINGS */
 
-   .actionButton__6b102 {
-       background-color: black;
-   }
-
-   .infoContainer__6b102 {
-       background-color: black;
-   }
-
-   .cardContainer__6b102 {
-       background-color: black;
-   }
 
 
    /* FIX SUMMARIES PLUGIN */
 
-   .messagesWrapper__36d07:has(.topicsPill__0f481) .topicsPill__0f481 {
-       background-color: black !important;
-       border: none !important;
-   }
 
    .messagesWrapper__36d07:has(.topicsPillContainer__0f481) .topicsPillContainer__0f481 {
        border: none !important;
@@ -593,13 +609,6 @@
 
    .searchBar_c322aa {
        border-radius: 5px;
-   }
-
-   .icon_c322aa {
-       background-color: black;
-       height: 40px !important;
-       position: relative;
-       top: -7px;
    }
 
 
@@ -808,14 +817,6 @@
 
 
 
-   
-
-   /* EMPTY FRIENDLIST FIX */
-
-   .peopleColumn__133bf {
-       background-color: black !important;
-
-   }
 
    /* FADE CAUSED SETTINGS SEARCHBAR BUG */
 
@@ -868,17 +869,14 @@
 
    @media (max-width: 1500px) {
 
-       /* MAKE THE OVERFLOW VISIBLE SO THE ICONS CAN SHOW ABOVE BAR */
        .form_f75fb0 .scrollableContainer__74017 {
            overflow: visible !important;
        }
 
-       /* MAKE IT MOVE */
        .form_f75fb0 .inner__74017 {
            position: relative;
        }
 
-       /* DEFINE POS */
        .form_f75fb0 .buttons__74017 {
            position: absolute;
            top: 0;
@@ -887,7 +885,6 @@
            transition: top 0.3s ease;
        }
 
-       /* MOVE BUTTONS */
        .form_f75fb0 .inner__74017:focus-within .buttons__74017 {
            top: -70px;
        }
@@ -896,7 +893,6 @@
            width: 100%;
        }
 
-       /* OTHERS */
        .form_f75fb0 .buttons__74017 {
            position: absolute;
            right: 0;
@@ -921,7 +917,6 @@
    .itemsContainer_ef3116,
    .privateChannels_e6b769,
    .sidebar__5e434 {
-       background-color: black !important;
        border: none !important;
    }
 
@@ -1026,4 +1021,380 @@
    }
 .backForwardButtons__63abb {
     display: none;
+}
+
+
+
+
+
+
+/* YADA YADA STUFF */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* translucent settings menu by benzeel V2 */
+/* ------ SETTINGS MENU START ------ */
+
+    /* settings menu scroll shadow */
+      .fixedContent__409aa:after {
+        border-top-left-radius:  8px;
+        border-top-right-radius:  8px;
+      }
+    /* settings menu main BG */
+      .content_e9e3ed {
+        background: #00000046;
+      }
+      .contentHeader_e9e3ed {
+        background: transparent !important;
+      } 
+    /* Security Keys BG */
+      .credentialItem__6c75d {background: none;}
+      .credentialItem__6c75d:is(:first-child) {border:0px;}
+      .credentialList__6c75d {
+        background: #0c0c0c83; 
+        border-radius: 8px; 
+        border: 1px solid var(--border-subtle);
+      }
+    /* krisp bg */
+      .card__73069:not(.outline__73069) {background: none}
+    /* keybinding bgs */
+      .defaultKeybindGroup__740f2 {background: #2b2a2a63;}
+    /* vencord quick actions */
+      .vc-card-base {background: none;}
+      .vc-settings-quickActions-pill {background: #55555571;}
+      .vc-settings-quickActions-pill:hover {background: #7e7e7e71;}
+    /* Plugins */
+      .vc-addon-card {background: none;}
+    /* server boosts */
+      .appliedBoostContainer_ceb06a {
+        background: none; 
+        border: 1px solid var(--border-subtle);
+      }
+      .guildContainer__5dba5 {background: #3d3d3d52;}
+      .boostContainer_ceb06a {background: #141414a1;}
+    /* server boost faq */
+      .wrapper__5b98e {background: #3d3d3d52;}
+    /* Share nitro */
+      .expandedProgressBarContainerSettingsPage_a61c56 {
+        background: none;
+        backdrop-filter: none;
+      }
+    /* my account */
+      .accountProfileCard__1fed1 {
+        background: #03030333; 
+        border: 1px solid var(--border-subtle);
+      }
+      .background__1fed1 {
+        background: #1818183b; 
+        border: 1px solid var(--border-subtle);
+      }
+      .fieldList__1fed1 {background: none;}
+    /* appearance */
+      .cardPrimary__73069, .cardPrimary__73069.editable__73069 {background: #03030356;}
+
+    /* "view reactions" popup & settings menu (for some reason)*/
+    .container__8a031 {background: #14141494; backdrop-filter: blur(10px);}
+
+/* ------ END OF SETTINGS MENU ------ */
+
+
+
+
+
+
+:root {
+  --isc-bg: var(--bg-4, var(--background-base-low));
+  /*blur can be performance intensive, to disable change this to 0px */
+  --isc-bg-blur: 2px;
+  --isc-bg-brightness: 0.5;
+
+  /* use these to dertime the order of the panels, smaller = higher */
+  --ics-panel-order-activity: 1;
+  --ics-panel-order-spotify: 2;
+  --ics-panel-order-voicechat: 3;
+  --ics-panel-order-user: 4;
+
+  --isc-song-title: var(--accent-4, var(--text-strong));
+  --isc-icon-color: var(--text-1, var(--text-default));
+
+  --isc-progress-bar: var(--accent-2, hsl(141, 41%, 45%));
+  --isc-progress-bar-hover: var(--accent-2, hsl(141, 41%, 65%));
+
+  --isc-button-icon: var(--text-4, var(--text-default));
+  --isc-button-icon-hover: var(--text-1, var(--text-strong));
+  --isc-button-bg: transparent;
+  --isc-button-bg-hover: var(--hover, var(--background-mod-strong));
+
+  --isc-button-toggled-icon: var(--accent-4, hsl(141, 41%, 45%));
+  --isc-button-toggled-icon-hover: var(--accent-4, hsl(141, 41%, 65%));
+  --isc-button-bg-base: var(--accent-new, hsl(141, 41%, 45%));
+  --isc-button-toggled-bg: color-mix(in hsl, var(--isc-button-bg-base), transparent 90%);
+  --isc-button-toggled-bg-hover: color-mix(in hsl, var(--isc-button-bg-base), transparent 80%);
+}
+
+/*---===< COVER ART AS BACKGROUND >===---*/
+
+/* hide the original album image */
+#vc-spotify-info-wrapper > img,
+#vc-spotify-player:not(:has(#vc-spotify-album-expanded-wrapper)):hover #vc-spotify-album-image {
+  display: none;
+}
+
+/* album cover as background using pseudo-elements */
+#vc-spotify-player::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  filter: blur(var(--isc-bg-blur)) brightness(var(--isc-bg-brightness, 1));
+  border-radius: inherit;
+  background-image: var(--vc-spotify-track-image);
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  content: '';
+}
+
+#vc-spotify-player {
+  border-radius: inherit;
+  overflow: hidden;
+}
+
+/* layer all children above background */
+#vc-spotify-info-wrapper,
+.vc-spotify-button {
+  position: relative;
+  z-index: 1;
+}
+
+/* fade towards bottom */
+#vc-spotify-player::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  border-radius: inherit;
+  background: linear-gradient(to bottom, transparent 68%, var(--isc-bg));
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  content: '';
+}
+
+/*---===< ICONS >===---*/
+
+/* the song info */
+#vc-spotify-info-wrapper {
+  margin-left: 16px;
+}
+
+#vc-spotify-song-title {
+  color: var(--isc-song-title);
+  text-shadow: hsl(0, 0%, 25%) 1px 1px;
+}
+
+#vc-spotify-song-title::before,
+#vc-spotify-song-title + p::before,
+#vc-spotify-song-title + p + p::before {
+  position: absolute;
+  -webkit-mask-size: contain;
+  margin-left: -17px;
+  background-color: var(--isc-icon-color, white);
+  padding: 7px;
+  content: ' ';
+}
+
+#vc-spotify-song-title::before {
+  -webkit-mask-image: url('https://raw.githubusercontent.com/ISOUL22/rice/refs/heads/main/Vencord/assets/music-note.svg');
+  margin-top: 3px;
+}
+
+#vc-spotify-song-title + p::before {
+  -webkit-mask-image: url('https://raw.githubusercontent.com/ISOUL22/rice/refs/heads/main/Vencord/assets/user.svg');
+  margin-top: 0px;
+}
+
+#vc-spotify-song-title + p + p::before {
+  -webkit-mask-image: url('https://raw.githubusercontent.com/ISOUL22/rice/refs/heads/main/Vencord/assets/disc-alt.svg');
+  margin-top: 2px;
+}
+
+/*---===< PROGRESS BAR >===---*/
+
+#vc-spotify-progress-bar {
+  margin: 0px;
+}
+
+#vc-spotify-player .bar_a562c8 {
+  background-color: hsla(0, 0%, 100%, 0.2);
+}
+
+#vc-spotify-player .barFill_a562c8 {
+  background-color: var(--isc-progress-bar);
+}
+
+#vc-spotify-progress-bar:hover .barFill_a562c8 {
+  background-color: var(--isc-progress-bar-hover);
+}
+
+#vc-spotify-progress-bar .grabber_a562c8 {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.1s;
+  margin-top: -8px;
+  margin-left: -8px;
+  border: solid 2px hsla(0, 0%, 0%, 0.3);
+  background-color: var(--isc-progress-bar-hover);
+  width: 16px;
+  height: 16px;
+}
+
+#vc-spotify-progress-bar:hover .grabber_a562c8 {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* hide durations */
+.vc-spotify-progress-time {
+  display: none;
+}
+
+/*---===< BUTTONS >===---*/
+.vc-spotify-button-row {
+  margin: 0px;
+}
+
+.vc-spotify-button {
+  margin: 0px 15px;
+  border: none;
+  background-color: var(--isc-button-bg);
+  width: 40px;
+  height: 25px;
+  color: var(--isc-button-icon);
+}
+
+.vc-spotify-button:hover {
+  background-color: var(--isc-button-bg-hover);
+  color: var(--isc-button-icon-hover);
+}
+
+.vc-spotify-button-icon {
+  width: 28px;
+  height: 28px;
+}
+
+.vc-spotify-shuffle-on,
+.vc-spotify-repeat-context,
+.vc-spotify-repeat-track {
+  background-color: var(--isc-button-toggled-bg);
+  color: var(--isc-button-toggled-icon);
+}
+
+.vc-spotify-shuffle-on:hover,
+.vc-spotify-repeat-context:hover,
+.vc-spotify-repeat-track:hover {
+  background-color: var(--isc-button-toggled-bg-hover);
+  color: var(--isc-button-toggled-icon-hover);
+}
+
+.vc-spotify-shuffle path,
+.vc-spotify-repeat path {
+  display: none;
+}
+
+svg.vc-spotify-shuffle,
+svg.vc-spotify-repeat {
+  -webkit-mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  background-color: currentColor;
+}
+
+svg.vc-spotify-shuffle {
+  -webkit-mask-image: url('https://raw.githubusercontent.com/ISOUL22/rice/refs/heads/main/Vencord/assets/shuffle.svg');
+  -webkit-mask-size: 24px 24px;
+}
+
+svg.vc-spotify-repeat {
+  -webkit-mask-image: url('https://raw.githubusercontent.com/ISOUL22/rice/refs/heads/main/Vencord/assets/loop.svg');
+  -webkit-mask-size: 20px 20px;
+}
+
+.vc-spotify-repeat-1 {
+  padding-right: 25px;
+  font-weight: 500;
+  font-size: 1em;
+}
+
+/*---===< FIXES FOR BASE DISCORD ELEMENTS >===---*/
+
+/* panel order */
+section.panels__5e434 {
+  display: flex;
+  flex-direction: column;
+
+  /* activity status */
+  .activityPanel__5e434 {
+    order: var(--ics-panel-order-activity);
+  }
+  /* spotify controls */
+  #vc-spotify-player {
+    order: var(--ics-panel-order-spotify);
+  }
+  /* voicechat settings */
+  .wrapper_e131a9 {
+    order: var(--ics-panel-order-voicechat);
+  }
+  /* user settings */
+  .container__37e49 {
+    order: var(--ics-panel-order-user);
+  }
+}
+
+/* transparent activity panel */
+.panels__5e434 div.panel__5dec7.activityPanel__5e434 {
+  background-color: transparent;
+}
+
+/* voice connected padding fix */
+.panels__5e434 .container_e131a9 {
+  padding-top: 12px;
 }
