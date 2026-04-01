@@ -1,5 +1,5 @@
  :root {
-       --theme-version: "2.7 - [19.03.2026] - Made by zafazu";
+       --theme-version: "2.8 - [01.04.2026] - Made by zafazu";
        --theme-transparency-amount: 0.5;
        --theme-blur-amount: 1px;
        --main-color: #6c6c6c;
@@ -205,6 +205,12 @@ color: transparent !important;
    .peopleListItem_cc6179 {
        border-top: none;
        border-bottom: none;
+   }
+
+    /* FRIENDLIST LINES  V2 */
+
+   .divider_cc6179 {
+    display: none;
    }
 
 
@@ -781,21 +787,19 @@ color: transparent !important;
    }
 
    .title_c38106::before {
-       /* The cat */
-       content:
-           "  ╱|、   \a"
-           "  (˚ˎ 。7  \a"
-           "  |、˜〵\  \a"
-           "    じしˍ,)ノ";
+    /* The cat */
+    content:
+        "                  _ _ /\\_/\\      〜 ♡\a"
+        "  'ᓚ(⌒,¸ 𐔌•⩊• 𐦯⚟";
 
-       white-space: pre;
-       display: block;
-       padding: 40px;
-       color: rgba(255, 255, 255, 0.503);
-       text-align: center;
-       font-size: 15%;
-       line-height: 1.2;
-   }
+    white-space: pre;
+    display: block;
+    padding: 0px;
+    color: rgba(255, 255, 255, 0.503);
+    text-align: center;
+    font-size: 75%;
+    line-height: 1.2;
+}
 
 
 
@@ -1398,3 +1402,22 @@ section.panels__5e434 {
 .panels__5e434 .container_e131a9 {
   padding-top: 12px;
 }
+
+/* grow user panel to fit track image - i want this to be an optional thing but idk how yet, so if you want this uncomment it :D 
+.panels__5e434:has(#vc-spotify-player) {
+  aspect-ratio: 1 / 1;
+  min-height: auto;
+  max-height: max-content;
+}
+
+.panels__5e434:has(#vc-spotify-player):not(:has(.activityPanel__5e434, .containerRtcOpened__37e49)) {
+  #vc-spotify-progress-bar {
+    margin-top: 180px;
+  }
+
+  #vc-spotify-info-wrapper {
+    padding-left: 24px;
+    scale: 120%;
+  }
+}
+*/
