@@ -1,5 +1,6 @@
  :root {
-       --theme-version: "2.9 - [16.04.2026] - Made by zafazu";
+       --theme-version: "2.10 - [10.05.2026] - Made by zafazu";
+       --profile-gradient-overlay-color: transparent !important;
        --theme-transparency-amount: 0.5;
        --theme-blur-amount: 1px;
        --main-color: #6c6c6c;
