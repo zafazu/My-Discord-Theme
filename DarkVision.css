@@ -1,7 +1,6 @@
-/* ── ROOT VARIABLES ──────────────────────────────────────── */
+/* DarkVision Theme */
 
 :root {
-  /* Theme */
   --theme-version: 'Dev 1.2';
   --profile-gradient-overlay-color: #4d444444 !important;
   --theme-transparency-amount: 0.5;
@@ -131,6 +130,9 @@
   --chat-background-default: 0 0;
 }
 
+
+
+
 /* Spoiler styling */
 .root, [data-popout-root], :root {
   --__spoiler-background-color--hidden:         #ffffff9a;
@@ -205,12 +207,6 @@
   display: none !important;
 }
 
-/* TODO: decide if this is needed
-   .channelTextArea_f75fb0 {
-       background-color: transparent !important;
-   }
-*/
-
 .wrapper__11054 {
   display: none;
 }
@@ -274,7 +270,6 @@
   display: none;
 }
 
-/* Empty state text */
 .image__33d12 {
   visibility: hidden;
   position: relative;
@@ -304,7 +299,7 @@
 }
 
 
-/* ── NEW UI / TOP BAR ────────────────────────────────────── */
+/* ── NEW UI / AFTER UI_V2 CHANGE ────────────────────────────────────── */
 
 .base__5e434 .bar_c38106 .title_c38106 .text-sm\/medium_cf4812 {
   font-size: 0;
@@ -565,7 +560,7 @@ span.guildTagContainer__63ed3 {
 }
 
 
-/* ── SERVER NITRO BOOST BAR ──────────────────────────────── */
+/* ── SERVER NITRO BOOST BAR TODO: FADE ──────────────────────────────── */
 
 .progress__0d0f9,
 .progress__0d0f9:hover {
@@ -594,7 +589,7 @@ span.guildTagContainer__63ed3 {
   background-color: transparent !important;
 }
 
-/* User profile sidebar footer - thanks to Computing Cat */
+/* User profile sidebar footer. Thanks to Computing Cat */
 .user-profile-sidebar > [class^='inner_'] > [class^='footer__'] {
   display: none;
 }
@@ -719,7 +714,7 @@ span.guildTagContainer__63ed3 {
   border-radius: 100%;
 }
 
-/* Small screen: message box button repositioning */
+/* If you not docked ur devtools this is a lifesaver */
 @media (max-width: 1500px) {
   .form_f75fb0 .scrollableContainer__74017 {
     overflow: visible !important;
@@ -1140,7 +1135,7 @@ section.panels__5e434 .container__37e49     { order: var(--ics-panel-order-user)
 }
 
 
-/* ── PROFILE (OTHER USERS) ───────────────────────────────── */
+/* ── PROFILE (DELETED SOON) ───────────────────────────────── */
 
 /* Keep header above background */
 .header__7f9c0 {
@@ -1191,7 +1186,7 @@ section.panels__5e434 .container__37e49     { order: var(--ics-panel-order-user)
 */
 
 
-/* ── PROFILE (SELF) ──────────────────────────────────────── */
+/* ── PROFILE (DELETED SOON) ──────────────────────────────────────── */
 
 /* Position fix for self profile background */
 .body_ce8328:has(.menus_ce8328) div[style*="background-image"] {
@@ -1226,7 +1221,7 @@ section.panels__5e434 .container__37e49     { order: var(--ics-panel-order-user)
 }
 
 
-/* ── DVOA ────────────────────────────────────────────────── */
+/* ── DVOA (DELETED SOON) ────────────────────────────────────────────────── */
 
 .dvoa-custom-background {
   display: none !important;
