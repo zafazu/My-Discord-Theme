@@ -130,7 +130,20 @@
   --chat-background-default: 0 0;
 }
 
+/* ── DVOA (DELETED SOON) ────────────────────────────────────────────────── */
 
+.dvoa-custom-background {
+  display: none !important;
+}
+
+.force-transparent-bg {
+  overflow: visible !important;
+}
+
+/* ── VENCORD ────────────────────────────────────────────────── */
+.vc-form-switch {
+    margin-top: 20px;
+}
 
 
 /* Spoiler styling */
@@ -1217,17 +1230,6 @@ section.panels__5e434 .container__37e49     { order: var(--ics-panel-order-user)
 
 /* Allow background to escape overflow */
 .body_ce8328:has(.menus_ce8328) {
-  overflow: visible !important;
-}
-
-
-/* ── DVOA (DELETED SOON) ────────────────────────────────────────────────── */
-
-.dvoa-custom-background {
-  display: none !important;
-}
-
-.force-transparent-bg {
   overflow: visible !important;
 }
 
