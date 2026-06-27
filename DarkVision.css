@@ -2,7 +2,7 @@
 
 :root {
   /* Theme */
-  --theme-version: 'Dev 1.2 / Custom 2.11';
+  --theme-version: 'Dev 1.2';
   --profile-gradient-overlay-color: #4d444444 !important;
   --theme-transparency-amount: 0.5;
   --theme-blur-amount: 1px;
