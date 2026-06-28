@@ -1,7 +1,5 @@
-/* DarkVision Theme */
-
 :root {
-  --theme-version: 'Dev 1.2';
+  --theme-version: 'Dev 1.2 / 2.12';
   --profile-gradient-overlay-color: #4d444444 !important;
   --theme-transparency-amount: 0.5;
   --theme-blur-amount: 1px;
@@ -1034,6 +1032,45 @@ svg.vc-spotify-repeat {
 }
 
 
+/* Spotify transparency thing extended for other places*/
+
+.card__39ec2:has([aria-label="Spotify"]) {
+  position: relative !important;
+  overflow: hidden !important;
+  z-index: 1 !important;
+}
+
+.card__39ec2:has([aria-label="Spotify"]) img.contentImage__42bf5 {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  min-height: unset !important;
+  object-fit: cover !important;
+  z-index: -1 !important;
+  opacity: 0.3 !important;
+}
+
+.card__39ec2:has([aria-label="Spotify"]) .imagePosition_ef9ae7 {
+  position: static !important;
+  display: contents !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+.card__39ec2:has([aria-label="Spotify"]) .details__39ec2 {
+  width: 100% !important;
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+.progress__8e51c{
+  background-color: var(--isc-progress-bar)
+}
+
+
 /* ── USER PANEL ORDER ────────────────────────────────────── */
 
 section.panels__5e434 {
@@ -1326,3 +1363,5 @@ section.panels__5e434 .container__37e49     { order: var(--ics-panel-order-user)
   top:              0;
   transform:        translateZ(0);
 }
+
+/*                                  */
