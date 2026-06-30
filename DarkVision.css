@@ -1070,6 +1070,21 @@ svg.vc-spotify-repeat {
   background-color: var(--isc-progress-bar)
 }
 
+/* Spotify extended blur for the buttons and stuff (basically the stuff above with buttons having same features) */
+
+div[class*="card__"]:has(div[aria-label="Spotify"]) div[class*="actions__"] button[class*="button_"] div[class*="buttonChildrenWrapper_"] {
+  background-color: rgba(88, 101, 242, 0.2) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  transition: background-color 0.15s ease, backdrop-filter 0.15s ease !important;
+  border-radius: inherit !important;
+}
+
+div[class*="card__"]:has(div[aria-label="Spotify"]) div[class*="actions__"] button[class*="button_"]:hover div[class*="buttonChildrenWrapper_"] {
+  background-color: var(--main-color, #5865F2) !important;
+  backdrop-filter: blur(0px) !important;
+  -webkit-backdrop-filter: blur(0px) !important;
+}
 
 /* ── USER PANEL ORDER ────────────────────────────────────── */
 
