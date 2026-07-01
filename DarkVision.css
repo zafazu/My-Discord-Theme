@@ -138,6 +138,12 @@
   overflow: visible !important;
 }
 
+.custom-user-profile-theme .profile__9c3be:before {
+    background: none ;
+}
+
+
+
 /* ── VENCORD ────────────────────────────────────────────────── */
 .vc-form-switch {
     margin-top: 20px;
